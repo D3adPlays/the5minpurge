@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://baqydv0s2phxm"]
 
-[ext_resource type="Script" uid="uid://blw5x5du6p06q" path="res://zombie.gd" id="1_roy8y"]
+[ext_resource type="Script" uid="uid://blw5x5du6p06q" path="res://src/zombie.gd" id="1_roy8y"]
 [ext_resource type="Texture2D" uid="uid://pkly7b26vdhg" path="res://textures/Enemies/Zombie_Small/Zombie_Small_Down_Idle-Sheet6.png" id="1_uiaus"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_roy8y"]

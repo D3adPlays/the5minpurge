@@ -1,23 +1,23 @@
 [gd_scene format=3 uid="uid://d17wp463dweqa"]
 
-[ext_resource type="Script" uid="uid://dnnfsovvjxu3c" path="res://player.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://dnnfsovvjxu3c" path="res://src/player.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ltfbs14ks3xb" path="res://map.tscn" id="1_lswn8"]
 [ext_resource type="Texture2D" uid="uid://dgbsopkqncbm" path="res://textures/Character/Main/Idle/Character_down_idle-Sheet6.png" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://uhygwq43rhsa" path="res://textures/Character/Main/Idle/Character_side_idle-Sheet6.png" id="3_h2yge"]
 [ext_resource type="Texture2D" uid="uid://0q77m5fikx8o" path="res://textures/Character/Main/Idle/Character_up_idle-Sheet6.png" id="4_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://d30q4tvm6us0c" path="res://textures/Character/Main/Run/Character_down_run-Sheet6.png" id="5_7mycd"]
-[ext_resource type="Script" uid="uid://22yg3w8wyqrv" path="res://fog.gd" id="5_vivmo"]
+[ext_resource type="Script" uid="uid://22yg3w8wyqrv" path="res://src/fog.gd" id="5_vivmo"]
 [ext_resource type="Texture2D" uid="uid://bl56odibbcl4s" path="res://textures/Character/Main/Run/Character_side-left_run-Sheet6.png" id="6_272bh"]
-[ext_resource type="Shader" uid="uid://bb6i7o0dy5lme" path="res://chromatic_aberration.gdshader" id="6_w48qg"]
+[ext_resource type="Shader" uid="uid://bb6i7o0dy5lme" path="res://shaders/chromatic_aberration.gdshader" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://v7fcpapgmyrp" path="res://textures/Character/Main/Run/Character_side_run_no-hands-Sheet6.png" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bd7l1f6lo53w8" path="res://textures/Character/Main/Run/Character_up_run-Sheet6.png" id="8_kek77"]
 [ext_resource type="Texture2D" uid="uid://djrfjadnt7xrl" path="res://textures/Objects/Bench_4_side_Overgrown_Dark-Green.png" id="13_4k2k6"]
-[ext_resource type="Shader" uid="uid://wlkvfp24iqph" path="res://clouds.gdshader" id="13_ycdy4"]
+[ext_resource type="Shader" uid="uid://wlkvfp24iqph" path="res://shaders/clouds.gdshader" id="13_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://bc3cdbg0gyu56" path="res://textures/Objects/Garbage-Bin_3.png" id="14_0rl1p"]
-[ext_resource type="Texture2D" uid="uid://n4dl43n7yc7e" path="res://cloudstileable1_maintex.png" id="14_w48qg"]
+[ext_resource type="Texture2D" uid="uid://n4dl43n7yc7e" path="res://textures/cloudstileable1_maintex.png" id="14_w48qg"]
 [ext_resource type="Texture2D" uid="uid://igdqdmx6ok3l" path="res://textures/Objects/Garbage-Bin_4.png" id="15_ok6jj"]
 [ext_resource type="Texture2D" uid="uid://bcibr3a5a6qv4" path="res://textures/Objects/Pallet_1.png" id="16_facbu"]
-[ext_resource type="Texture2D" uid="uid://c1sredvwqssmr" path="res://film_texture___grain_explosion_by_stephanepellennec_d37pwfa-fullview.jpg" id="17_074og"]
+[ext_resource type="Texture2D" uid="uid://c1sredvwqssmr" path="res://textures/film_texture___grain_explosion_by_stephanepellennec_d37pwfa-fullview.jpg" id="17_074og"]
 [ext_resource type="Texture2D" uid="uid://pb66ntcixwyc" path="res://textures/Objects/Trash-bag_2.png" id="17_b1qrp"]
 [ext_resource type="Texture2D" uid="uid://chnujxqaa15j1" path="res://textures/Lights/512x512 textures (78).png" id="18_cegan"]
 [ext_resource type="Texture2D" uid="uid://cg8e152wafymm" path="res://textures/Objects/Vending-machine_Red.png" id="18_come4"]
@@ -424,7 +424,7 @@ position = Vector2(117, -1922)
 scale = Vector2(5.288462, 4.857149)
 texture = ExtResource("16_facbu")
 
-[node name="TrashBag2" type="Sprite2D" parent="Map" unique_id=690652522]
+[node name="TrashBag5" type="Sprite2D" parent="Map" unique_id=690652522]
 texture_filter = 1
 position = Vector2(131, -1946.9999)
 scale = Vector2(4.25, 4.4583206)
@@ -492,6 +492,10 @@ shadow_filter_smooth = 1.2
 texture = ExtResource("18_cegan")
 texture_scale = 3.06
 
+[node name="TomatoGun" parent="CharacterBody2D" unique_id=2073554385 instance=ExtResource("21_getpj")]
+fire_rate = 1.0
+attack_cooldown = 0.01
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=591487852]
 texture_filter = 3
 position = Vector2(-9.536743e-07, -4.7683716e-07)
@@ -500,10 +504,6 @@ sprite_frames = SubResource("SpriteFrames_kek77")
 animation = &"walk-down"
 autoplay = "idle-down"
 frame_progress = 0.8554486
-
-[node name="TomatoGun" parent="CharacterBody2D" unique_id=2073554385 instance=ExtResource("21_getpj")]
-fire_rate = 1.0
-attack_cooldown = 0.01
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=697755794]
 position = Vector2(-0.5, 25.25)

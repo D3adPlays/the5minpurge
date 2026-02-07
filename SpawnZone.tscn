@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cuhm54xp5n1di"]
+
+[ext_resource type="Script" uid="uid://bfulmxc8myvkv" path="res://src/spawn_zone.gd" id="1_ufohv"]
+[ext_resource type="Script" uid="uid://ddwfgcrswyyvr" path="res://src/enemy_spawn_entry.gd" id="2_pf6fu"]
+[ext_resource type="PackedScene" uid="uid://baqydv0s2phxm" path="res://zombie.tscn" id="3_jjstm"]
+
+[sub_resource type="Resource" id="Resource_lfv8e"]
+script = ExtResource("2_pf6fu")
+enemy_scene = ExtResource("3_jjstm")
+spawn_count = 10
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pf6fu"]
+size = Vector2(783, 1133)
+
+[node name="SpawnZone" type="Area2D" unique_id=650088937]
+script = ExtResource("1_ufohv")
+enemy_spawns = Array[ExtResource("2_pf6fu")]([SubResource("Resource_lfv8e")])
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=55781621]
+position = Vector2(397.5, 84.5)
+shape = SubResource("RectangleShape2D_pf6fu")

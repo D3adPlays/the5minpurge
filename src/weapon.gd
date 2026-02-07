@@ -5,7 +5,7 @@ extends Node
 
 @export var attack_cooldown: float = 0.5
 @export var damage: float = 10.0
-@export var gun_offset: float = 70.0  # Offset in pixels from owner in aim direction
+@export var gun_offset: float = 50.0  # Offset in pixels from owner in aim direction
 @export var spawn_offset: float = gun_offset + 40.0  # Offset in pixels from owner in aim direction
 
 var can_attack: bool = true

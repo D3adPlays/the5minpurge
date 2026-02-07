@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://clh85swii0k2o"
-path="res://.godot/imported/1599145257red-ink-spatter.png-a9161e1783f21f3f44df08711d9bc8a9.ctex"
+uid="uid://c1sredvwqssmr"
+path="res://.godot/imported/film_texture___grain_explosion_by_stephanepellennec_d37pwfa-fullview.jpg-0aa118af575c16f05ad57aa2794f2ec6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://1599145257red-ink-spatter.png"
-dest_files=["res://.godot/imported/1599145257red-ink-spatter.png-a9161e1783f21f3f44df08711d9bc8a9.ctex"]
+source_file="res://textures/film_texture___grain_explosion_by_stephanepellennec_d37pwfa-fullview.jpg"
+dest_files=["res://.godot/imported/film_texture___grain_explosion_by_stephanepellennec_d37pwfa-fullview.jpg-0aa118af575c16f05ad57aa2794f2ec6.ctex"]
 
 [params]
 

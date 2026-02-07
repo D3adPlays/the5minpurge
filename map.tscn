@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://4mvlrtftdjh2" path="res://Objects/car_1_overgrown_dark_green_gray.tscn" id="7_sb2pt"]
 [ext_resource type="PackedScene" uid="uid://vcca5gvwi1sp" path="res://Objects/car_8_red_bus.tscn" id="8_0t07s"]
 [ext_resource type="PackedScene" uid="uid://631iysgjyhww" path="res://Objects/car_2_gray_upsidedown.tscn" id="9_6qsgm"]
-[ext_resource type="PackedScene" uid="uid://dba50h7psbidk" path="res://car_4_red.tscn" id="10_ooc2g"]
-[ext_resource type="PackedScene" uid="uid://ti2oxh5gyhjr" path="res://car_7_green_truck.tscn" id="11_2wwcf"]
+[ext_resource type="PackedScene" uid="uid://dba50h7psbidk" path="res://Objects/car_4_red.tscn" id="10_ooc2g"]
+[ext_resource type="PackedScene" uid="uid://ti2oxh5gyhjr" path="res://Objects/car_7_green_truck.tscn" id="11_2wwcf"]
 [ext_resource type="Texture2D" uid="uid://d0qbrhxhb74dc" path="res://textures/Objects/Vehicles/Overgrown/Car_1_Overgrown/Bleak-Yellow/Car_1_Overgrown_Bleak-Yellow_Gray.png" id="12_0t07s"]
 [ext_resource type="Texture2D" uid="uid://dtp8d3khrjtef" path="res://textures/Objects/Vehicles/Rust/Car_5_Rust_Tractor/Car_5_Rust_Tractor_Up.png" id="13_ooc2g"]
 [ext_resource type="Texture2D" uid="uid://cftotod11v8go" path="res://textures/Objects/Vehicles/Normal/Car_4/Car_4_Green.png" id="14_2wwcf"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://du1lub8qb6r1j" path="res://textures/Objects/Stop-sign_Down_1.png" id="38_vbtoe"]
 [ext_resource type="Texture2D" uid="uid://xrsb4w8omxov" path="res://textures/Objects/Nature/Dark-Green/Tree_6_Big-pine_Dark-Green.png" id="39_xkcq7"]
 [ext_resource type="Texture2D" uid="uid://rjjun11gvusn" path="res://textures/Objects/Nature/Dark-Green/Tree_3_Normal_Dark-Green.png" id="40_8uufd"]
+[ext_resource type="PackedScene" uid="uid://cuhm54xp5n1di" path="res://SpawnZone.tscn" id="41_8uufd"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vivmo"]
 tile_data = PackedInt32Array(0, 262144, 7, 65536, 327680, 9, 131072, 327680, 9, 196608, 196608, 8, 262144, 327680, 9, 327680, 327680, 9, 393216, 262144, 805306375)
@@ -1364,3 +1365,7 @@ texture_filter = 1
 position = Vector2(4860, -599)
 scale = Vector2(7.9776554, 8.425)
 texture = ExtResource("40_8uufd")
+
+[node name="SpawnZone" parent="." unique_id=650088937 instance=ExtResource("41_8uufd")]
+position = Vector2(-2115.0002, 325.00012)
+scale = Vector2(1.85, 1.85)

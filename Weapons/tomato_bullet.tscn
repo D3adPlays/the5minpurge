@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuhk4ytt2s4rr"]
 
-[ext_resource type="Script" uid="uid://hxhonj0i68ld" path="res://tomato_projectile.gd" id="1_d46dn"]
+[ext_resource type="Script" uid="uid://hxhonj0i68ld" path="res://src/tomato_projectile.gd" id="1_d46dn"]
 [ext_resource type="Texture2D" uid="uid://ckemnix68oawe" path="res://textures/Character/Guns/Bullets/tomato_icon.png" id="1_h0o7c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d46dn"]
