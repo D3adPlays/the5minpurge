@@ -406,6 +406,61 @@ shader_parameter/color_bleed_quality = 5
 
 [node name="Map" parent="." unique_id=1093885806 instance=ExtResource("1_lswn8")]
 
+[node name="GarbageBin3" type="Sprite2D" parent="Map" unique_id=542479842]
+texture_filter = 1
+position = Vector2(110.25, -2146)
+scale = Vector2(4.825, 4.8571444)
+texture = ExtResource("14_0rl1p")
+
+[node name="GarbageBin4" type="Sprite2D" parent="Map" unique_id=1827275299]
+texture_filter = 1
+position = Vector2(116, -2025.9999)
+scale = Vector2(5.375, 4.425925)
+texture = ExtResource("15_ok6jj")
+
+[node name="Pallet1" type="Sprite2D" parent="Map" unique_id=401974826]
+texture_filter = 1
+position = Vector2(117, -1922)
+scale = Vector2(5.288462, 4.857149)
+texture = ExtResource("16_facbu")
+
+[node name="TrashBag2" type="Sprite2D" parent="Map" unique_id=690652522]
+texture_filter = 1
+position = Vector2(131, -1946.9999)
+scale = Vector2(4.25, 4.4583206)
+texture = ExtResource("17_b1qrp")
+
+[node name="VendingMachineRed2" type="Sprite2D" parent="Map" unique_id=481288749]
+texture_filter = 1
+position = Vector2(260, -2213)
+scale = Vector2(5.214286, 5.021739)
+texture = ExtResource("18_come4")
+
+[node name="VendingMachineBlue2" type="Sprite2D" parent="Map" unique_id=718818965]
+texture_filter = 1
+position = Vector2(340.00003, -2212)
+scale = Vector2(5.125002, 5.0842457)
+texture = ExtResource("19_h8e4i")
+
+[node name="TrashCan2" type="Sprite2D" parent="Map" unique_id=958975103]
+texture_filter = 1
+position = Vector2(725.99994, -1976)
+scale = Vector2(5.134613, 4.708332)
+texture = ExtResource("20_4lmeg")
+
+[node name="VendingMachineBlue3" type="Sprite2D" parent="Map" unique_id=675586452]
+texture_filter = 1
+position = Vector2(449.99994, -2186)
+rotation = 1.3623536
+scale = Vector2(4.9059057, 5.2474127)
+texture = ExtResource("19_h8e4i")
+
+[node name="Bench4SideOvergrownDarkGreen2" type="Sprite2D" parent="Map" unique_id=373870775]
+texture_filter = 1
+position = Vector2(249.00002, -1352.0001)
+scale = Vector2(4.028846, 4.124998)
+texture = ExtResource("13_4k2k6")
+
 [node name="Sky" type="CanvasLayer" parent="." unique_id=1769921489]
 layer = 100
 follow_viewport_enabled = true
@@ -418,61 +473,6 @@ offset_top = -5405.0005
 offset_right = -4834.0005
 offset_bottom = -4181.6006
 scale = Vector2(10, 10)
-
-[node name="Bench4SideOvergrownDarkGreen" type="Sprite2D" parent="Sky" unique_id=373870775]
-texture_filter = 1
-position = Vector2(249.00002, -1352.0001)
-scale = Vector2(4.028846, 4.124998)
-texture = ExtResource("13_4k2k6")
-
-[node name="GarbageBin3" type="Sprite2D" parent="Sky" unique_id=542479842]
-texture_filter = 1
-position = Vector2(110.25, -2146)
-scale = Vector2(4.825, 4.8571444)
-texture = ExtResource("14_0rl1p")
-
-[node name="GarbageBin4" type="Sprite2D" parent="Sky" unique_id=1827275299]
-texture_filter = 1
-position = Vector2(116, -2025.9999)
-scale = Vector2(5.375, 4.425925)
-texture = ExtResource("15_ok6jj")
-
-[node name="Pallet1" type="Sprite2D" parent="Sky" unique_id=401974826]
-texture_filter = 1
-position = Vector2(117, -1922)
-scale = Vector2(5.288462, 4.857149)
-texture = ExtResource("16_facbu")
-
-[node name="TrashBag2" type="Sprite2D" parent="Sky" unique_id=690652522]
-texture_filter = 1
-position = Vector2(131, -1946.9999)
-scale = Vector2(4.25, 4.4583206)
-texture = ExtResource("17_b1qrp")
-
-[node name="VendingMachineRed" type="Sprite2D" parent="Sky" unique_id=481288749]
-texture_filter = 1
-position = Vector2(260, -2213)
-scale = Vector2(5.214286, 5.021739)
-texture = ExtResource("18_come4")
-
-[node name="VendingMachineBlue" type="Sprite2D" parent="Sky" unique_id=718818965]
-texture_filter = 1
-position = Vector2(340.00003, -2212)
-scale = Vector2(5.125002, 5.0842457)
-texture = ExtResource("19_h8e4i")
-
-[node name="TrashCan2" type="Sprite2D" parent="Sky" unique_id=958975103]
-texture_filter = 1
-position = Vector2(725.99994, -1976)
-scale = Vector2(5.134613, 4.708332)
-texture = ExtResource("20_4lmeg")
-
-[node name="VendingMachineBlue2" type="Sprite2D" parent="Sky" unique_id=675586452]
-texture_filter = 1
-position = Vector2(449.99994, -2186)
-rotation = 1.3623536
-scale = Vector2(4.9059057, 5.2474127)
-texture = ExtResource("19_h8e4i")
 
 [node name="Zombie" parent="." unique_id=1073264807 instance=ExtResource("21_ryguw")]
 position = Vector2(160, 317)
