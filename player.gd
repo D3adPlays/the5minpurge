@@ -28,8 +28,8 @@ func _physics_process(delta: float) -> void:
 func handle_movement() -> void:
 	# Get input from WASD/Arrow keys or left joystick
 	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_axis("ui_left", "ui_right")
-	input_vector.y = Input.get_axis("ui_up", "ui_down")
+	input_vector.x = Input.get_axis("left", "right")
+	input_vector.y = Input.get_axis("up", "down")
 	
 	# Normalize diagonal movement so speed is consistent
 	input_vector = input_vector.normalized()

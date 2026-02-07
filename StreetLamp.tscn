@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dy403sk50y045"]
+
+[ext_resource type="Texture2D" uid="uid://c5dtfgkcrid4" path="res://textures/Objects/Street-Light_1_Side.png" id="1_55en0"]
+[ext_resource type="Texture2D" uid="uid://v7f0ca6lawws" path="res://textures/Lights/512x512 textures (23).png" id="2_16xat"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uo7hi"]
+radius = 4.0
+
+[node name="StreetLamp" type="Sprite2D" unique_id=1128733908]
+texture_filter = 1
+scale = Vector2(5.076087, 5.076087)
+texture = ExtResource("1_55en0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=158623243]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1305530193]
+position = Vector2(-8, 15)
+shape = SubResource("CircleShape2D_uo7hi")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1389466100]
+position = Vector2(0.77310926, 0.77310926)
+scale = Vector2(0.5147617, 0.5147617)
+shadow_enabled = true
+texture = ExtResource("2_16xat")
