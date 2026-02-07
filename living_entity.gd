@@ -5,7 +5,7 @@ class_name LivingEntity
 ## Provides common functionality for health, movement, and death
 
 ## Current health of the entity
-@export var max_health: float = 100.0
+@export var max_health: float = 10000.0
 @export var current_health: float = 100.0
 
 ## Movement properties
