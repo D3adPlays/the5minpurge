@@ -46,6 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://hjctm17hkb8g" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Flowers_1_yellow.png" id="44_iwan2"]
 [ext_resource type="Texture2D" uid="uid://db2txt6su7lxe" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Stump_1.png" id="45_hac6k"]
 [ext_resource type="Texture2D" uid="uid://qplbyaygwdlj" path="res://textures/Objects/Nature/Dark-Green/Grass-On-Top-Of-Things/Moss-On-Top_Dark-Green_9.png" id="46_tu3qe"]
+[ext_resource type="Script" uid="uid://ddwfgcrswyyvr" path="res://src/enemy_spawn_entry.gd" id="42_urahp"]
+[ext_resource type="PackedScene" uid="uid://baqydv0s2phxm" path="res://zombie.tscn" id="43_cskkv"]
 [ext_resource type="Texture2D" uid="uid://dmug0mk1151mo" path="res://textures/Objects/Washing-machine.png" id="47_y0s0d"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vivmo"]
@@ -1141,6 +1143,10 @@ radius = 5.1516647
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f61l"]
 radius = 4.542546
+[sub_resource type="Resource" id="Resource_028i1"]
+script = ExtResource("42_urahp")
+enemy_scene = ExtResource("43_cskkv")
+spawn_count = 50
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xi453"]
 size = Vector2(12.245615, 12.966509)
@@ -1754,9 +1760,13 @@ texture = ExtResource("40_8uufd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree3NormalDarkGreen/StaticBody2D" unique_id=651125797]
 position = Vector2(0.8774508, 10.8011875)
 shape = SubResource("CircleShape2D_kwd4m")
+[node name="SpawnZone2" parent="." unique_id=436386275 instance=ExtResource("41_8uufd")]
+position = Vector2(-2253, 634)
+scale = Vector2(1.3355323, 4.1513867)
+enemy_spawns = Array[ExtResource("42_urahp")]([SubResource("Resource_028i1")])
 
 [node name="SpawnZone" parent="." unique_id=650088937 instance=ExtResource("41_8uufd")]
-position = Vector2(-2115.0002, 325.00012)
+position = Vector2(1577, 1017)
 scale = Vector2(1.85, 1.85)
 
 [node name="Tree1SpruceDarkGreen2" type="Sprite2D" parent="." unique_id=908479207]
@@ -2781,6 +2791,7 @@ texture_filter = 1
 position = Vector2(5552, 2675.9998)
 scale = Vector2(5.033337, 5.166663)
 texture = ExtResource("46_tu3qe")
+enemy_spawns = Array[ExtResource("42_urahp")]([SubResource("Resource_028i1")])
 
 [node name="WashingMachine" type="Sprite2D" parent="." unique_id=474004299]
 texture_filter = 1

@@ -74,6 +74,13 @@ func handle_attack() -> void:
 			weapon.attack(aim_direction)
 		else:
 			print("Cannot attack: No weapon equipped")
+	
+	# Bat spin attack with Enter key or gamepad X button
+	if Input.is_action_just_pressed("bat_attack"):
+		if bat_weapon:
+			bat_weapon.attack(aim_direction)
+		else:
+			print("Cannot use bat attack: No bat weapon equipped")
 
 func handle_animation() -> void:
 	if velocity.length() < 10:
