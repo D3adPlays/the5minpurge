@@ -2,7 +2,65 @@
 
 [ext_resource type="Script" uid="uid://b158p6go0hpqy" path="res://tomato_gun.gd" id="1_iiw23"]
 [ext_resource type="PackedScene" uid="uid://cuhk4ytt2s4rr" path="res://Weapons/tomato_bullet.tscn" id="2_skqpj"]
+[ext_resource type="Texture2D" uid="uid://tij41e2ydevm" path="res://textures/Character/Guns/Shotgun/Shotgun_up_idle-and-run-Sheet6.png" id="3_0i078"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wgho"]
+atlas = ExtResource("3_0i078")
+region = Rect2(0, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5nn6"]
+atlas = ExtResource("3_0i078")
+region = Rect2(6, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbkap"]
+atlas = ExtResource("3_0i078")
+region = Rect2(12, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejp10"]
+atlas = ExtResource("3_0i078")
+region = Rect2(18, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwark"]
+atlas = ExtResource("3_0i078")
+region = Rect2(24, 0, 6, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04gl0"]
+atlas = ExtResource("3_0i078")
+region = Rect2(30, 0, 6, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bxude"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wgho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n5nn6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbkap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejp10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwark")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04gl0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="TomatoGun" type="Node" unique_id=2073554385]
 script = ExtResource("1_iiw23")
 projectile_scene = ExtResource("2_skqpj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1264594654]
+texture_filter = 1
+position = Vector2(9.536743e-07, 1.9073486e-06)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_bxude")
+frame_progress = 0.087158926

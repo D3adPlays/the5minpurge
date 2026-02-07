@@ -25,10 +25,6 @@ func _physics_process(delta: float) -> void:
 	handle_ai()
 
 func handle_ai() -> void:
-	# Your zombie AI logic
-	## move towards player if within detection range, otherwise patrol
-	
-
 	pass
 
 func _on_death() -> void:
