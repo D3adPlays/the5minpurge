@@ -56,7 +56,7 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 
 func _apply_damage_once() -> void:
-	# Using bodies (CharacterBody2D enemies)
+	# Check for both bodies (CharacterBody2D enemies) and areas (hitboxes)
 	for body in get_overlapping_bodies():
 		if body == owner_node:
 			continue
@@ -68,3 +68,17 @@ func _apply_damage_once() -> void:
 		_hit_this_attack[body] = true
 		if body.has_method("take_damage"):
 			body.take_damage(damage, owner_node)
+	
+	# Also check for enemy hitboxes (Area2D)
+	for area in get_overlapping_areas():
+		var enemy = area.get_parent()
+		if not enemy or enemy == owner_node:
+			continue
+		if not enemy.is_in_group("enemies"):
+			continue
+		if _hit_this_attack.has(enemy):
+			continue
+
+		_hit_this_attack[enemy] = true
+		if enemy.has_method("take_damage"):
+			enemy.take_damage(damage, owner_node)

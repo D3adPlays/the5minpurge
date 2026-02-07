@@ -10,12 +10,12 @@ enemy_scene = ExtResource("3_jjstm")
 spawn_count = 10
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pf6fu"]
-size = Vector2(783, 1133)
+size = Vector2(1601, 1522)
 
 [node name="SpawnZone" type="Area2D" unique_id=650088937]
 script = ExtResource("1_ufohv")
 enemy_spawns = Array[ExtResource("2_pf6fu")]([SubResource("Resource_lfv8e")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=55781621]
-position = Vector2(397.5, 84.5)
+position = Vector2(806.5, -110)
 shape = SubResource("RectangleShape2D_pf6fu")
