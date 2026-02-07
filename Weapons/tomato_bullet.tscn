@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cuhk4ytt2s4rr"]
+
+[ext_resource type="Script" uid="uid://hxhonj0i68ld" path="res://tomato_projectile.gd" id="1_d46dn"]
+[ext_resource type="Texture2D" uid="uid://ckemnix68oawe" path="res://textures/Character/Guns/Bullets/tomato_icon.png" id="1_h0o7c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d46dn"]
+radius = 15.033297
+
+[node name="TomatoBullet" type="RigidBody2D" unique_id=1843558461]
+script = ExtResource("1_d46dn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1330305221]
+position = Vector2(-1.5258789e-05, -1.9999847)
+scale = Vector2(0.20348836, 0.20348836)
+texture = ExtResource("1_h0o7c")
+
+[node name="Colider" type="CollisionShape2D" parent="." unique_id=274832675]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_d46dn")

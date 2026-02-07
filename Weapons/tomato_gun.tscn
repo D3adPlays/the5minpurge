@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://camfdnjgsh661"]
+
+[ext_resource type="Script" uid="uid://b158p6go0hpqy" path="res://tomato_gun.gd" id="1_iiw23"]
+[ext_resource type="PackedScene" uid="uid://cuhk4ytt2s4rr" path="res://Weapons/tomato_bullet.tscn" id="2_skqpj"]
+
+[node name="TomatoGun" type="Node" unique_id=2073554385]
+script = ExtResource("1_iiw23")
+projectile_scene = ExtResource("2_skqpj")
