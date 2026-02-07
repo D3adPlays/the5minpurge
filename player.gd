@@ -1,16 +1,26 @@
-extends CharacterBody2D
+extends LivingEntity
 
-const SPEED = 300.0
 const JOYSTICK_DEADZONE = 0.2
 
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var weapon: Weapon = null
 
 var aim_direction: Vector2 = Vector2.RIGHT
 var last_movement_direction: Vector2 = Vector2.DOWN
 
+func _on_ready() -> void:
+	# Set up inherited animated sprite reference
+	animated_sprite = $AnimatedSprite2D
+	# Try to find the weapon node
+	weapon = get_node_or_null("TomatoGun")
+	add_to_group("player")
+	if not weapon:
+		push_error("No TomatoGun found as child of player. Weapon functionality will be disabled.")
+		push_error("Add a TomatoGun node as a child of the Player node in the scene.")
+
 func _physics_process(delta: float) -> void:
 	handle_movement()
 	handle_aim_direction()
+	handle_attack()
 	handle_animation()
 	move_and_slide()
 	handle_collisions()
@@ -29,7 +39,7 @@ func handle_movement() -> void:
 		last_movement_direction = input_vector
 	
 	# Apply movement
-	velocity = input_vector * SPEED
+	velocity = input_vector * move_speed
 
 func handle_aim_direction() -> void:
 	# Check for right joystick input first (gamepad has priority)
@@ -46,30 +56,31 @@ func handle_aim_direction() -> void:
 		var mouse_pos = get_global_mouse_position()
 		aim_direction = (mouse_pos - global_position).normalized()
 
+func handle_attack() -> void:
+	# Attack with Space, Left Mouse Button, or gamepad button
+	if Input.is_action_pressed("attack"):
+		if weapon:
+			weapon.attack(aim_direction)
+		else:
+			print("Cannot attack: No weapon equipped")
+
 func handle_animation() -> void:
 	if velocity.length() < 10:
-		# Play idle animations when not moving
 		if abs(last_movement_direction.x) > abs(last_movement_direction.y):
-			# Last moved horizontally
 			animated_sprite.play("idle-side")
 			animated_sprite.flip_h = last_movement_direction.x < 0
 		elif last_movement_direction.y < 0:
-			# Last moved up
 			animated_sprite.play("idle-up")
 		else:
-			# Last moved down
 			animated_sprite.play("idle-down")
 	else:
 		# Play walk animations when moving
 		if abs(last_movement_direction.x) > abs(last_movement_direction.y):
-			# Moving horizontally
 			animated_sprite.play("walk-right")
 			animated_sprite.flip_h = last_movement_direction.x < 0
 		elif last_movement_direction.y < 0:
-			# Moving up
 			animated_sprite.play("walk-up")
 		else:
-			# Moving down
 			animated_sprite.play("walk-down")
 
 func handle_collisions() -> void:
@@ -78,26 +89,18 @@ func handle_collisions() -> void:
 		var collision = get_slide_collision(i)
 		var collider = collision.get_collider()
 		
-		# Check what we collided with and respond accordingly
 		if collider is RigidBody2D:
-			# Push rigid bodies (like barrels, crates, etc.)
 			var push_force = 100.0
 			var push_direction = collision.get_normal() * -1
 			collider.apply_central_impulse(push_direction * push_force * get_physics_process_delta_time())
 		
 		elif collider is CharacterBody2D:
-			# Handle collision with other characters (enemies, NPCs)
 			if collider.is_in_group("enemies"):
-				# Take damage or handle enemy collision
 				pass
 		
 		elif collider is StaticBody2D or collider is TileMap:
-			# Collided with walls or static environment
-			# move_and_slide() already handles sliding along walls
 			pass
 		
 		elif collider is Area2D:
-			# Handle area interactions (triggers, pickups, etc.)
 			if collider.is_in_group("items"):
-				# Handle item pickup
 				pass
