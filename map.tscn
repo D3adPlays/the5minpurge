@@ -1009,6 +1009,21 @@ sources/4 = SubResource("TileSetAtlasSource_ryguw")
 pattern_0 = SubResource("TileMapPattern_vivmo")
 pattern_1 = SubResource("TileMapPattern_2cqfq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_urahp"]
+size = Vector2(36.02822, 14.557808)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_028i1"]
+size = Vector2(36.10824, 13.093262)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hltbc"]
+polygon = PackedVector2Array(-17.577087, -3.7366028, -17.8667, -1.6261292, -15.454712, -1.2060547, -12.24765, -1.2477417, -6.9804688, -2.9714966, -3.1275635, -2.7206116, 2.3266602, -2.6410217, 7.618286, -2.7098083, 11.633789, -2.3105469, 16.604736, -2.375183, 16.55362, -5.8355103, 13.478027, -7.7517395, 10.095062, -8.761139, 5.930359, -8.406036, 1.2801208, -8.345581, -1.9402771, -9.206604, -6.4212646, -8.546448, -8.962463, -6.8581543, -11.831024, -5.6170044, -16.320892, -5.558655)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0s0d"]
+size = Vector2(54.873016, 27.39914)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iwan2"]
+polygon = PackedVector2Array(-28.304016, 20.57431, -24.915527, 22.533783, -25.91214, 15.871613, -19.135101, 7.0540466, -8.770264, 8.425659, 1.1959534, -1.1756897, 13.155426, -11.364868, 20.729736, -15.283783, 24.317566, -14.304077, 27.905396, -10.385132, 24.716217, -19.398651, 18.13852, -23.905426, 10.763519, -27.82434, 2.3919067, -20.966217, -3.3884888, -15.67569, -7.7736206, -10.385132, -12.557404, -5.8783875, -18.138489, -1.9594727, -25.114838, 5.2905273, -28.503357, 10.972961)
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sb2pt"]
 vertices = PackedVector2Array(4563, 2157, 4731, 2157, 4731, 2219, 4563, 2219, 4563, 2275, 4333, 2275, 4333, 2101, 4563, 2101, 3555, 2331, 3555, 2387, 3499, 2387, 77, 2381, 77, 2051, 917, 1093, 6523.2734, 1323, 6523, 1323, 861, 1165.3203, 861, 1099, 637, -1427, 1533, -1365, 587, -1365, 419, -1427, 133, 1333.3203, 133, 797.39844, 148.14063, 866.25, 27, 595, 27, 1211, -85, 1211, -203, 1037, -203, 595, 755, 1093, 699, 1099, 749, 1093, 587, 1093, 284.5703, 836.25, 413, 701, 587, 589, 307, 483, 241.5, 640.39844, 133, 664.25, 133, 595, 251, 253, 917, 645, 6542.883, -3066.8828, 917, 651, 917, 315, 805, 1165.3203, 805, 1164.6875, -91, 1389.3203, -91, 1388.6875, -35, 1389.3203, 3381, 2845.3203, 3381, 2844.6875, 3437, 2845.3203, 3661, 2773, 3661, 2732.6875, 3717, 2733.3203, 6514.1094, 3373.0313, 3829, 2677.3203, 3829, 2676.6875, 3885, 2677.3203, 3885, 2676.6875, 3941, 2677.3203, 3941, 2676.6875, 3997, 2677.3203, 3997, 2676.6875, 4053, 2677.3203, 4053, 2676.6875, 4109, 2677.3203, 6243, 1491, 6243, 1659, 6187, 1659, -282.42188, 1557.1406, -975.8672, 2023.1875, -975.8672, 1741.9219, -328.60938, 1603.3281, 4227, 1995, -85, 2051, -3040.2188, -3023.1094, 1427, -3043.5078, 1427, -2995, 2149, -3046.8125, 2491, -3048.3594, 2491, -2995, 2149, -2995, 6461, 1989, 6520.297, 1989, 6461, 2045, 6411, 1379, 6411, 1435, 6299, 1435, 3437, 3377.4766, 3437, 3283, 749, 315, 749, 147, 357, 147, 357, 35, -309, 141, 251, 141, 643, 253, 643, 421, 811, 651, 811, 987, 755, 987, 693, 483, 749, 987, 693, 987, 413, 589, 307, 701, -483, 595, -483, 141, -371, 141, -589, 701, -309, 701, -309, 1037, -85, 1317, -91, 1317, -91, 1211, -203, 1155, -203, 1211, -309, 1155, 6523, 1379, 699, 1164.1328, 6299, 1491, -197, 1388.1328, -288.60156, 1534.0625, -305.5078, 1517.1328, 6187, 1771, 6131, 1771, 6131, 1827, 6075, 1827, 6075, 1883, 6019, 1883, 6019, 1939, 5963, 1939, 5963, 1995, 5907, 1995, 5907, 2051, 5795, 2051, -288.60156, 1580.2422, 5795, 2107, 5627, 2107, 4837, 2051, 4669, 1995, 5627, 2163, 5515, 2163, 5515, 2219, 5403, 2219, 5403, 2275, 5291, 2275, 5453, 2661, 5453, 2605, 5565, 2605, 5565, 2549, 5677, 2549, 5677, 2493, 5845, 2493, 5845, 2437, 5957, 2437, 5957, 2381, 6069, 2381, 6069, 2325, 6181, 2325, 6181, 2269, 6237, 2269, 6237, 2213, 6293, 2213, 6293, 2157, 6349, 2157, 6349, 2101, 6405, 2101, 6405, 2045, 3381, 3283, 3381, 3059, 3325, 3059, 3325, 2891, 3269, 2891, 3269, 2885, 3290.6563, 2885, 3437, 2829, 3458.6563, 2829, 3493, 2723, 3493, 2661, 3499, 2661, 3499, 2717, 3549, 2723, 3555, 2717, 3555, 2773, 3549, 2789.3203, 3717, 2717, 3738.6563, 2717, 4109, 2661, 4130.6563, 2661, 4165, 2616, 4165, 2605, 5067, 2605, 5067, 2661, 5229, 2275, 4837, 2275, 4669, 2051, 4227, 2275, 3779, 2275, 3779, 2331, -85, 2157, -29, 2157, -29, 2275, -203, 2275, -203, 2051, 3499, 2499, 3437, 2499, 3437, 2387, 3331, 2387, 3331, 2443, 3219, 2443, 3219, 2499, 3107, 2499, 3107, 2555, 2995, 2555, 2995, 2611, 2939, 2611, 2939, 2667, 2883, 2667, 2883, 2723, 2715, 2723, 2715, 2779, 2603, 2779, 2603, 2835, 2491, 2835, 2491, 2891, 2435, 2891, 2435, 2947, 2379, 2947, 2379, 3003, 1707, 3003, 1707, 3059, 1483, 3059, 1483, 3115, 1315, 3115, 1315, 3171, 1203, 3171, 1203, 3227, 1147, 3227, 1147, 3283, 1091, 3283, 1091, 3339, 867, 3339, 1483, -2995, 1483, -2989, 1427, -2989, 1427, -2597, 1371, -2597, 1371, -2491, 1427, -2491, 1427, -2379, 693, -2317, 1483, -2379, 1483, -2317, 1427, -2317, 1427, -2093, 693, -2093, 357, -1141, 245, -1141, 245, -1427, 357, -1427, 357, -1533, 245, -1533, 245, -2211, 587, -2211, 587, -1987, 1533, -1987, 1533, -2211, 1875, -2211, 1875, -2043, 1981, -2043, 1981, -2099, 2099, -2099, 2099, -2043, 2205, -2205, 1981, -2205, 1981, -2317, 2037, -2491, 1869, -2317, 1869, -2435, 1925, -2435, 1925, -2491, 2037, -2653, 1981, -2653, 1981, -2715, 2093, -2715, 2093, -2995, 2603, -2995, 2603, -2939, 3275, -2939, 3275, -2883, 3387, -2883, 3387, -2827, 3331, -2653, 3611, -2827, 3611, -2821, 3555, -2821, 3555, -2765, 3499, -2765, 3499, -2709, 3443, -2709, 3443, -2653, 3331, -2541, 3219, -2541, 3219, -2485, 3163, -2485, 3163, -2429, 3107, -2429, 3107, -2373, 3051, -2373, 3051, -2317, 2939, -2317, 2939, -2261, 2883, -2261, 2883, -2205, 2715, -2205, 2715, -2093, 2659, -2093, 2659, -2037, 2547, -2037, 2205, -2043, 2547, -1981, 2491, -1981, 2205, -2037, 2491, -1925, 2435, -1925, 2435, -1869, 2205, -1869, 2099, -2037, 2099, -1925, 1981, -1925, 1981, -2037, 1875, -2037, 1875, -1141, 1533, -1141, 587, -1141, 475, -1141, 693, -1035, 693, -1259, 1427, -1259, 1427, -1035, 1981, -1035, 1981, -1819, 2099, -1819, 2099, -1707, 2211, -1707, 2211, -1651, 2379, -1651, 2379, -1595, 2653, -1595, 2653, -1707, 2709, -1707, 2709, -1763, 2765, -1763, 2765, -1819, 2877, -1819, 2877, -1931, 2989, -1931, 2989, -1987, 3101, -1987, 3101, -2043, 3157, -2043, 3157, -2099, 3213, -2099, 3213, -2155, 3269, -2155, 3269, -2211, 3437, -2211, 3437, -2267, 3549, -2267, 3549, -2379, 3605, -2379, 3605, -2435, 3773, -2435, 3773, -2491, 3829, -2491, 3829, -2603, 3941, -2603, 3941, -2659, 3997, -2659, 3997, -2771, 4053, -2771, 4053, -2827, 4109, -2827, 4109, -2883, 4165, -2883, 4165, -2939, 4221, -2939, 4221, -2995, 4277, -2995, 867, 3381.211, -3097.7734, 3386.961, -309, 2381, 4277, -3056.5234, 3291.7813, 2844.3125, 3459.7813, 2788.3125, 3739.7813, 2676.3125, 4131.9063, 2616, 811, 645, 637, -1533, 139, -2317, 139, -1035, -589, 35, 811, 421, -309, 35, -371, 35, -309, 2051, -1480.8203, 2023.1875, 5229, 2661, -328.60938, 1510.9688, -309, 1317, -197, 1323, 419, -1533, 27, 1332.1328, -35, 1323, 27, 1317, -351.6875, 1517.1328, -305.5078, 1597.1484, 5291, 2661, -368.6172, 1534.0625, -374.78125, 1557.1406, -1480.8203, 1741.9219, 357, -1035, 475, -1035, -351.6875, 1597.1484, -368.6172, 1580.2422)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5, 6), PackedInt32Array(0, 3, 6), PackedInt32Array(7, 0, 6), PackedInt32Array(8, 9, 10, 11, 12), PackedInt32Array(13, 14, 15, 16, 17), PackedInt32Array(18, 19, 20, 21), PackedInt32Array(22, 23, 24), PackedInt32Array(25, 26, 27, 28, 29), PackedInt32Array(30, 13, 17, 31), PackedInt32Array(32, 30, 31), PackedInt32Array(33, 32, 31), PackedInt32Array(34, 35, 36, 33, 22), PackedInt32Array(37, 38, 39, 40, 41), PackedInt32Array(42, 43, 14, 44), PackedInt32Array(43, 42, 45), PackedInt32Array(46, 47, 16), PackedInt32Array(48, 49, 50), PackedInt32Array(51, 52, 53), PackedInt32Array(54, 55, 56, 57), PackedInt32Array(58, 59, 60, 57), PackedInt32Array(60, 61, 62, 57), PackedInt32Array(62, 63, 64, 57), PackedInt32Array(64, 65, 66, 57), PackedInt32Array(66, 67, 68, 57), PackedInt32Array(50, 69, 70, 71, 72, 48), PackedInt32Array(73, 74, 75, 76, 12, 77), PackedInt32Array(78, 79, 80), PackedInt32Array(81, 82, 83, 84), PackedInt32Array(85, 86, 57, 87), PackedInt32Array(16, 88, 89, 90, 50, 46), PackedInt32Array(57, 91, 92), PackedInt32Array(45, 93, 94, 43), PackedInt32Array(94, 95, 96, 43), PackedInt32Array(97, 98, 41, 40, 25), PackedInt32Array(41, 99, 100, 37), PackedInt32Array(101, 102, 103, 104), PackedInt32Array(103, 30, 32, 105), PackedInt32Array(105, 106, 104), PackedInt32Array(35, 107, 36), PackedInt32Array(108, 35, 34), PackedInt32Array(108, 34, 38, 37), PackedInt32Array(29, 109, 110, 111), PackedInt32Array(112, 113, 114), PackedInt32Array(27, 115, 116, 117), PackedInt32Array(28, 27, 117, 118, 114), PackedInt32Array(117, 119, 118), PackedInt32Array(114, 118, 120), PackedInt32Array(15, 121, 88, 16), PackedInt32Array(122, 46, 50, 22), PackedInt32Array(90, 123, 69, 50), PackedInt32Array(124, 48, 72, 125), PackedInt32Array(124, 125, 126), PackedInt32Array(71, 127, 128, 72), PackedInt32Array(128, 129, 130, 72), PackedInt32Array(130, 131, 132, 72), PackedInt32Array(132, 133, 134, 72), PackedInt32Array(134, 135, 136, 72), PackedInt32Array(72, 136, 137, 138, 139), PackedInt32Array(138, 140, 141, 142, 143), PackedInt32Array(141, 144, 145, 142), PackedInt32Array(145, 146, 147, 142), PackedInt32Array(147, 148, 149, 142), PackedInt32Array(150, 151, 152, 57), PackedInt32Array(152, 153, 154, 57), PackedInt32Array(154, 155, 156, 57), PackedInt32Array(156, 157, 158, 57), PackedInt32Array(158, 159, 160, 57), PackedInt32Array(160, 161, 162, 57), PackedInt32Array(162, 163, 164, 57), PackedInt32Array(164, 165, 166, 57), PackedInt32Array(166, 167, 168, 57), PackedInt32Array(168, 169, 170, 57), PackedInt32Array(170, 171, 87, 57), PackedInt32Array(92, 172, 173), PackedInt32Array(173, 174, 175, 51, 53), PackedInt32Array(175, 176, 177, 178), PackedInt32Array(53, 179, 180, 57), PackedInt32Array(181, 182, 183, 184), PackedInt32Array(185, 181, 184, 186), PackedInt32Array(185, 186, 187, 188), PackedInt32Array(56, 189, 190, 57), PackedInt32Array(68, 191, 192, 57), PackedInt32Array(193, 194, 195, 196), PackedInt32Array(197, 198, 142), PackedInt32Array(142, 199, 143), PackedInt32Array(76, 200, 201, 12), PackedInt32Array(201, 202, 8, 12), PackedInt32Array(203, 204, 205, 206), PackedInt32Array(203, 206, 207, 77), PackedInt32Array(10, 208, 209, 210), PackedInt32Array(11, 10, 210), PackedInt32Array(11, 210, 211), PackedInt32Array(211, 212, 213, 11), PackedInt32Array(213, 214, 215, 11), PackedInt32Array(215, 216, 217, 11), PackedInt32Array(217, 218, 219, 11), PackedInt32Array(219, 220, 221, 11), PackedInt32Array(221, 222, 223, 11), PackedInt32Array(223, 224, 225, 11), PackedInt32Array(225, 226, 227, 11), PackedInt32Array(227, 228, 229, 11), PackedInt32Array(229, 230, 231, 11), PackedInt32Array(231, 232, 233, 11), PackedInt32Array(233, 234, 235, 11), PackedInt32Array(235, 236, 237, 11), PackedInt32Array(237, 238, 239, 11), PackedInt32Array(239, 240, 241, 11), PackedInt32Array(241, 242, 243, 11), PackedInt32Array(243, 244, 245, 11), PackedInt32Array(80, 246, 247, 248), PackedInt32Array(248, 249, 250, 78), PackedInt32Array(251, 252, 253, 254), PackedInt32Array(253, 255, 256, 257), PackedInt32Array(257, 258, 259, 254), PackedInt32Array(253, 257, 254), PackedInt32Array(260, 261, 262, 263), PackedInt32Array(264, 265, 266, 267, 268), PackedInt32Array(269, 270, 271, 272), PackedInt32Array(273, 274, 275, 276), PackedInt32Array(277, 278, 279, 280), PackedInt32Array(279, 281, 282, 283), PackedInt32Array(283, 284, 280, 279), PackedInt32Array(285, 286, 287, 288), PackedInt32Array(288, 289, 84), PackedInt32Array(83, 290, 291, 288), PackedInt32Array(291, 292, 293), PackedInt32Array(293, 294, 295, 296), PackedInt32Array(295, 297, 298, 299), PackedInt32Array(299, 300, 301, 295), PackedInt32Array(301, 302, 303, 295), PackedInt32Array(303, 304, 296, 295), PackedInt32Array(296, 305, 306, 291, 293), PackedInt32Array(306, 307, 308, 291), PackedInt32Array(308, 309, 310, 291), PackedInt32Array(310, 311, 312, 291), PackedInt32Array(312, 313, 314, 291), PackedInt32Array(314, 315, 316, 291), PackedInt32Array(285, 288, 291, 316, 317, 318, 280), PackedInt32Array(318, 319, 320, 277, 280), PackedInt32Array(277, 320, 321, 322, 323), PackedInt32Array(323, 322, 324, 325, 326), PackedInt32Array(325, 327, 328, 326), PackedInt32Array(328, 329, 330, 326), PackedInt32Array(331, 332, 333, 334), PackedInt32Array(335, 336, 337, 19), PackedInt32Array(20, 338, 339, 21), PackedInt32Array(340, 341, 342, 343), PackedInt32Array(344, 345, 346, 347), PackedInt32Array(347, 348, 349, 344), PackedInt32Array(349, 350, 351, 344), PackedInt32Array(352, 353, 354), PackedInt32Array(354, 355, 356), PackedInt32Array(356, 357, 358), PackedInt32Array(358, 359, 360), PackedInt32Array(360, 361, 362), PackedInt32Array(362, 363, 364), PackedInt32Array(364, 365, 366), PackedInt32Array(366, 367, 368), PackedInt32Array(368, 369, 370), PackedInt32Array(370, 371, 372), PackedInt32Array(372, 373, 374), PackedInt32Array(374, 375, 376), PackedInt32Array(376, 377, 378), PackedInt32Array(378, 379, 380), PackedInt32Array(380, 381, 382), PackedInt32Array(382, 383, 384), PackedInt32Array(384, 385, 386), PackedInt32Array(386, 387, 388), PackedInt32Array(388, 389, 390), PackedInt32Array(390, 391, 392), PackedInt32Array(11, 245, 393, 394, 395), PackedInt32Array(392, 396, 43), PackedInt32Array(78, 80, 248), PackedInt32Array(178, 397, 51, 175), PackedInt32Array(180, 398, 188, 57), PackedInt32Array(190, 399, 58, 57), PackedInt32Array(57, 192, 400, 193, 196), PackedInt32Array(14, 13, 44), PackedInt32Array(401, 42, 44, 101), PackedInt32Array(33, 31, 122, 22), PackedInt32Array(335, 19, 18, 402, 269, 272), PackedInt32Array(78, 250, 251, 254, 403), PackedInt32Array(394, 78, 403, 404, 405), PackedInt32Array(103, 105, 104), PackedInt32Array(401, 101, 104), PackedInt32Array(406, 401, 104), PackedInt32Array(100, 406, 104, 37), PackedInt32Array(288, 84, 83), PackedInt32Array(22, 24, 34), PackedInt32Array(57, 92, 173, 53), PackedInt32Array(97, 25, 29, 111), PackedInt32Array(407, 97, 111, 408), PackedInt32Array(73, 409, 395, 394, 410), PackedInt32Array(188, 187, 54, 57), PackedInt32Array(57, 196, 411), PackedInt32Array(124, 126, 412, 413, 414), PackedInt32Array(264, 268, 269, 415), PackedInt32Array(276, 323, 326, 331), PackedInt32Array(273, 276, 331, 334), PackedInt32Array(272, 273, 334, 335), PackedInt32Array(416, 22, 50), PackedInt32Array(416, 50, 417, 418), PackedInt32Array(115, 418, 417, 414), PackedInt32Array(116, 115, 414), PackedInt32Array(413, 116, 414), PackedInt32Array(413, 412, 419), PackedInt32Array(344, 351, 352), PackedInt32Array(420, 139, 138), PackedInt32Array(372, 374, 376, 43), PackedInt32Array(390, 392, 43), PackedInt32Array(388, 390, 43), PackedInt32Array(386, 388, 43), PackedInt32Array(112, 114, 120), PackedInt32Array(384, 386, 43, 382), PackedInt32Array(380, 382, 43), PackedInt32Array(378, 380, 43), PackedInt32Array(421, 150, 57), PackedInt32Array(421, 57, 411), PackedInt32Array(149, 421, 411, 197), PackedInt32Array(376, 378, 43), PackedInt32Array(413, 419, 422, 112, 120), PackedInt32Array(112, 422, 423, 74, 424), PackedInt32Array(149, 197, 142), PackedInt32Array(269, 402, 415), PackedInt32Array(263, 264, 415, 21), PackedInt32Array(260, 263, 21, 339), PackedInt32Array(425, 260, 339, 426), PackedInt32Array(43, 96, 407), PackedInt32Array(366, 368, 370), PackedInt32Array(43, 407, 408, 344), PackedInt32Array(75, 420, 138, 143), PackedInt32Array(73, 77, 207), PackedInt32Array(73, 207, 409), PackedInt32Array(424, 410, 394), PackedInt32Array(75, 143, 76), PackedInt32Array(427, 75, 74), PackedInt32Array(428, 427, 74), PackedInt32Array(423, 428, 74), PackedInt32Array(405, 112, 424, 394), PackedInt32Array(352, 354, 356, 358), PackedInt32Array(358, 360, 362), PackedInt32Array(364, 366, 370), PackedInt32Array(408, 405, 404, 425), PackedInt32Array(408, 425, 426), PackedInt32Array(408, 426, 340), PackedInt32Array(408, 340, 343), PackedInt32Array(408, 343, 344), PackedInt32Array(372, 43, 344, 352), PackedInt32Array(372, 352, 358, 362, 370), PackedInt32Array(370, 362, 364)])
@@ -1017,6 +1032,55 @@ source_geometry_mode = 1
 source_geometry_group_name = &"navigation"
 border_size = 15.0
 agent_radius = 25.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hac6k"]
+size = Vector2(18.8172, 35.592308)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tu3qe"]
+polygon = PackedVector2Array(-8.602158, -14.545471, -5.376343, -16.749329, -1.290329, -16.52893, 2.7956848, -16.749329, 7.9569855, -14.986237, 9.032242, -11.4600525, 9.032242, -7.9338684, 8.8172, -1.9834595, 9.032242, 3.7465515, 8.602142, 8.595047, 8.602142, 13.22316, 8.602142, 17.410477, 5.591385, 19.834732, 1.9354706, 18.292023, -2.1505432, 18.07164, -4.5161285, 19.173569, -7.7419434, 16.308548, -9.677429, 14.986237, -8.817215, 11.019302, -8.817215, 5.7300415, -8.602158, 0, -8.602158, -5.068878, -8.817215, -9.256195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xagg"]
+size = Vector2(60.70117, 24.939194)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_urahp"]
+polygon = PackedVector2Array(10.918213, -27.935852, 14.399902, -26.694275, 17.578857, -24.565826, 22.12024, -21.727905, 25.904724, -18.889984, 25.904724, -13.214142, 26.056091, -7.183563, 23.028503, -3.4587708, 19.092651, 0.62072754, 14.854065, 4.8776245, 11.220947, 8.602386, 6.5281982, 12.681915, 2.1382446, 17.470917, -1.9490356, 21.373016, -4.3710938, 24.92044, -9.517944, 27.93576, -17.086914, 27.226227, -24.353088, 23.501495, -28.743103, 21.01828, -28.28894, 12.859283, -28.137573, 7.892914, -22.839294, 3.2812805, -18.903442, -1.5076904, -14.362122, -4.8777466, -8.60968, -10.021484, -3.765564, -14.455719, 1.2299194, -19.954193, 6.0740967, -23.856354, 8.798889, -25.984772)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cskkv"]
+size = Vector2(38.905487, 16.127975)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_028i1"]
+polygon = PackedVector2Array(-18.955261, 8.159943, -18.856201, 5.551544, -18.95996, 1.9538269, -18.648682, -1.2463379, -18.582642, -5.317444, -13.614563, -5.567566, -8.969421, -7.6377563, -3.8740234, -8.24295, -0.5800171, -7.7113647, 2.9733887, -8.680603, 7.31427, -8.736389, 11.435913, -7.014557, 14.557739, -5.6143494, 17.722046, -4.3324585, 18.453003, -0.9290161, 18.424683, 3.81427, 18.068604, 7.5281067, 13.100464, 7.7781982, 9.933838, 6.8916016, 7.04303, 8.734009, 4.1192017, 9.113647, 0.74505615, 8.02829, -3.4732666, 8.519562, -6.642273, 8.028259, -10.723816, 6.583374, -12.447449, 8.669159, -15.7508545, 9.71875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uufd"]
+size = Vector2(19.358292, 31.716732)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8uufd"]
+polygon = PackedVector2Array(-4.3026123, -17.2341, -1.2368164, -16.80008, 2.3864136, -15.932053, 5.312866, -14.774673, 8.796722, -13.761963, 12.001892, -12.170563, 12.001892, -7.251709, 10.887054, -3.0561981, 10.32962, 1.1392975, 8.936066, 5.6241455, 7.4031677, 9.819641, 6.28833, 14.015152, 4.755432, 16.908585, 0.8535156, 17.053268, -4.5813293, 15.895889, -7.6471252, 14.883194, -10.991638, 14.159836, -12.245819, 10.9770355, -11.4096985, 5.768814, -9.5980835, 0.12658691, -8.622589, -3.7795563, -7.368408, -7.8303986, -6.2535706, -13.761963)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epbps"]
+size = Vector2(10.996094, 11.83362)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xbf5p"]
+size = Vector2(19.931412, 11.467529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_na5ms"]
+size = Vector2(10.403967, 7.766014)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28eae"]
+radius = 3.9806333
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwd4m"]
+size = Vector2(31.2258, 22.266663)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8uufd"]
+radius = 3.738037
+height = 7.476074
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f61l"]
+size = Vector2(17.241379, 34.141235)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xi453"]
+polygon = PackedVector2Array(-6.13031, -10.944794, -2.1073303, -10.944794, 1.5325317, -10.944794, 5.9386597, -11.271515, 6.704956, -5.3907166, 6.704956, -1.6335449, 7.0880737, 1.1434937, 6.704956, 5.5541077, 0.9578247, 5.5541077, -6.5134583, 5.5541077, -6.5134583, 0.81677246, -6.705017, -3.9205322, -6.321869, -6.8609314)
 
 [node name="Map" type="Node2D" unique_id=1093885806]
 
@@ -1055,6 +1119,13 @@ position = Vector2(10.441113, 13.002141)
 scale = Vector2(1.2856983, 1.2779216)
 texture = ExtResource("14_2wwcf")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="StreetLamp2/Car4Green" unique_id=1505448272]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StreetLamp2/Car4Green/StaticBody2D" unique_id=544590531]
+position = Vector2(-0.15322684, 0.77078927)
+scale = Vector2(1, 0.99999976)
+shape = SubResource("RectangleShape2D_urahp")
+
 [node name="Car1OvergrownDarkGreenGray" parent="." unique_id=1939703739 groups=["navigation"] instance=ExtResource("7_sb2pt")]
 position = Vector2(185.69342, 774.5861)
 scale = Vector2(4.9582043, 5.0008726)
@@ -1068,8 +1139,28 @@ position = Vector2(-397.00003, 1720.0001)
 [node name="Car4Red" parent="." unique_id=2097195010 groups=["navigation"] instance=ExtResource("10_ooc2g")]
 position = Vector2(2510.25, -2844.6501)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Car4Red" unique_id=40837581]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car4Red/StaticBody2D" unique_id=127602298]
+position = Vector2(0.29760984, 1.1473261)
+shape = SubResource("RectangleShape2D_028i1")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Car4Red" unique_id=396265761]
+occluder = SubResource("OccluderPolygon2D_hltbc")
+
 [node name="Car7GreenTruck" parent="." unique_id=1668830696 groups=["navigation"] instance=ExtResource("11_2wwcf")]
 position = Vector2(2049, -2435)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Car7GreenTruck" unique_id=1801126778]
+position = Vector2(6.647827, -0.24990845)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car7GreenTruck/StaticBody2D" unique_id=1997623776]
+position = Vector2(-6.7562866, 0.7246399)
+rotation = -0.75749993
+shape = SubResource("RectangleShape2D_y0s0d")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Car7GreenTruck" unique_id=1686582196]
+occluder = SubResource("OccluderPolygon2D_iwan2")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=374642744 groups=["navigation"]]
 visible = false
@@ -1080,6 +1171,15 @@ texture_filter = 1
 position = Vector2(894.00006, -1179)
 scale = Vector2(4.650002, 4.5374975)
 texture = ExtResource("12_0t07s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Car1OvergrownBleakYellowGray" unique_id=285453495]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car1OvergrownBleakYellowGray/StaticBody2D" unique_id=411900855]
+position = Vector2(-0.21506953, 0.22038573)
+shape = SubResource("RectangleShape2D_hac6k")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Car1OvergrownBleakYellowGray" unique_id=528896176]
+occluder = SubResource("OccluderPolygon2D_tu3qe")
 
 [node name="Car5RustTractorUp" type="Sprite2D" parent="." unique_id=709256809]
 texture_filter = 1
@@ -1099,6 +1199,17 @@ position = Vector2(4992.875, 2809.5002)
 scale = Vector2(6.6059346, 5.6379275)
 texture = ExtResource("16_4sf5t")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Car7RedTruck" unique_id=1840547612]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car7RedTruck/StaticBody2D" unique_id=1307297021]
+position = Vector2(0.19415283, 2.18161)
+rotation = -0.78011024
+scale = Vector2(0.9999996, 0.9999994)
+shape = SubResource("RectangleShape2D_1xagg")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Car7RedTruck" unique_id=445447253]
+occluder = SubResource("OccluderPolygon2D_urahp")
+
 [node name="Car6GrayScrap" type="Sprite2D" parent="." unique_id=695342295]
 texture_filter = 1
 position = Vector2(4938.9995, 3118.0005)
@@ -1106,19 +1217,35 @@ rotation = 1.2433913
 scale = Vector2(7.576923, 8)
 texture = ExtResource("17_3mr0t")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Car6GrayScrap" unique_id=1999419031]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car6GrayScrap/StaticBody2D" unique_id=962975126]
+position = Vector2(0.4975586, 1.0158691)
+scale = Vector2(1, 1.0000004)
+shape = SubResource("RectangleShape2D_cskkv")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Car6GrayScrap" unique_id=1597132998]
+occluder = SubResource("OccluderPolygon2D_028i1")
+
 [node name="Bush2DarkGreen" type="Sprite2D" parent="." unique_id=1486209724]
+light_mask = 3
+visibility_layer = 3
 texture_filter = 1
 position = Vector2(4988, 3317)
 scale = Vector2(5.285714, 9.192307)
 texture = ExtResource("18_6sq2s")
 
 [node name="Bush2DarkGreen2" type="Sprite2D" parent="." unique_id=959220418]
+light_mask = 3
+visibility_layer = 3
 texture_filter = 1
 position = Vector2(4916, 3367)
 scale = Vector2(5.285714, 9.192307)
 texture = ExtResource("18_6sq2s")
 
 [node name="Bush2DarkGreen3" type="Sprite2D" parent="." unique_id=602209934]
+light_mask = 3
+visibility_layer = 3
 texture_filter = 1
 position = Vector2(4973, 3425)
 scale = Vector2(5.285714, 9.192307)
@@ -1137,6 +1264,17 @@ texture_filter = 1
 position = Vector2(-2850.1248, 1672.125)
 scale = Vector2(7.175937, 6.9121647)
 texture = ExtResource("20_y1wlr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Car2BlueUpsidedown" unique_id=1764717999]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car2BlueUpsidedown/StaticBody2D" unique_id=978097124]
+position = Vector2(-0.011779785, 0.25482178)
+rotation = 0.26906648
+scale = Vector2(1, 0.9999997)
+shape = SubResource("RectangleShape2D_8uufd")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Car2BlueUpsidedown" unique_id=772294677]
+occluder = SubResource("OccluderPolygon2D_8uufd")
 
 [node name="RoofHole1Gray" type="Sprite2D" parent="." unique_id=938057094]
 texture_filter = 1
@@ -1201,11 +1339,24 @@ rotation = 1.5947185
 scale = Vector2(6.4422894, 8.378971)
 texture = ExtResource("27_xkcq7")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="ShoppingCart" unique_id=1405013052]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShoppingCart/StaticBody2D" unique_id=511887959]
+position = Vector2(0.32852173, -1.3098412)
+scale = Vector2(1.0000002, 1.0000002)
+shape = SubResource("RectangleShape2D_epbps")
+
 [node name="TrashBag2" type="Sprite2D" parent="." unique_id=1378209239]
 texture_filter = 1
 position = Vector2(262.375, -1762.5)
 scale = Vector2(6.295452, 6.4166713)
 texture = ExtResource("28_8uufd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TrashBag2" unique_id=1478326531]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashBag2/StaticBody2D" unique_id=1291406265]
+position = Vector2(4.38809, 0.077921994)
+shape = SubResource("RectangleShape2D_xbf5p")
 
 [node name="TrashBag3" type="Sprite2D" parent="." unique_id=700097081]
 texture_filter = 1
@@ -1219,11 +1370,24 @@ position = Vector2(264.625, -1701.125)
 scale = Vector2(7.1590915, 7.7954574)
 texture = ExtResource("29_1xagg")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="TrashBag1" unique_id=1677349382]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashBag1/StaticBody2D" unique_id=676085848]
+position = Vector2(0.15833282, 1.5900116)
+shape = SubResource("RectangleShape2D_na5ms")
+
 [node name="TrashBag4" type="Sprite2D" parent="." unique_id=552863548]
 texture_filter = 1
 position = Vector2(1315, -1604)
 scale = Vector2(4.57955, 6.3522787)
 texture = ExtResource("29_1xagg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TrashBag4" unique_id=2115616664]
+position = Vector2(0.13214111, 1.5558624)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashBag4/StaticBody2D" unique_id=641259360]
+position = Vector2(-0.35049352, 0.33321887)
+shape = SubResource("CircleShape2D_28eae")
 
 [node name="Tire1" type="Sprite2D" parent="." unique_id=1172905895]
 texture_filter = 1
@@ -1288,6 +1452,13 @@ position = Vector2(1319.0001, -1976.9999)
 scale = Vector2(4.428571, 4.8913045)
 texture = ExtResource("34_y0s0d")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="VendingMachineBlue" unique_id=1960545128]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VendingMachineBlue/StaticBody2D" unique_id=1616336902]
+position = Vector2(8.54837, -0.09341431)
+scale = Vector2(1, 1.0000001)
+shape = SubResource("RectangleShape2D_kwd4m")
+
 [node name="VendingMachineRed" type="Sprite2D" parent="." unique_id=987594173]
 texture_filter = 1
 position = Vector2(1392, -1976.0001)
@@ -1300,35 +1471,27 @@ position = Vector2(2858, -2921)
 scale = Vector2(9.5, 8.293103)
 texture = ExtResource("36_hac6k")
 
-[node name="Tree1SpruceDarkGreen2" type="Sprite2D" parent="." unique_id=783387306]
-texture_filter = 1
-position = Vector2(2936, -2730)
-scale = Vector2(9.5, 8.293103)
-texture = ExtResource("36_hac6k")
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree1SpruceDarkGreen" unique_id=1857348880]
 
-[node name="Tree1SpruceDarkGreen4" type="Sprite2D" parent="." unique_id=67701211]
-texture_filter = 1
-position = Vector2(3133, -2619)
-scale = Vector2(9.5, 8.293103)
-texture = ExtResource("36_hac6k")
-
-[node name="Tree1SpruceDarkGreen5" type="Sprite2D" parent="." unique_id=402141418]
-texture_filter = 1
-position = Vector2(3306, -2810)
-scale = Vector2(9.5, 8.293103)
-texture = ExtResource("36_hac6k")
-
-[node name="Tree1SpruceDarkGreen3" type="Sprite2D" parent="." unique_id=392439222]
-texture_filter = 1
-position = Vector2(3084, -2878)
-scale = Vector2(9.5, 8.293103)
-texture = ExtResource("36_hac6k")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1SpruceDarkGreen/StaticBody2D" unique_id=962833375]
+position = Vector2(-1.0526316, 11.0935545)
+shape = SubResource("CapsuleShape2D_8uufd")
 
 [node name="Car1Blue" type="Sprite2D" parent="." unique_id=621669999]
 texture_filter = 1
 position = Vector2(2390.0002, -2291)
 scale = Vector2(5.219998, 6.1216216)
 texture = ExtResource("37_tu3qe")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Car1Blue" unique_id=468571184]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car1Blue/StaticBody2D" unique_id=1038867027]
+position = Vector2(0.19152832, 0.5718384)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_1f61l")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Car1Blue" unique_id=1161919875]
+occluder = SubResource("OccluderPolygon2D_xi453")
 
 [node name="StopSignDown1" type="Sprite2D" parent="." unique_id=479943312]
 texture_filter = 1
@@ -1369,3 +1532,51 @@ texture = ExtResource("40_8uufd")
 [node name="SpawnZone" parent="." unique_id=650088937 instance=ExtResource("41_8uufd")]
 position = Vector2(-2115.0002, 325.00012)
 scale = Vector2(1.85, 1.85)
+
+[node name="Tree1SpruceDarkGreen2" type="Sprite2D" parent="." unique_id=908479207]
+texture_filter = 1
+position = Vector2(3139, -2879)
+scale = Vector2(9.5, 8.293103)
+texture = ExtResource("36_hac6k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree1SpruceDarkGreen2" unique_id=1319015471]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1SpruceDarkGreen2/StaticBody2D" unique_id=427309952]
+position = Vector2(-1.0526316, 11.0935545)
+shape = SubResource("CapsuleShape2D_8uufd")
+
+[node name="Tree1SpruceDarkGreen3" type="Sprite2D" parent="." unique_id=1886252165]
+texture_filter = 1
+position = Vector2(2953, -2761)
+scale = Vector2(9.5, 8.293103)
+texture = ExtResource("36_hac6k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree1SpruceDarkGreen3" unique_id=399993495]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1SpruceDarkGreen3/StaticBody2D" unique_id=1455413147]
+position = Vector2(-1.0526316, 11.0935545)
+shape = SubResource("CapsuleShape2D_8uufd")
+
+[node name="Tree1SpruceDarkGreen4" type="Sprite2D" parent="." unique_id=954291674]
+texture_filter = 1
+position = Vector2(3149, -2622)
+scale = Vector2(9.5, 8.293103)
+texture = ExtResource("36_hac6k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree1SpruceDarkGreen4" unique_id=1042155883]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1SpruceDarkGreen4/StaticBody2D" unique_id=2036903883]
+position = Vector2(-1.0526316, 11.0935545)
+shape = SubResource("CapsuleShape2D_8uufd")
+
+[node name="Tree1SpruceDarkGreen5" type="Sprite2D" parent="." unique_id=498971349]
+texture_filter = 1
+position = Vector2(2916, -2519)
+scale = Vector2(9.5, 8.293103)
+texture = ExtResource("36_hac6k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree1SpruceDarkGreen5" unique_id=1717996817]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1SpruceDarkGreen5/StaticBody2D" unique_id=754396485]
+position = Vector2(-1.0526316, 11.0935545)
+shape = SubResource("CapsuleShape2D_8uufd")
