@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c8jwngngb0ubl"]
+
+[ext_resource type="Script" uid="uid://cx1c3s3mjd1dg" path="res://timer.gd" id="1_qdhxh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nws1w"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+expand_margin_left = 15.0
+expand_margin_top = 15.0
+expand_margin_right = 15.0
+expand_margin_bottom = 15.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qdhxh"]
+bg_color = Color(0, 0.55983883, 0.94190085, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nws1w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ye2uk"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qdhxh"]
+font_size = 55
+
+[node name="TimeBar" type="ProgressBar" unique_id=980289935]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0000076
+offset_top = 11.000004
+offset_right = -1425.0001
+offset_bottom = -1004.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme_override_styles/background = SubResource("StyleBoxFlat_nws1w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qdhxh")
+step = 0.001
+value = 58.6
+show_percentage = false
+script = ExtResource("1_qdhxh")
+
+[node name="ProgressBG" type="ProgressBar" parent="." unique_id=956789743]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 3.0517578e-05
+offset_bottom = -3.0517578e-05
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxEmpty_nws1w")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ye2uk")
+value = 60.17
+show_percentage = false
+
+[node name="Timer" type="Label" parent="." unique_id=907344063]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 985.0
+offset_top = -75.00002
+offset_right = 753.5753
+offset_bottom = -49.000023
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.895, 1.895)
+text = "5:00"
+label_settings = SubResource("LabelSettings_qdhxh")
+vertical_alignment = 1
