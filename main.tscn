@@ -612,21 +612,73 @@ texture = ExtResource("1_kek77")
 15:16/0 = 0
 16:16/0 = 0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1u8w0"]
+polygon = PackedVector2Array(-4.6763268, -8, 4.9747515, -8, 5.036045, 8, -4.6763268, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0odxb"]
+polygon = PackedVector2Array(-4.6763268, -8, 4.9747515, -8, 5.036045, 8, -4.6763268, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lswn8"]
+polygon = PackedVector2Array(-4.6763268, -8, 4.9747515, -8, 5.036045, 8, -4.6763268, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_a6jrf"]
+polygon = PackedVector2Array(-8, -4.856185, 8, -4.856185, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xuqvo"]
+polygon = PackedVector2Array(-8, 1.6187286, 1.6187286, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qsp4k"]
+polygon = PackedVector2Array(-8, -8, -3.956892, -8, -3.7770338, -2.5180216, 4.6763268, -1.6187286, 3.5971737, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kq58d"]
+polygon = PackedVector2Array(-8, -4.856185, 8, -4.856185, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_seu75"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_htxhm"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_jq2sk"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4k2k6"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0rl1p"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ok6jj"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yaehf"]
 texture = ExtResource("2_dg77c")
 0:0/0 = 0
+0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_1u8w0")
 1:0/0 = 0
+1:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_a6jrf")
 2:0/0 = 0
+2:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xuqvo")
 3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_qsp4k")
 4:0/0 = 0
+4:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_htxhm")
 5:0/0 = 0
+5:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_4k2k6")
 0:1/0 = 0
+0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0odxb")
 3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_kq58d")
 5:1/0 = 0
+5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0rl1p")
 0:2/0 = 0
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_lswn8")
 3:2/0 = 0
+3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_seu75")
 4:2/0 = 0
+4:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_jq2sk")
 5:2/0 = 0
+5:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_ok6jj")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_074og"]
 texture = ExtResource("3_ycdy4")
@@ -869,6 +921,8 @@ texture = ExtResource("5_getpj")
 2:13/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_efxa6"]
+uv_clipping = true
+occlusion_layer_0/light_mask = 1
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "Asphalt"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
@@ -1411,5 +1465,4 @@ scale = Vector2(10, 10)
 metadata/_edit_use_anchors_ = true
 
 [node name="AmbiantLight" type="CanvasModulate" parent="." unique_id=794281094]
-visible = false
-color = Color(0.008633897, 0.015112126, 0.052128717, 1)
+color = Color(0.07608076, 0.11975584, 0.23239583, 1)
