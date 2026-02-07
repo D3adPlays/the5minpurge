@@ -16,9 +16,6 @@ func _on_ready() -> void:
 	move_speed = patrol_speed
 	animated_sprite = $AnimatedSprite2D
 	collision_shape = $CollisionShape2D
-	
-	await get_tree().process_frame
-	player = get_player()
 
 func _physics_process(delta: float) -> void:
 	if not is_alive:
@@ -26,7 +23,6 @@ func _physics_process(delta: float) -> void:
 	
 	# AI logic here (chase player, patrol, etc.)
 	handle_ai()
-	move_and_slide()
 
 func handle_ai() -> void:
 	# Your zombie AI logic

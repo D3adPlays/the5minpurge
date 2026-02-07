@@ -96,3 +96,6 @@ func _on_death() -> void:
 		animated_sprite.modulate = Color(1, 1, 1, 0.5)
 	if collision_shape:
 		collision_shape.disabled = true
+	# Hide and disable the entity
+	visible = false
+	set_physics_process(false)

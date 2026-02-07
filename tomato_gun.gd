@@ -15,19 +15,19 @@ func _ready() -> void:
 func _do_attack(direction: Vector2) -> void:
 	# Create and fire a projectile
 	print("TomatoGun firing!")
+	
+	# Add controller vibration
+	Input.start_joy_vibration(0, 0.3, 0.3, 0.1)
+	
 	if projectile_scene:
 		var projectile = projectile_scene.instantiate()
 		get_parent().add_sibling(projectile)
-		projectile.global_position = owner_node.global_position
-		projectile.gravity_scale = 0.0
-		projectile.mass = 0.1
-		# Handle different projectile types
+		# Apply offset in the direction of aim to spawn projectile away from player
+		projectile.global_position = owner_node.global_position + (direction.normalized() * spawn_offset)
+		
+		# Set velocity using the projectile's method
 		if projectile.has_method("set_velocity"):
 			projectile.set_velocity(direction * projectile_speed)
-		elif "linear_velocity" in projectile:
-			projectile.linear_velocity = direction * projectile_speed
-		elif "velocity" in projectile:
-			projectile.velocity = direction * projectile_speed
 		
 		print("Projectile created at: ", projectile.global_position)
 	else:

@@ -21,6 +21,9 @@
 [ext_resource type="Texture2D" uid="uid://chnujxqaa15j1" path="res://textures/Lights/512x512 textures (78).png" id="18_cegan"]
 [ext_resource type="Texture2D" uid="uid://1dftvgilpe6" path="res://textures/Objects/Vehicles/Normal/Car_2_Upsidedown/Car_2_Gray_Upsidedown.png" id="19_getpj"]
 [ext_resource type="Texture2D" uid="uid://0eiu8oj7sqve" path="res://textures/Objects/Vehicles/Normal/Car_8_Bus/Car_8_Red_Bus.png" id="20_ryguw"]
+[ext_resource type="PackedScene" uid="uid://baqydv0s2phxm" path="res://zombie.tscn" id="21_ryguw"]
+[ext_resource type="PackedScene" uid="uid://camfdnjgsh661" path="res://Weapons/tomato_gun.tscn" id="21_getpj"]
+[ext_resource type="Texture2D" uid="uid://dx06r5wbfs6ac" path="res://textures/Objects/Vehicles/Overgrown/Car_1_Overgrown/Dark-Green/Car_1_Overgrown_Dark-Green_Gray.png" id="22_ryguw"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vivmo"]
 tile_data = PackedInt32Array(0, 262144, 7, 65536, 327680, 9, 131072, 327680, 9, 196608, 196608, 8, 262144, 327680, 9, 327680, 327680, 9, 393216, 262144, 805306375)
@@ -1237,7 +1240,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
-size = Vector2(9.315511, 5.4677925)
+size = Vector2(9.113001, 6.581606)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vivmo"]
 
@@ -1366,6 +1369,10 @@ shadow_filter_smooth = 1.2
 texture = ExtResource("18_cegan")
 texture_scale = 3.06
 
+[node name="TomatoGun" parent="CharacterBody2D" unique_id=2073554385 instance=ExtResource("21_getpj")]
+fire_rate = 1.0
+attack_cooldown = 0.01
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=591487852]
 texture_filter = 3
 position = Vector2(-9.536743e-07, -4.7683716e-07)
@@ -1376,7 +1383,7 @@ autoplay = "idle-down"
 frame_progress = 0.8554486
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=697755794]
-position = Vector2(1, 27.5)
+position = Vector2(-0.5, 25.25)
 scale = Vector2(4.938, 4.938)
 shape = SubResource("RectangleShape2D_0xm2m")
 
@@ -1403,10 +1410,5 @@ grow_vertical = 2
 scale = Vector2(10, 10)
 metadata/_edit_use_anchors_ = true
 
-[node name="TomatoGun" parent="CharacterBody2D" unique_id=2073554385 instance=ExtResource("21_getpj")]
-fire_rate = 1.0
-attack_cooldown = 0.01
-
 [node name="AmbiantLight" type="CanvasModulate" parent="." unique_id=794281094]
-visible = false
 color = Color(0.008633897, 0.015112126, 0.052128717, 1)
