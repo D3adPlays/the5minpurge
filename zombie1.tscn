@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://6b52tm2cijan"]
+
+[ext_resource type="Script" uid="uid://cnbklf7mmloax" path="res://zombie.gd" id="1_jmu02"]
+[ext_resource type="Texture2D" uid="uid://chs5jlte5xs1g" path="res://textures/Enemies/Zombie_Small/Zombie_Small_Side_Walk-Sheet6.png" id="1_uiaus"]
+[ext_resource type="PackedScene" uid="uid://cq14vooaijnqe" path="res://hitzone.tscn" id="2_roy8y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roy8y"]
+atlas = ExtResource("1_uiaus")
+region = Rect2(0, 0, 13, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmu02"]
+atlas = ExtResource("1_uiaus")
+region = Rect2(13, 0, 13, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eseir"]
+atlas = ExtResource("1_uiaus")
+region = Rect2(26, 0, 13, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nqyo"]
+atlas = ExtResource("1_uiaus")
+region = Rect2(39, 0, 13, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnshm"]
+atlas = ExtResource("1_uiaus")
+region = Rect2(52, 0, 13, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5rsa"]
+atlas = ExtResource("1_uiaus")
+region = Rect2(65, 0, 13, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ogcpr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roy8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jmu02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eseir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nqyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnshm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5rsa")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmu02"]
+size = Vector2(8, 13)
+
+[node name="Zombie1" type="CharacterBody2D" unique_id=315926972]
+texture_filter = 1
+script = ExtResource("1_jmu02")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1714197847]
+sprite_frames = SubResource("SpriteFrames_ogcpr")
+animation = &"walk"
+autoplay = "walk"
+
+[node name="hitzone" parent="AnimatedSprite2D" unique_id=167884148 instance=ExtResource("2_roy8y")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/hitzone" unique_id=997886042]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jmu02")

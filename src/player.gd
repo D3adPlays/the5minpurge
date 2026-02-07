@@ -3,6 +3,7 @@ extends LivingEntity
 const JOYSTICK_DEADZONE = 0.2
 
 @onready var weapon: Weapon = null
+@onready var bat_weapon: Weapon = null
 
 var aim_direction: Vector2 = Vector2.RIGHT
 var last_movement_direction: Vector2 = Vector2.DOWN
@@ -12,6 +13,9 @@ func _on_ready() -> void:
 	animated_sprite = $AnimatedSprite2D
 	# Try to find the weapon node
 	weapon = get_node_or_null("TomatoGun")
+	# Optional melee/AOE weapon (Enter)
+	bat_weapon = get_node_or_null("BatSpinWeapon")
+	_ensure_bat_input()
 	add_to_group("player")
 	if not weapon:
 		push_error("No TomatoGun found as child of player. Weapon functionality will be disabled.")
@@ -63,6 +67,28 @@ func handle_attack() -> void:
 			weapon.attack(aim_direction)
 		else:
 			print("Cannot attack: No weapon equipped")
+
+	# Bat spin AOE with Enter (just pressed)
+	if Input.is_action_just_pressed("bat_attack"):
+		if bat_weapon:
+			# Direction isn't used by the bat weapon, but we pass aim_direction anyway
+			bat_weapon.attack(aim_direction)
+		else:
+			print("Cannot bat spin: No BatSpinWeapon equipped")
+
+func _ensure_bat_input() -> void:
+	# Create an input action at runtime so you don't have to edit Project Settings.
+	if InputMap.has_action("bat_attack"):
+		return
+	InputMap.add_action("bat_attack")
+
+	var ev_enter := InputEventKey.new()
+	ev_enter.keycode = KEY_ENTER
+	InputMap.action_add_event("bat_attack", ev_enter)
+
+	var ev_kp_enter := InputEventKey.new()
+	ev_kp_enter.keycode = KEY_KP_ENTER
+	InputMap.action_add_event("bat_attack", ev_kp_enter)
 
 func handle_animation() -> void:
 	if velocity.length() < 10:

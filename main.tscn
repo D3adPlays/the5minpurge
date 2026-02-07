@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://b42w0bw7a6tga" path="res://textures/Objects/Vending-machine_Blue.png" id="19_h8e4i"]
 [ext_resource type="Texture2D" uid="uid://btvsf03d5g45w" path="res://textures/Objects/Trash-can_2.png" id="20_4lmeg"]
 [ext_resource type="PackedScene" uid="uid://camfdnjgsh661" path="res://Weapons/tomato_gun.tscn" id="21_getpj"]
+[ext_resource type="PackedScene" path="res://Weapons/bat_spin_weapon.tscn" id="22_batspin"]
 [ext_resource type="PackedScene" uid="uid://baqydv0s2phxm" path="res://zombie.tscn" id="21_ryguw"]
 [ext_resource type="Texture2D" uid="uid://c2s4d26eh4isp" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Rain-Drop_2_Long_Blue.png" id="26_lswn8"]
 
@@ -495,6 +496,8 @@ texture_scale = 3.06
 [node name="TomatoGun" parent="CharacterBody2D" unique_id=2073554385 instance=ExtResource("21_getpj")]
 fire_rate = 1.0
 attack_cooldown = 0.01
+
+[node name="BatSpinWeapon" parent="CharacterBody2D" instance=ExtResource("22_batspin")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=591487852]
 texture_filter = 3
