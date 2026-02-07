@@ -17,12 +17,29 @@ var is_alive: bool = true
 ## Reference to the animated sprite (must be set by child classes)
 var animated_sprite: AnimatedSprite2D = null
 
-## Reference to the collision shape (optional, for enabling/disabling collisions on death)
-var collision_shape: CollisionShape2D = null
+## Reference to the collision shape for physics (movement blocking)
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+
+## Reference to the hitbox for damage detection (Area2D)
+var hitbox: Area2D = null
+var hitbox_collision_shape: CollisionShape2D = null
+
+## Last movement direction for animation purposes
+var last_movement_direction: Vector2 = Vector2.DOWN
 
 func _ready() -> void:
 	add_to_group("living-entity")
 	current_health = max_health
+	
+	# Setup hitbox reference
+	hitbox = get_node_or_null("Hitbox")
+	if hitbox:
+		hitbox_collision_shape = hitbox.get_node_or_null("CollisionShape2D")
+		# Connect the hitbox's owner to this entity for damage handling
+		hitbox.add_to_group(name + "_hitbox")
+	else:
+		push_warning(name + ": No Hitbox node found. Add an Area2D named 'Hitbox' as a child.")
+	
 	_on_ready()
 
 ## Override this in child classes for custom initialization
@@ -44,10 +61,15 @@ func get_player() -> Node2D:
 
 ## Take damage from an attack
 func take_damage(amount: float, damage_source: Node = null) -> void:
+	print("[", name, "] take_damage called - Amount: ", amount, " Source: ", damage_source.name if damage_source else "none")
+	print("[", name, "] Current health: ", current_health, " Is alive: ", is_alive)
+	
 	if not is_alive:
+		print("[", name, "] Already dead, ignoring damage")
 		return
 	
 	current_health -= amount
+	print("[", name, "] New health: ", current_health)
 	_on_damage_taken(amount, damage_source)
 	
 	if current_health <= 0:
@@ -83,6 +105,29 @@ func get_health_percentage() -> float:
 func is_at_full_health() -> bool:
 	return current_health >= max_health
 
+## Handle animation based on velocity and movement direction
+func handle_animation() -> void:
+	if not animated_sprite:
+		return
+	
+	if velocity.length() < 10:
+		if abs(last_movement_direction.x) > abs(last_movement_direction.y):
+			animated_sprite.play("idle-side")
+			animated_sprite.flip_h = last_movement_direction.x < 0
+		elif last_movement_direction.y < 0:
+			animated_sprite.play("idle-up")
+		else:
+			animated_sprite.play("idle-down")
+	else:
+		# Play walk animations when moving
+		if abs(last_movement_direction.x) > abs(last_movement_direction.y):
+			animated_sprite.play("walk-right")
+			animated_sprite.flip_h = last_movement_direction.x < 0
+		elif last_movement_direction.y < 0:
+			animated_sprite.play("walk-up")
+		else:
+			animated_sprite.play("walk-down")
+
 ## Override these in child classes for custom behavior
 func _on_damage_taken(amount: float, damage_source: Node) -> void:
 	pass
@@ -95,7 +140,9 @@ func _on_death() -> void:
 	if animated_sprite:
 		animated_sprite.modulate = Color(1, 1, 1, 0.5)
 	if collision_shape:
-		collision_shape.disabled = true
+		collision_shape.set_deferred("disabled", true)
+	if hitbox_collision_shape:
+		hitbox_collision_shape.set_deferred("disabled", true)
 	# Hide and disable the entity
 	visible = false
 	set_physics_process(false)

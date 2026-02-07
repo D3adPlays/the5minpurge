@@ -32,8 +32,11 @@ func spawn_enemy(spawn_entry: EnemySpawnEntry):
 	
 	# Instance the enemy
 	var enemy = spawn_entry.enemy_scene.instantiate()
-	get_parent().add_child(enemy)
-	enemy.global_position = spawn_position
+	
+	# Defer adding to tree and setting position
+	var parent = get_parent()
+	parent.add_child.call_deferred(enemy)
+	call_deferred("_set_enemy_position", enemy, spawn_position)
 	
 	# Track spawned enemy
 	spawned_enemies += 1
@@ -41,6 +44,10 @@ func spawn_enemy(spawn_entry: EnemySpawnEntry):
 	# Connect to enemy death/removal if needed
 	if enemy.has_signal("tree_exited"):
 		enemy.tree_exited.connect(_on_enemy_removed)
+
+func _set_enemy_position(enemy: Node2D, pos: Vector2):
+	if is_instance_valid(enemy):
+		enemy.global_position = pos
 
 func get_random_position_in_zone() -> Vector2:
 	# Assumes a CollisionShape2D child with RectangleShape2D

@@ -1,74 +1,62 @@
-extends LivingEntity
+extends Enemy
 
-@export var patrol_speed: float = 100.0
-@export var chase_speed: float = 150.0
-@export var attack_damage: float = 15.0
-@export var detection_range: float = 900.0
-
-var player: Node2D = null
-var state: String = "idle"  # idle, patrol, chase, attack
-@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
+## Zombie enemy - a slow but persistent melee attacker
 
 func _on_ready() -> void:
-	# Set up zombie properties
-	add_to_group("enemies")
-	max_health = 50.0
+	# Call parent to ensure zombie is added to "enemies" group
+	super._on_ready()
+	
+	# Set up zombie-specific properties
+	max_health = 30.0
 	current_health = max_health
+	
+	# Movement speeds
+	patrol_speed = 80.0
+	chase_speed = 120.0
 	move_speed = patrol_speed
+	
+	# Combat properties
+	attack_damage = 15.0
+	attack_range = 60.0
+	attack_cooldown = 1.5
+	
+	# Detection
+	detection_range = 900.0
+	lose_sight_range = 1200.0
+	
+	# Set up sprite and collision
 	animated_sprite = $AnimatedSprite2D
 	collision_shape = $CollisionShape2D
-	
-	# Wait for navigation to be ready
-	call_deferred("actor_setup")
+	navigation_agent = $NavigationAgent2D
 
-func actor_setup() -> void:
-	# Wait for the first physics frame so the NavigationServer can sync
-	await get_tree().physics_frame
-	# Find the player
-	var players = get_tree().get_nodes_in_group("player")
-	if players.size() > 0:
-		player = players[0]
+func _on_enemy_ready() -> void:
+	# Additional zombie-specific setup after enemy initialization
+	pass
 
-func _physics_process(delta: float) -> void:
-	if not is_alive:
+func _on_state_changed(old_state: State, new_state: State) -> void:
+	# Update animations based on state changes
+	if not animated_sprite:
 		return
 	
-	# AI logic here (chase player, patrol, etc.)
-	handle_ai()
-	move_and_slide()
+	match new_state:
+		State.IDLE:
+			if animated_sprite.sprite_frames.has_animation("idle"):
+				animated_sprite.play("idle")
+		State.CHASE:
+			if animated_sprite.sprite_frames.has_animation("walk"):
+				animated_sprite.play("walk")
+		State.ATTACK:
+			if animated_sprite.sprite_frames.has_animation("attack"):
+				animated_sprite.play("attack")
 
-func handle_ai() -> void:
-	if not player:
-		return
-	
-	var distance_to_player = global_position.distance_to(player.global_position)
-	
-	# If player is within detection range, pathfind towards them
-	if distance_to_player < detection_range:
-		state = "chase"
-		move_speed = chase_speed
-		navigation_agent.target_position = player.global_position
-		
-		# Get the next position from the navigation agent
-		if navigation_agent.is_navigation_finished():
-			return
-		
-		var next_path_position = navigation_agent.get_next_path_position()
-		var direction = (next_path_position - global_position).normalized()
-		
-		# Move towards the next path position
-		velocity = direction * move_speed
-	else:
-		state = "idle"
-		move_speed = patrol_speed
-		velocity = Vector2.ZERO
+func _on_attack_performed() -> void:
+	# Play attack sound or animation
+	if animated_sprite and animated_sprite.sprite_frames.has_animation("attack"):
+		animated_sprite.play("attack")
 
-func _on_death() -> void:
-	# Custom death behavior for zombies
-	if animated_sprite:
-		animated_sprite.play("death")
-	if collision_shape:
-		collision_shape.disabled = true
-	# Optional: drop items, play sound, etc.
-	await get_tree().create_timer(2.0).timeout
-	queue_free()
+func _on_enemy_death() -> void:
+	# Custom zombie death behavior
+	# Add 5 seconds to player's timer on zombie kill
+	var player_node = get_player()
+	if player_node and player_node.has_method("modify_timer"):
+		player_node.modify_timer(7.0)

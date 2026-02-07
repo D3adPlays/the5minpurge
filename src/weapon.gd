@@ -3,7 +3,7 @@ extends Node
 
 # Abstract weapon class for all weapons
 
-@export var attack_cooldown: float = 0.5
+@export var attack_cooldown: float = 0.3
 @export var damage: float = 10.0
 @export var gun_offset: float = 50.0  # Offset in pixels from owner in aim direction
 @export var spawn_offset: float = gun_offset + 40.0  # Offset in pixels from owner in aim direction
@@ -34,5 +34,5 @@ func _do_attack(direction: Vector2) -> void:
 
 func get_export_property(property: String) -> float:
 	if "attack_cooldown" == property:
-		return 0.5
+		return attack_cooldown
 	return 0.0

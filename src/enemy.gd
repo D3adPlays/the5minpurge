@@ -15,6 +15,7 @@ enum State { IDLE, PATROL, CHASE, ATTACK }
 @export var attack_damage: float = 10.0
 @export var attack_range: float = 50.0
 @export var attack_cooldown: float = 1.0
+@export var knockback_force: float = 300.0
 
 ## Detection and AI
 @export var detection_range: float = 800.0
@@ -175,6 +176,13 @@ func perform_attack() -> void:
 	# Check if player is still in range
 	var distance = global_position.distance_to(player.global_position)
 	if distance <= attack_range:
+		# Calculate knockback direction (from enemy to player)
+		var knockback_direction = (player.global_position - global_position).normalized()
+		
+		# Apply knockback to player
+		if player is CharacterBody2D:
+			player.velocity += knockback_direction * knockback_force
+		
 		# Deal damage to player if it has the take_damage method
 		if player.has_method("take_damage"):
 			player.take_damage(attack_damage, self)
@@ -195,6 +203,13 @@ func _face_direction(direction: Vector2) -> void:
 func _on_death() -> void:
 	# Remove from enemies group
 	remove_from_group("enemies")
+	_on_enemy_death()
+
+	# Disable collision shapes using deferred call to avoid physics errors
+	if collision_shape:
+		collision_shape.set_deferred("disabled", true)
+	if hitbox_collision_shape:
+		hitbox_collision_shape.set_deferred("disabled", true)
 	
 	# Play death animation if available
 	if animated_sprite:
@@ -206,14 +221,7 @@ func _on_death() -> void:
 			var tween = create_tween()
 			tween.tween_property(animated_sprite, "modulate:a", 0.0, 0.5)
 			await tween.finished
-	
-	# Disable collision
-	if collision_shape:
-		collision_shape.disabled = true
-	
-	# Allow child classes to add custom death behavior
-	_on_enemy_death()
-	
+			
 	# Clean up
 	queue_free()
 

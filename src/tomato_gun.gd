@@ -4,7 +4,6 @@ extends Weapon
 # Tomato gun that shoots projectiles
 
 @export var projectile_scene: PackedScene
-@export var fire_rate: float = 0.5
 @export var projectile_speed: float = 1000.0
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -36,7 +35,23 @@ func _physics_process(delta: float) -> void:
 
 func _do_attack(direction: Vector2) -> void:
 	# Create and fire a projectile
-	print("TomatoGun firing!")
+	print("[TomatoGun] Firing weapon!")
+	
+	# Reduce timer by 1 second on shoot
+	print("[TomatoGun] Getting player from tree...")
+	var player = get_tree().get_first_node_in_group("player")
+	print("[TomatoGun] Player found: ", player)
+	
+	if player:
+		print("[TomatoGun] Player has modify_timer: ", player.has_method("modify_timer"))
+		if player.has_method("modify_timer"):
+			print("[TomatoGun] Calling player.modify_timer(-1.0)")
+			player.modify_timer(-1.0)
+			print("[TomatoGun] Timer modification complete")
+		else:
+			print("[TomatoGun] ERROR: Player doesn't have modify_timer method!")
+	else:
+		print("[TomatoGun] ERROR: Could not find player!")
 	
 	# Add controller vibration
 	Input.start_joy_vibration(0, 0.3, 0.3, 0.1)

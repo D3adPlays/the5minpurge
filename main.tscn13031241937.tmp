@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://btvsf03d5g45w" path="res://textures/Objects/Trash-can_2.png" id="20_4lmeg"]
 [ext_resource type="PackedScene" uid="uid://camfdnjgsh661" path="res://Weapons/tomato_gun.tscn" id="21_getpj"]
 [ext_resource type="PackedScene" uid="uid://baqydv0s2phxm" path="res://zombie.tscn" id="21_ryguw"]
-[ext_resource type="PackedScene" path="res://Weapons/bat_spin_weapon.tscn" id="22_batspin"]
 [ext_resource type="Texture2D" uid="uid://c2s4d26eh4isp" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Rain-Drop_2_Long_Blue.png" id="26_lswn8"]
 [ext_resource type="PackedScene" uid="uid://c8jwngngb0ubl" path="res://timer.tscn" id="27_a6jrf"]
 
@@ -33,7 +32,7 @@
 shader = ExtResource("13_ycdy4")
 shader_parameter/cloud_texture = ExtResource("14_w48qg")
 shader_parameter/scroll_speed = Vector2(0.02, 0.01)
-shader_parameter/opacity = 0.06400000304
+shader_parameter/opacity = 0.02000000095
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h2yge"]
 atlas = ExtResource("2_0xm2m")
@@ -483,6 +482,9 @@ position = Vector2(160, 317)
 position = Vector2(570, 319)
 motion_mode = 1
 script = ExtResource("1_ig7tw")
+max_health = null
+current_health = null
+move_speed = null
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D" unique_id=1343187200]
 position = Vector2(-1, 27)
@@ -496,10 +498,9 @@ texture_scale = 3.06
 
 [node name="TomatoGun" parent="CharacterBody2D" unique_id=2073554385 instance=ExtResource("21_getpj")]
 projectile_speed = null
+cooldown_timer = null
 damage = null
 gun_offset = null
-
-[node name="BatSpinWeapon" parent="CharacterBody2D" unique_id=396909702 instance=ExtResource("22_batspin")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=591487852]
 texture_filter = 3

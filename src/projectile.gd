@@ -23,8 +23,9 @@ var velocity: Vector2 = Vector2.ZERO
 var shooter: Node = null
 
 func _ready() -> void:
-	# Connect collision signal
+	# Connect collision signals
 	body_entered.connect(_on_body_entered)
+	area_entered.connect(_on_area_entered)
 	add_to_group("projectiles")
 	
 	# Call child initialization
@@ -59,7 +60,7 @@ func _on_body_entered(body: Node) -> void:
 		return
 	if body.is_in_group("player") or body.is_in_group("projectiles"):
 		return
-	
+
 	var is_valid_target = false
 	for group in target_groups:
 		if body.is_in_group(group):
@@ -87,6 +88,46 @@ func _on_hit_target(target: Node) -> void:
 ## Override for custom behavior on any collision
 func _on_collision(body: Node) -> void:
 	pass
+
+## Handle collision with a hitbox (Area2D)
+func _on_area_entered(area: Area2D) -> void:
+	print("[Projectile] Area collision with: ", area.name, " parent: ", area.get_parent().name if area.get_parent() else "none")
+	
+	# Check if this is a hitbox attached to a living entity
+	var owner_entity = area.get_parent()
+	if not owner_entity:
+		return
+	
+	if ignore_shooter and owner_entity == shooter:
+		print("[Projectile] Ignoring shooter's hitbox")
+		return
+	
+	if owner_entity.is_in_group("player") or owner_entity.is_in_group("projectiles"):
+		print("[Projectile] Ignoring player/projectile hitbox")
+		return
+	
+	print("[Projectile] Entity groups: ", owner_entity.get_groups())
+	print("[Projectile] Target groups: ", target_groups)
+	
+	var is_valid_target = false
+	for group in target_groups:
+		if owner_entity.is_in_group(group):
+			is_valid_target = true
+			print("[Projectile] Found matching group: ", group)
+			break
+	
+	if is_valid_target:
+		print("[Projectile] Valid target confirmed via hitbox!")
+		if owner_entity.has_method("take_damage"):
+			print("[Projectile] Dealing ", damage, " damage to ", owner_entity.name)
+			owner_entity.take_damage(damage, self as Node)
+			_on_hit_target(owner_entity)
+			print("[Projectile] Destroying projectile after hitbox collision")
+			queue_free()
+		else:
+			print("[Projectile] WARNING: Entity has no take_damage method!")
+	else:
+		print("[Projectile] Not a valid target")
 
 ## Override for custom behavior when lifetime expires
 func _on_lifetime_expired() -> void:

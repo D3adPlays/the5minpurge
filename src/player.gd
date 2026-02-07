@@ -3,23 +3,29 @@ extends LivingEntity
 const JOYSTICK_DEADZONE = 0.2
 
 @onready var weapon: Weapon = null
+@onready var camera: Camera2D = $Camera2D
+@onready var timer_bar: ProgressBar = $Camera2D/CanvasLayer/TimeBar
 @onready var bat_weapon: Weapon = null
 
 var aim_direction: Vector2 = Vector2.RIGHT
-var last_movement_direction: Vector2 = Vector2.DOWN
+var countdown_timer: float = 0.0
 
 func _on_ready() -> void:
+	print("Player _on_ready() called")
 	# Set up inherited animated sprite reference
 	animated_sprite = $AnimatedSprite2D
 	# Try to find the weapon node
 	weapon = get_node_or_null("TomatoGun")
 	# Optional melee/AOE weapon (Enter)
 	bat_weapon = get_node_or_null("BatSpinWeapon")
-	_ensure_bat_input()
 	add_to_group("player")
 	if not weapon:
 		push_error("No TomatoGun found as child of player. Weapon functionality will be disabled.")
 		push_error("Add a TomatoGun node as a child of the Player node in the scene.")
+	
+	# Setup timer bar locked to camera
+	print("About to call setup_timer_bar()")
+	setup_timer_bar()
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
@@ -28,6 +34,7 @@ func _physics_process(delta: float) -> void:
 	handle_animation()
 	move_and_slide()
 	handle_collisions()
+	handle_timer_countdown(delta)
 
 func handle_movement() -> void:
 	# Get input from WASD/Arrow keys or left joystick
@@ -67,28 +74,6 @@ func handle_attack() -> void:
 			weapon.attack(aim_direction)
 		else:
 			print("Cannot attack: No weapon equipped")
-
-	# Bat spin AOE with Enter (just pressed)
-	if Input.is_action_just_pressed("bat_attack"):
-		if bat_weapon:
-			# Direction isn't used by the bat weapon, but we pass aim_direction anyway
-			bat_weapon.attack(aim_direction)
-		else:
-			print("Cannot bat spin: No BatSpinWeapon equipped")
-
-func _ensure_bat_input() -> void:
-	# Create an input action at runtime so you don't have to edit Project Settings.
-	if InputMap.has_action("bat_attack"):
-		return
-	InputMap.add_action("bat_attack")
-
-	var ev_enter := InputEventKey.new()
-	ev_enter.keycode = KEY_ENTER
-	InputMap.action_add_event("bat_attack", ev_enter)
-
-	var ev_kp_enter := InputEventKey.new()
-	ev_kp_enter.keycode = KEY_KP_ENTER
-	InputMap.action_add_event("bat_attack", ev_kp_enter)
 
 func handle_animation() -> void:
 	if velocity.length() < 10:
@@ -130,3 +115,36 @@ func handle_collisions() -> void:
 		elif collider is Area2D:
 			if collider.is_in_group("items"):
 				pass
+
+func setup_timer_bar() -> void:
+	print("setup_timer_bar() called")
+	print("timer_bar reference: ", timer_bar)
+	if not timer_bar:
+		push_error("TimeBar not found in scene!")
+		return
+	
+	# Timer bar is already in the correct CanvasLayer in the scene hierarchy
+	# Just initialize it with 5 minutes (300 seconds)
+	print("Calling timer_bar.setup_bar with 300.0")
+	timer_bar.setup_bar.call_deferred(300.0)
+
+# Public method to modify timer from other scripts
+func modify_timer(delta_time: float) -> void:
+	print("modify_timer() called with delta_time: ", delta_time)
+	print("timer_bar is: ", timer_bar)
+	if timer_bar:
+		print("Calling timer_bar.change_value()")
+		timer_bar.change_value(delta_time)
+	else:
+		print("ERROR: timer_bar is null!")
+
+func handle_timer_countdown(delta: float) -> void:
+	countdown_timer += delta
+	if countdown_timer >= 1.0:
+		print("Timer countdown tick - removing 1 second")
+		countdown_timer -= 1.0
+		modify_timer(-1.0)
+
+# Override from LivingEntity to reduce timer when taking damage
+func _on_damage_taken(amount: float, damage_source: Node) -> void:
+	modify_timer(-amount)

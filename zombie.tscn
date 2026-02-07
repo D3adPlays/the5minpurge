@@ -2,6 +2,35 @@
 
 [ext_resource type="Script" uid="uid://blw5x5du6p06q" path="res://src/zombie.gd" id="1_roy8y"]
 [ext_resource type="Texture2D" uid="uid://pkly7b26vdhg" path="res://textures/Enemies/Zombie_Small/Zombie_Small_Down_Idle-Sheet6.png" id="1_uiaus"]
+[ext_resource type="Texture2D" uid="uid://756073jcp1ng" path="res://textures/Enemies/Zombie_Small/Zombie_Small_Side_Second-Death-Sheet7.png" id="2_jmu02"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogcpr"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i82o5"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw3ev"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4h2d"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pub2r"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcb2u"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vm0g"]
+atlas = ExtResource("2_jmu02")
+region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_roy8y"]
 atlas = ExtResource("1_uiaus")
@@ -31,6 +60,56 @@ region = Rect2(65, 0, 13, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ogcpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i82o5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jw3ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4h2d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pub2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dcb2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vm0g")
+}],
+"loop": false,
+"name": &"death",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_roy8y")
 }, {
 "duration": 1.0,
@@ -56,6 +135,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_roy8y"]
 radius = 13.152946
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmu02"]
+size = Vector2(73, 106)
+
 [node name="Zombie" type="CharacterBody2D" unique_id=1073264807]
 script = ExtResource("1_roy8y")
 
@@ -64,6 +146,10 @@ texture_filter = 1
 position = Vector2(0, -1.0000038)
 scale = Vector2(6.3461537, 6.346154)
 sprite_frames = SubResource("SpriteFrames_ogcpr")
+animation = &"death"
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1574589112]
 position = Vector2(0, 30)
@@ -72,3 +158,9 @@ shape = SubResource("CircleShape2D_roy8y")
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=234617498]
 debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=673604881]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1967347383]
+position = Vector2(3.5, -4)
+shape = SubResource("RectangleShape2D_jmu02")
