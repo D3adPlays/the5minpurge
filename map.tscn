@@ -46,6 +46,7 @@
 [ext_resource type="Texture2D" uid="uid://hjctm17hkb8g" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Flowers_1_yellow.png" id="44_iwan2"]
 [ext_resource type="Texture2D" uid="uid://db2txt6su7lxe" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Stump_1.png" id="45_hac6k"]
 [ext_resource type="Texture2D" uid="uid://qplbyaygwdlj" path="res://textures/Objects/Nature/Dark-Green/Grass-On-Top-Of-Things/Moss-On-Top_Dark-Green_9.png" id="46_tu3qe"]
+[ext_resource type="Texture2D" uid="uid://dmug0mk1151mo" path="res://textures/Objects/Washing-machine.png" id="47_y0s0d"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vivmo"]
 tile_data = PackedInt32Array(0, 262144, 7, 65536, 327680, 9, 131072, 327680, 9, 196608, 196608, 8, 262144, 327680, 9, 327680, 327680, 9, 393216, 262144, 805306375)
@@ -652,8 +653,8 @@ polygon = PackedVector2Array(-4.6763268, -8, 4.9747515, -8, 5.036045, 8, -4.6763
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0odxb"]
 polygon = PackedVector2Array(-4.6763268, -8, 4.9747515, -8, 5.036045, 8, -4.6763268, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lswn8"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_y0s0d"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, -1.7985859, -8, -1.6187286)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sb2pt"]
 polygon = PackedVector2Array(-8, -8, -3.956891, -8, 4.856186, 2.3381634, 4.856186, 8, -8, 8)
@@ -664,8 +665,8 @@ polygon = PackedVector2Array(-3.956891, 1.7985878, 3.0576, -8, 8, -8, 8, 8, -3.9
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qsp4k"]
 polygon = PackedVector2Array(-8, -8, -3.956892, -8, -3.7770338, -2.5180216, 4.6763268, -1.6187286, 3.5971737, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kq58d"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_epbps"]
+polygon = PackedVector2Array(-8, 2.5180225, 8, 2.5180225, 8, 8, -8, 8)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_seu75"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -679,8 +680,8 @@ polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4k2k6"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0rl1p"]
-polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xbf5p"]
+polygon = PackedVector2Array(-8, -8, 8, -8, 8, -2.1583042, -8, -2.3381624)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ok6jj"]
 polygon = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -706,11 +707,11 @@ texture = ExtResource("2_0t07s")
 0:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0odxb")
 0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
-3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_kq58d")
+3:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_epbps")
 5:1/0 = 0
-5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_0rl1p")
+5:1/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_xbf5p")
 0:2/0 = 0
-0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_lswn8")
+0:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_y0s0d")
 3:2/0 = 0
 3:2/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_seu75")
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -724,17 +725,29 @@ texture = ExtResource("2_0t07s")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_074og"]
 texture = ExtResource("3_6qsgm")
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, -5.3957615, 8, -0.5395756, -4.3166084, 8, -8)
 1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 3.7770348, -8, 3.956892, -8, -8, 8, -8)
 2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-1.2590103, 10.611666, -10.431807, -2.1583042, -4.136751, -8, 5.3957615, 4.136751)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.6187286, 8, -2.6978817, 8, -2.877739, -8, 1.6187286, -8)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 3.7770348, -8, 3.956892, -8, -8, 8, -8)
 2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.6187286, 8, -1.6187286, 8, -1.7985878, -8, 1.6187286, -8)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.6187286, 8, -2.6978817, 8, -2.877739, -8, 1.6187286, -8)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 3.7770348, -8, 3.956892, -8, -8, 8, -8)
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(1.6187286, 8, -1.6187286, 8, -1.7985878, -8, 1.6187286, -8)
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 5.5756207, -0.5395756, 1.4388714, -5.5756207, -8, 8, -8)
 1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 3.7770348, -8, 3.956892, -8, -8, 8, -8)
 2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.8992939, 1.6187286, -8, 5.036045, -8, -8, 5.5756207, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cegan"]
 texture = ExtResource("4_ooc2g")
@@ -1082,6 +1095,12 @@ polygon = PackedVector2Array(-4.3026123, -17.2341, -1.2368164, -16.80008, 2.3864
 [sub_resource type="CircleShape2D" id="CircleShape2D_tu3qe"]
 radius = 5.330983
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_y0s0d"]
+radius = 5.5130415
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu3qe"]
+size = Vector2(14.2650585, 23.423222)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epbps"]
 size = Vector2(10.996094, 11.83362)
 
@@ -1122,6 +1141,9 @@ radius = 5.1516647
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f61l"]
 radius = 4.542546
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi453"]
+size = Vector2(12.245615, 12.966509)
 
 [node name="Map" type="Node2D" unique_id=1093885806]
 
@@ -1391,6 +1413,12 @@ position = Vector2(-327.5, 2036.3751)
 scale = Vector2(4.900001, 5.64999)
 texture = ExtResource("24_kpdfo")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Hydrant1Red" unique_id=1611888002]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hydrant1Red/StaticBody2D" unique_id=791184740]
+position = Vector2(-0.30612236, 2.411487)
+shape = SubResource("CircleShape2D_y0s0d")
+
 [node name="Manhole" type="Sprite2D" parent="." unique_id=573715558]
 texture_filter = 1
 position = Vector2(-329, 2238)
@@ -1408,6 +1436,13 @@ texture_filter = 1
 position = Vector2(231.00002, 152)
 scale = Vector2(5.1875005, 4.767858)
 texture = ExtResource("26_e1wd7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Refrigerator" unique_id=1324326706]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Refrigerator/StaticBody2D" unique_id=896153492]
+position = Vector2(-3.8146973e-06, 1.7116127)
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_tu3qe")
 
 [node name="ShoppingCart" type="Sprite2D" parent="." unique_id=442235782]
 texture_filter = 1
@@ -2746,3 +2781,16 @@ texture_filter = 1
 position = Vector2(5552, 2675.9998)
 scale = Vector2(5.033337, 5.166663)
 texture = ExtResource("46_tu3qe")
+
+[node name="WashingMachine" type="Sprite2D" parent="." unique_id=474004299]
+texture_filter = 1
+position = Vector2(129, 163.99997)
+scale = Vector2(8.142858, 6.9666667)
+texture = ExtResource("47_y0s0d")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="WashingMachine" unique_id=1536886993]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WashingMachine/StaticBody2D" unique_id=283187772]
+position = Vector2(-0.3684206, 0.28708473)
+scale = Vector2(1, 1.0000002)
+shape = SubResource("RectangleShape2D_xi453")
