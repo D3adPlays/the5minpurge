@@ -38,6 +38,8 @@
 [ext_resource type="Texture2D" uid="uid://wm200pmquqpe" path="res://textures/Objects/Nature/Dark-Green/Tree_1_Spruce_Dark-Green.png" id="36_hac6k"]
 [ext_resource type="Texture2D" uid="uid://cm8r6xn5d2ybr" path="res://textures/Objects/Vehicles/Normal/Car_1/Car_1_Blue.png" id="37_tu3qe"]
 [ext_resource type="Texture2D" uid="uid://du1lub8qb6r1j" path="res://textures/Objects/Stop-sign_Down_1.png" id="38_vbtoe"]
+[ext_resource type="Texture2D" uid="uid://xrsb4w8omxov" path="res://textures/Objects/Nature/Dark-Green/Tree_6_Big-pine_Dark-Green.png" id="39_xkcq7"]
+[ext_resource type="Texture2D" uid="uid://rjjun11gvusn" path="res://textures/Objects/Nature/Dark-Green/Tree_3_Normal_Dark-Green.png" id="40_8uufd"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vivmo"]
 tile_data = PackedInt32Array(0, 262144, 7, 65536, 327680, 9, 131072, 327680, 9, 196608, 196608, 8, 262144, 327680, 9, 327680, 327680, 9, 393216, 262144, 805306375)
@@ -1124,7 +1126,7 @@ texture = ExtResource("18_6sq2s")
 [node name="TreeTrunk2GrassDarkGreen" type="Sprite2D" parent="." unique_id=1596513981]
 visibility_layer = 3
 texture_filter = 1
-position = Vector2(5560.001, 2627)
+position = Vector2(5756, 1959)
 rotation = 0.27044085
 scale = Vector2(4.8125057, 5.4999876)
 texture = ExtResource("19_4v3wx")
@@ -1332,3 +1334,33 @@ texture_filter = 1
 position = Vector2(-2682, 1486)
 scale = Vector2(5.8125, 6.1)
 texture = ExtResource("38_vbtoe")
+
+[node name="Tree6BigPineDarkGreen" type="Sprite2D" parent="." unique_id=1533830769]
+texture_filter = 1
+position = Vector2(6043, 3175)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="Tree6BigPineDarkGreen2" type="Sprite2D" parent="." unique_id=1670135091]
+texture_filter = 1
+position = Vector2(6072, 2540)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="Tree6BigPineDarkGreen3" type="Sprite2D" parent="." unique_id=266655788]
+texture_filter = 1
+position = Vector2(6356.9995, 3270)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="Tree6BigPineDarkGreen4" type="Sprite2D" parent="." unique_id=200624388]
+texture_filter = 1
+position = Vector2(6433, 2183)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="Tree3NormalDarkGreen" type="Sprite2D" parent="." unique_id=1276529560]
+texture_filter = 1
+position = Vector2(4860, -599)
+scale = Vector2(7.9776554, 8.425)
+texture = ExtResource("40_8uufd")
