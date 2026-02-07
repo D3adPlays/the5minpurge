@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ti2oxh5gyhjr"]
+
+[ext_resource type="Texture2D" uid="uid://di7jdwf7noeoq" path="res://textures/Objects/Vehicles/Normal/Car_7_Truck/Car_7_Green_Truck.png" id="1_b1nn5"]
+
+[node name="Car7GreenTruck" type="Sprite2D" unique_id=1668830696]
+texture_filter = 1
+scale = Vector2(5.0169516, 5.1034474)
+texture = ExtResource("1_b1nn5")

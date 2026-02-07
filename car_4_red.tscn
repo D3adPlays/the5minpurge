@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dba50h7psbidk"]
+
+[ext_resource type="Texture2D" uid="uid://dvb64hn488m1p" path="res://textures/Objects/Vehicles/Normal/Car_4/Car_4_Red.png" id="1_ar3lq"]
+
+[node name="Car4Red" type="Sprite2D" unique_id=2097195010]
+texture_filter = 1
+rotation = 0.013853474
+scale = Vector2(6.235652, 6.646114)
+texture = ExtResource("1_ar3lq")

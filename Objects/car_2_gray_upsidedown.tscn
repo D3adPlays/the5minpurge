@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://631iysgjyhww"]
+
+[ext_resource type="Texture2D" uid="uid://1dftvgilpe6" path="res://textures/Objects/Vehicles/Normal/Car_2_Upsidedown/Car_2_Gray_Upsidedown.png" id="1_2rjng"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_82xsv"]
+cull_mode = 1
+polygon = PackedVector2Array(-4.5, -18.5, -4.5, -16.5, -5.5, -16.5, -5.5, -15.5, -6.5, -15.5, -6.5, -13.5, -7.5, -13.5, -7.5, -9.5, -6.5, -9.5, -6.5, -8.5, -7.5, -8.5, -7.5, -6.5, -8.5, -6.5, -8.5, -3.5, -9.5, -3.5, -9.5, 0.5, -10.5, 0.5, -10.5, 2.5, -11.5, 2.5, -11.5, 3.5, -12.5, 3.5, -12.5, 4.5, -13.5, 4.5, -13.5, 10.5, -12.5, 10.5, -12.5, 14.5, -11.5, 14.5, -11.5, 15.5, -9.5, 15.5, -9.5, 16.5, -5.5, 16.5, -5.5, 17.5, -1.5, 17.5, -1.5, 18.5, 5.5, 18.5, 5.5, 17.5, 6.5, 17.5, 6.5, 16.5, 7.5, 16.5, 7.5, 13.5, 8.5, 13.5, 8.5, 8.5, 9.5, 8.5, 9.5, 5.5, 10.5, 5.5, 10.5, 1.5, 11.5, 1.5, 11.5, -1.5, 12.5, -1.5, 12.5, -3.5, 13.5, -3.5, 13.5, -11.5, 12.5, -11.5, 12.5, -13.5, 10.5, -13.5, 10.5, -14.5, 8.5, -14.5, 8.5, -15.5, 5.5, -15.5, 5.5, -16.5, 2.5, -16.5, 2.5, -17.5, -0.5, -17.5, -0.5, -18.5)
+
+[node name="Car2GrayUpsidedown" type="Sprite2D" unique_id=1119418524]
+texture_filter = 1
+rotation = 0.5054473
+scale = Vector2(6.538082, 6.538082)
+texture = ExtResource("1_2rjng")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1255134508]
+scale = Vector2(0.99999994, 0.99999994)
+occluder = SubResource("OccluderPolygon2D_82xsv")

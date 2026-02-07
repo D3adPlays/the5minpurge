@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://4mvlrtftdjh2"]
+
+[ext_resource type="Texture2D" uid="uid://dx06r5wbfs6ac" path="res://textures/Objects/Vehicles/Overgrown/Car_1_Overgrown/Dark-Green/Car_1_Overgrown_Dark-Green_Gray.png" id="1_k4mp8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d13ii"]
+size = Vector2(23.293695, 38.069725)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ryguw"]
+cull_mode = 2
+polygon = PackedVector2Array(-9.294216, -15.426346, -7.1183357, -16.501816, -5.0403175, -15.759872, -3.2383156, -16.607391, -1.2646103, -16.80629, 1.4937744, -16.228043, 4.8651314, -15.521301, 7.86261, -14.586624, 8.855907, -11.927856, 9.340542, -8.456757, 8.770927, -4.5940247, 9.016464, -1.4793549, 9.329399, 1.3430939, 8.992435, 2.804062, 8.625004, 5.790222, 8.735752, 9.489273, 9.048687, 12.311737, 7.9334908, 15.753784, 6.101017, 18.12651, 3.3121529, 19.073486, 0.553772, 18.49524, -1.8981247, 17.981247, -5.0977783, 17.923141, -7.653984, 16.468338, -9.431957, 13.032425, -9.916588, 9.561325, -9.138359, 7.5802307, -8.942623, 3.9454498, -9.01646, 1.4794159, -8.409931, -1.1502991, -8.925037, -3.0962067, -8.385902, -5.433731, -9.244411, -8.676895, -9.355167, -12.375931)
+
+[node name="Car1OvergrownDarkGreenGray" type="Sprite2D" unique_id=1939703739]
+rotation = -0.21644175
+scale = Vector2(3.8500724, 3.9538977)
+texture = ExtResource("1_k4mp8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2069380847]
+position = Vector2(3.6363637, 1.2121028)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1912170457]
+position = Vector2(-3.73283, -0.67178345)
+shape = SubResource("RectangleShape2D_d13ii")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1979982136]
+occluder = SubResource("OccluderPolygon2D_ryguw")

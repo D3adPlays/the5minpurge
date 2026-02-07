@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://vcca5gvwi1sp"]
+
+[ext_resource type="Texture2D" uid="uid://0eiu8oj7sqve" path="res://textures/Objects/Vehicles/Normal/Car_8_Bus/Car_8_Red_Bus.png" id="1_1bmwf"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_getpj"]
+cull_mode = 1
+polygon = PackedVector2Array(-25.5, -15.5, -25.5, -14.5, -26.5, -14.5, -26.5, -12.5, -27.5, -12.5, -27.5, -10.5, -28.5, -10.5, -28.5, -8.5, -29.5, -8.5, -29.5, -5.5, -30.5, -5.5, -30.5, 7.5, -29.5, 7.5, -29.5, 13.5, -28.5, 13.5, -28.5, 14.5, -24.5, 14.5, -24.5, 15.5, -10.5, 15.5, -10.5, 14.5, 4.5, 14.5, 4.5, 15.5, 18.5, 15.5, 18.5, 14.5, 27.5, 14.5, 27.5, 13.5, 28.5, 13.5, 28.5, 12.5, 29.5, 12.5, 29.5, 3.5, 30.5, 3.5, 30.5, -4.5, 29.5, -4.5, 29.5, -7.5, 28.5, -7.5, 28.5, -9.5, 27.5, -9.5, 27.5, -11.5, 26.5, -11.5, 26.5, -13.5, 25.5, -13.5, 25.5, -14.5, 24.5, -14.5, 24.5, -15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82xsv"]
+size = Vector2(62.859074, 31.9533)
+
+[node name="Car8RedBus" type="Sprite2D" unique_id=1669244512]
+texture_filter = 1
+scale = Vector2(7.237729, 7.237729)
+texture = ExtResource("1_1bmwf")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=549208525]
+occluder = SubResource("OccluderPolygon2D_getpj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2050525176]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1086245914]
+position = Vector2(-0.60006714, 0.21472168)
+shape = SubResource("RectangleShape2D_82xsv")
