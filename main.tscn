@@ -12,6 +12,7 @@
 [ext_resource type="Shader" uid="uid://bb6i7o0dy5lme" path="res://shaders/chromatic_aberration.gdshader" id="6_w48qg"]
 [ext_resource type="Texture2D" uid="uid://v7fcpapgmyrp" path="res://textures/Character/Main/Run/Character_side_run_no-hands-Sheet6.png" id="7_5vw27"]
 [ext_resource type="Texture2D" uid="uid://bd7l1f6lo53w8" path="res://textures/Character/Main/Run/Character_up_run-Sheet6.png" id="8_kek77"]
+[ext_resource type="Texture2D" uid="uid://bd2t3xvtmkqkf" path="res://textures/Lights/512x512 textures (38).png" id="12_facbu"]
 [ext_resource type="Texture2D" uid="uid://djrfjadnt7xrl" path="res://textures/Objects/Bench_4_side_Overgrown_Dark-Green.png" id="13_4k2k6"]
 [ext_resource type="Shader" uid="uid://wlkvfp24iqph" path="res://shaders/clouds.gdshader" id="13_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://bc3cdbg0gyu56" path="res://textures/Objects/Garbage-Bin_3.png" id="14_0rl1p"]
@@ -35,6 +36,7 @@
 [ext_resource type="AudioStream" uid="uid://c0hm0m7edq381" path="res://sounds/rain1.ogg" id="30_htxhm"]
 [ext_resource type="AudioStream" uid="uid://uolraelcylad" path="res://sounds/hurt.ogg" id="33_jq2sk"]
 [ext_resource type="Script" uid="uid://v17vufuf4sj" path="res://win.gd" id="34_win"]
+[ext_resource type="Texture2D" uid="uid://btqddit7oh284" path="res://textures/Escape.png" id="36_ok6jj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w48qg"]
 shader = ExtResource("13_ycdy4")
@@ -473,6 +475,30 @@ texture_filter = 1
 position = Vector2(249.00002, -1352.0001)
 scale = Vector2(4.028846, 4.124998)
 texture = ExtResource("13_4k2k6")
+
+[node name="Escape2" type="Sprite2D" parent="Map" unique_id=1591085968]
+position = Vector2(3778, 3411.9998)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("36_ok6jj")
+
+[node name="PointLight2D" type="PointLight2D" parent="Map/Escape2" unique_id=703034825]
+position = Vector2(13.471142, -20.206701)
+scale = Vector2(6.73533, 6.73533)
+color = Color(0, 1, 0, 1)
+texture = ExtResource("12_facbu")
+texture_scale = 0.73
+
+[node name="Escape" type="Sprite2D" parent="Map" unique_id=625339879]
+position = Vector2(2321, -2987)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("36_ok6jj")
+
+[node name="PointLight2D" type="PointLight2D" parent="Map/Escape" unique_id=898151217]
+position = Vector2(13.471142, -20.206701)
+scale = Vector2(6.73533, 6.73533)
+color = Color(0, 1, 0, 1)
+texture = ExtResource("12_facbu")
+texture_scale = 0.73
 
 [node name="Sky" type="CanvasLayer" parent="." unique_id=1769921489]
 layer = 100
