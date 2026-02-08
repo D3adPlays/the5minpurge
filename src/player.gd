@@ -28,7 +28,19 @@ func _on_ready() -> void:
 	setup_timer_bar()
 	
 func take_damage(amount: float, damage_source: Node = null) -> void:
+	# Play hurt sound
+	var hurt_sound = get_node_or_null("Hurt")
+	if hurt_sound and hurt_sound is AudioStreamPlayer:
+		hurt_sound.play()
+	# 3 small vibration bursts for damage feedback
+	vibrate_burst()
+
 	modify_timer(-15.0)
+
+func vibrate_burst() -> void:
+	for i in range(3):
+		Input.start_joy_vibration(0, 1, 0.7, 0.1)
+		await get_tree().create_timer(0.5).timeout
 
 func _physics_process(delta: float) -> void:
 	handle_movement()
@@ -153,8 +165,12 @@ func handle_timer_countdown(delta: float) -> void:
 	if countdown_timer >= 1.0:
 		print("Timer countdown tick - removing 1 second")
 		countdown_timer -= 1.0
+		$Node/Tickdown.play()
 		modify_timer(-1.0)
 
 # Override from LivingEntity to reduce timer when taking damage
 func _on_damage_taken(amount: float, damage_source: Node) -> void:
+	Input.start_joy_vibration(0, 0.8, 0.8, 0.9)
 	modify_timer(-amount)
+	# Vibrate controller for damage feedback
+	

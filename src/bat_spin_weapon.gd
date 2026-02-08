@@ -26,7 +26,7 @@ func _do_attack(direction: Vector2) -> void:
 		print("[TomatoGun] Player has modify_timer: ", player.has_method("modify_timer"))
 		if player.has_method("modify_timer"):
 			print("[TomatoGun] Calling player.modify_timer(-1.0)")
-			player.modify_timer(-5.0)
+			player.modify_timer(-15.0)
 			print("[TomatoGun] Timer modification complete")		
 		else:
 			print("[TomatoGun] ERROR: Player doesn't have modify_timer method!")

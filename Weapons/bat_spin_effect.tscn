@@ -1,7 +1,8 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://bsrsvo361i2pp"]
 
-[ext_resource type="Script" path="res://src/bat_spin_effect.gd" id="1_batfx"]
-[ext_resource type="Texture2D" path="res://textures/Character/Bat/Bat_side_attack-Sheet4.png" id="2_battex"]
+[ext_resource type="Script" uid="uid://bgdse26i6xeo1" path="res://src/bat_spin_effect.gd" id="1_batfx"]
+[ext_resource type="Texture2D" uid="uid://b82b0qxfsjqph" path="res://textures/Character/Bat/Bat_side_attack-Sheet4.png" id="2_battex"]
+[ext_resource type="AudioStream" uid="uid://cfvsc5mw57whp" path="res://sounds/Woosh.ogg" id="3_307ht"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_batfx"]
 radius = 110.0
@@ -42,15 +43,21 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="BatSpinEffect" type="Area2D"]
+[node name="BatSpinEffect" type="Area2D" unique_id=1221043309]
 script = ExtResource("1_batfx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1461728167]
 shape = SubResource("CircleShape2D_batfx")
 
-[node name="BatSprite" type="AnimatedSprite2D" parent="."]
+[node name="BatSprite" type="AnimatedSprite2D" parent="." unique_id=130338558]
 texture_filter = 1
 position = Vector2(110, 0)
 scale = Vector2(5, 5)
 sprite_frames = SubResource("SpriteFrames_batfx")
 autoplay = "default"
+
+[node name="Woosh" type="AudioStreamPlayer" parent="." unique_id=530304783]
+stream = ExtResource("3_307ht")
+volume_db = -20.702
+pitch_scale = 1.07
+autoplay = true

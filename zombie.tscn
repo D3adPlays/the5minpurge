@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://pkly7b26vdhg" path="res://textures/Enemies/Zombie_Small/Zombie_Small_Down_Idle-Sheet6.png" id="1_uiaus"]
 [ext_resource type="Texture2D" uid="uid://756073jcp1ng" path="res://textures/Enemies/Zombie_Small/Zombie_Small_Side_Second-Death-Sheet7.png" id="2_jmu02"]
 [ext_resource type="AudioStream" uid="uid://ci4amakugimyx" path="res://sounds/zombie-1.wav" id="4_lnshm"]
+[ext_resource type="AudioStream" uid="uid://dj2hdfj3l2bo1" path="res://sounds/Zombie_death.ogg" id="5_ogcpr"]
 [ext_resource type="AudioStream" uid="uid://dwckgtoui64my" path="res://sounds/zombie-2.wav" id="5_x5rsa"]
 [ext_resource type="AudioStream" uid="uid://bxhhw7axbmhtd" path="res://sounds/zombie-3.wav" id="6_ogcpr"]
+[ext_resource type="AudioStream" uid="uid://jdce4vhjgbfa" path="res://sounds/Zombie_hurt.ogg" id="7_hurt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogcpr"]
 atlas = ExtResource("2_jmu02")
@@ -136,7 +138,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_roy8y"]
-radius = 13.152946
+radius = 10.049875
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jmu02"]
 size = Vector2(73, 106)
@@ -156,6 +158,14 @@ volume_db = -4.364
 stream = ExtResource("6_ogcpr")
 volume_db = -4.364
 
+[node name="ZombieDeath" type="AudioStreamPlayer2D" parent="." unique_id=1877413091]
+stream = ExtResource("5_ogcpr")
+volume_db = -12.575
+
+[node name="ZombieHurt" type="AudioStreamPlayer2D" parent="." unique_id=1234567890]
+stream = ExtResource("7_hurt")
+volume_db = -10.864
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=212519111]
 texture_filter = 1
 position = Vector2(0, -1.0000038)
@@ -171,7 +181,6 @@ position = Vector2(0, 30)
 shape = SubResource("CircleShape2D_roy8y")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=234617498]
-debug_enabled = true
 debug_path_custom_color = Color(1, 0, 0, 1)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=673604881]
