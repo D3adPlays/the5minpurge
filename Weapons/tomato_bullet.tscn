@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://hxhonj0i68ld" path="res://src/tomato_projectile.gd" id="1_d46dn"]
 [ext_resource type="Texture2D" uid="uid://ckemnix68oawe" path="res://textures/Character/Guns/Bullets/tomato_icon.png" id="1_h0o7c"]
+[ext_resource type="AudioStream" uid="uid://bnerpajetfvsd" path="res://sounds/woop.ogg" id="3_awcru"]
+[ext_resource type="AudioStream" uid="uid://dub220w5n1ie5" path="res://sounds/tomato_splat.ogg" id="3_s67us"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d46dn"]
 radius = 15.033297
@@ -37,3 +39,12 @@ angle_min = -199.6
 angle_max = 256.6
 scale_amount_min = 0.1
 scale_amount_max = 0.2
+
+[node name="Pop" type="AudioStreamPlayer2D" parent="." unique_id=1458591831]
+stream = ExtResource("3_awcru")
+volume_db = -8.864
+autoplay = true
+
+[node name="TomatoSplat" type="AudioStreamPlayer2D" parent="." unique_id=867122137]
+stream = ExtResource("3_s67us")
+volume_db = -9.455
