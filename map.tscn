@@ -48,12 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://hjctm17hkb8g" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Flowers_1_yellow.png" id="44_iwan2"]
 [ext_resource type="Texture2D" uid="uid://db2txt6su7lxe" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Stump_1.png" id="45_hac6k"]
 [ext_resource type="Texture2D" uid="uid://qplbyaygwdlj" path="res://textures/Objects/Nature/Dark-Green/Grass-On-Top-Of-Things/Moss-On-Top_Dark-Green_9.png" id="46_tu3qe"]
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://ddwfgcrswyyvr" path="res://src/enemy_spawn_entry.gd" id="42_urahp"]
-[ext_resource type="PackedScene" uid="uid://baqydv0s2phxm" path="res://zombie.tscn" id="43_cskkv"]
 [ext_resource type="Texture2D" uid="uid://dmug0mk1151mo" path="res://textures/Objects/Washing-machine.png" id="47_y0s0d"]
-=======
->>>>>>> refs/remotes/origin/main
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vivmo"]
 tile_data = PackedInt32Array(0, 262144, 7, 65536, 327680, 9, 131072, 327680, 9, 196608, 196608, 8, 262144, 327680, 9, 327680, 327680, 9, 393216, 262144, 805306375)
@@ -1151,13 +1146,11 @@ script = ExtResource("42_urahp")
 enemy_scene = ExtResource("43_cskkv")
 spawn_count = 50
 
-<<<<<<< HEAD
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi453"]
-size = Vector2(12.245615, 12.966509)
-=======
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f61l"]
 radius = 4.542546
->>>>>>> refs/remotes/origin/main
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xi453"]
+size = Vector2(12.245615, 12.966509)
 
 [node name="Map" type="Node2D" unique_id=1093885806]
 
@@ -1426,7 +1419,6 @@ position = Vector2(-327.5, 2036.3751)
 scale = Vector2(4.900001, 5.64999)
 texture = ExtResource("24_kpdfo")
 
-<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Hydrant1Red" unique_id=1611888002]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hydrant1Red/StaticBody2D" unique_id=791184740]
@@ -1434,15 +1426,14 @@ position = Vector2(-0.30612236, 2.411487)
 shape = SubResource("CircleShape2D_y0s0d")
 
 [node name="Manhole" type="Sprite2D" parent="." unique_id=573715558]
-=======
-[node name="Manhole" type="Sprite2D" parent="." unique_id=573715558 groups=["navigation"]]
->>>>>>> refs/remotes/origin/main
+
+[node name="Manhole2" type="Sprite2D" parent="." unique_id=442083493 groups=["navigation"]]
 texture_filter = 1
 position = Vector2(-329, 2238)
 scale = Vector2(4.6562495, 4.4687557)
 texture = ExtResource("25_vbtoe")
 
-[node name="Manhole2" type="Sprite2D" parent="." unique_id=300319548 groups=["navigation"]]
+[node name="Manhole3" type="Sprite2D" parent="." unique_id=300319548 groups=["navigation"]]
 texture_filter = 1
 position = Vector2(-326.99997, 2312)
 scale = Vector2(4.6562495, 4.4687557)
@@ -1454,7 +1445,6 @@ position = Vector2(231.00002, 152)
 scale = Vector2(5.1875005, 4.767858)
 texture = ExtResource("26_e1wd7")
 
-<<<<<<< HEAD
 [node name="StaticBody2D" type="StaticBody2D" parent="Refrigerator" unique_id=1324326706]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Refrigerator/StaticBody2D" unique_id=896153492]
@@ -1463,14 +1453,6 @@ scale = Vector2(1, 1.0000002)
 shape = SubResource("RectangleShape2D_tu3qe")
 
 [node name="ShoppingCart" type="Sprite2D" parent="." unique_id=442235782]
-=======
-[node name="ShoppingCart" type="Sprite2D" parent="." unique_id=442235782 groups=["navigation"]]
->>>>>>> refs/remotes/origin/main
-texture_filter = 1
-position = Vector2(427.36325, -1747.9739)
-rotation = 1.5947185
-scale = Vector2(6.4422894, 8.378971)
-texture = ExtResource("27_xkcq7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="ShoppingCart" unique_id=1405013052]
 
@@ -1478,6 +1460,13 @@ texture = ExtResource("27_xkcq7")
 position = Vector2(0.32852173, -1.3098412)
 scale = Vector2(1.0000002, 1.0000002)
 shape = SubResource("RectangleShape2D_epbps")
+
+[node name="ShoppingCart2" type="Sprite2D" parent="." unique_id=476190516 groups=["navigation"]]
+texture_filter = 1
+position = Vector2(427.36325, -1747.9739)
+rotation = 1.5947185
+scale = Vector2(6.4422894, 8.378971)
+texture = ExtResource("27_xkcq7")
 
 [node name="TrashBag2" type="Sprite2D" parent="." unique_id=1378209239 groups=["navigation"]]
 texture_filter = 1
@@ -2811,8 +2800,6 @@ texture_filter = 1
 position = Vector2(5552, 2675.9998)
 scale = Vector2(5.033337, 5.166663)
 texture = ExtResource("46_tu3qe")
-<<<<<<< HEAD
-enemy_spawns = Array[ExtResource("42_urahp")]([SubResource("Resource_028i1")])
 
 [node name="WashingMachine" type="Sprite2D" parent="." unique_id=474004299]
 texture_filter = 1
@@ -2826,5 +2813,3 @@ texture = ExtResource("47_y0s0d")
 position = Vector2(-0.3684206, 0.28708473)
 scale = Vector2(1, 1.0000002)
 shape = SubResource("RectangleShape2D_xi453")
-=======
->>>>>>> refs/remotes/origin/main
