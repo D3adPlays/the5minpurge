@@ -10,6 +10,11 @@ func _on_body_entered(body: Node2D) -> void:
 	if has_won:
 		return
 	
+	# Check if the player has already lost (lose condition triggered)
+	var timer = get_tree().get_first_node_in_group("timer")
+	if timer and timer.has_lost:
+		return  # Don't trigger win if already lost
+	
 	# Check if the body is the player
 	if body.is_in_group("player"):
 		has_won = true
