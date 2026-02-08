@@ -53,21 +53,19 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	handle_collisions()
 	handle_timer_countdown(delta)
-	handle_pause_logic(delta)
 
 func has_player_input() -> bool:
 	if Input.is_action_pressed("left") \
 	or Input.is_action_pressed("right") \
 	or Input.is_action_pressed("up") \
 	or Input.is_action_pressed("down") \
-	or Input.is_action_pressed("attack"):
+	or Input.is_action_pressed("attack") \
+	or Input.is_action_pressed("bat_attack"):
 		return true
 
-	if Input.get_vector("left", "right", "up", "down") != Vector2.ZERO:
-		return true
-
-	if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) != 0.0 \
-	or Input.get_joy_axis(0, JOY_AXIS_LEFT_Y) != 0.0:
+	# Joystick avec deadzone réelle
+	if abs(Input.get_joy_axis(0, JOY_AXIS_LEFT_X)) > 0.25 \
+	or abs(Input.get_joy_axis(0, JOY_AXIS_LEFT_Y)) > 0.25:
 		return true
 
 	return false
@@ -138,6 +136,16 @@ func handle_animation() -> void:
 		else:
 			animated_sprite.play("walk-down")
 
+func _process(_delta):
+	if Input.is_action_just_pressed("pause"):
+		toggle_pause()
+
+func toggle_pause():
+	get_tree().paused = !get_tree().paused
+	print("PAUSED =", get_tree().paused)
+
+
+
 func handle_collisions() -> void:
 	# Handle collisions after move_and_slide()
 	for i in get_slide_collision_count():
@@ -190,28 +198,26 @@ func handle_timer_countdown(delta: float) -> void:
 		$Node/Tickdown.play()
 		modify_timer(-1.0)
 
-func handle_pause_logic(delta: float) -> void:
-	if Input.is_action_just_pressed("pause"):
-		is_paused_manually = !is_paused_manually
-		get_tree().paused = is_paused_manually
-		idle_time = 0.0
-		return
-
+func handle_pause_idle(delta: float) -> void:
+	# Si pause manuelle → on ignore l'auto pause
 	if is_paused_manually:
 		return
 
+	# Si le jeu est en pause auto → on dépausera au premier input
 	if get_tree().paused:
 		if has_player_input():
 			get_tree().paused = false
 			idle_time = 0.0
 		return
 
+	# Détection d'inactivité
 	if has_player_input():
 		idle_time = 0.0
 	else:
 		idle_time += delta
 		if idle_time >= IDLE_PAUSE_TIME:
 			get_tree().paused = true
+
 
 
 
