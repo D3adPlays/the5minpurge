@@ -1735,6 +1735,10 @@ enemy_spawns = Array[ExtResource("42_urahp")]([SubResource("Resource_028i1")])
 position = Vector2(1577, 1017)
 scale = Vector2(1.85, 1.85)
 
+[node name="SpawnZone" parent="SpawnZone" unique_id=8671480 groups=["navigation"] instance=ExtResource("41_8uufd")]
+position = Vector2(-330.2705, -549.7301)
+scale = Vector2(1.85, 1.85)
+
 [node name="Tree1SpruceDarkGreen2" type="Sprite2D" parent="." unique_id=908479207 groups=["navigation"]]
 texture_filter = 1
 position = Vector2(3139, -2879)

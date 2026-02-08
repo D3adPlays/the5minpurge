@@ -32,6 +32,7 @@
 [ext_resource type="AudioStream" uid="uid://d1vntudtposj8" path="res://sounds/end.ogg" id="29_qsp4k"]
 [ext_resource type="AudioStream" uid="uid://b2caxyocb2ojn" path="res://sounds/rain2.ogg" id="29_seu75"]
 [ext_resource type="AudioStream" uid="uid://c0hm0m7edq381" path="res://sounds/rain1.ogg" id="30_htxhm"]
+[ext_resource type="AudioStream" uid="uid://uolraelcylad" path="res://sounds/hurt.ogg" id="33_jq2sk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w48qg"]
 shader = ExtResource("13_ycdy4")
@@ -488,6 +489,10 @@ position = Vector2(-2849, 1891)
 motion_mode = 1
 script = ExtResource("1_ig7tw")
 
+[node name="Hurt" type="AudioStreamPlayer" parent="CharacterBody2D" unique_id=1387056953]
+stream = ExtResource("33_jq2sk")
+volume_db = -14.731
+
 [node name="AudioListener2D" type="AudioListener2D" parent="CharacterBody2D" unique_id=409015048]
 current = true
 
@@ -521,6 +526,7 @@ shape = SubResource("RectangleShape2D_0xm2m")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=959372920]
 material = SubResource("ShaderMaterial_vivmo")
+position = Vector2(-3, 17)
 position_smoothing_enabled = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="CharacterBody2D/Camera2D" unique_id=1071295861]
