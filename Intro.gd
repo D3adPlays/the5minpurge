@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	# Create first text label
 	var text1 = Label.new()
-	text1.text = "You crashed and found yourself stranded in the middle of zombies"
+	text1.text = "You crashed and found yourself stranded in the middle of nowhere..."
 	text1.modulate = Color(1, 1, 1, 0)  # Start transparent
 	text1.size = Vector2(1920, 400)
 	text1.position = Vector2(0, 300)
