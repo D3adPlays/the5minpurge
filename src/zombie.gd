@@ -17,7 +17,7 @@ func _on_ready() -> void:
 	
 	# Movement speeds
 	patrol_speed = 80.0
-	chase_speed = 120.0
+	chase_speed = 200.0
 	move_speed = patrol_speed
 	
 	# Combat properties

@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" path="res://Weapons/bat_spin_weapon.tscn" id="22_batspin"]
 [ext_resource type="Texture2D" uid="uid://c2s4d26eh4isp" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Rain-Drop_2_Long_Blue.png" id="26_lswn8"]
 [ext_resource type="PackedScene" uid="uid://c8jwngngb0ubl" path="res://timer.tscn" id="27_a6jrf"]
+[ext_resource type="AudioStream" uid="uid://dsbm63rnaojm2" path="res://sounds/Tickdown.ogg" id="29_htxhm"]
 [ext_resource type="AudioStream" uid="uid://d1vntudtposj8" path="res://sounds/end.ogg" id="29_qsp4k"]
 [ext_resource type="AudioStream" uid="uid://b2caxyocb2ojn" path="res://sounds/rain2.ogg" id="29_seu75"]
 [ext_resource type="AudioStream" uid="uid://c0hm0m7edq381" path="res://sounds/rain1.ogg" id="30_htxhm"]
@@ -556,6 +557,12 @@ offset_right = 1583.9995
 offset_bottom = -944.0
 
 [node name="Node" type="Node" parent="CharacterBody2D" unique_id=2111289708]
+
+[node name="Tickdown" type="AudioStreamPlayer" parent="CharacterBody2D/Node" unique_id=188275111]
+stream = ExtResource("29_htxhm")
+volume_db = -4.547
+autoplay = true
+parameters/looping = false
 
 [node name="Rain2" type="AudioStreamPlayer" parent="CharacterBody2D/Node" unique_id=761763958]
 stream = ExtResource("29_seu75")

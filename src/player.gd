@@ -153,6 +153,7 @@ func handle_timer_countdown(delta: float) -> void:
 	if countdown_timer >= 1.0:
 		print("Timer countdown tick - removing 1 second")
 		countdown_timer -= 1.0
+		$Node/Tickdown.play()
 		modify_timer(-1.0)
 
 # Override from LivingEntity to reduce timer when taking damage

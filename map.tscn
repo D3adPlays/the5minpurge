@@ -42,12 +42,12 @@
 [ext_resource type="Texture2D" uid="uid://xrsb4w8omxov" path="res://textures/Objects/Nature/Dark-Green/Tree_6_Big-pine_Dark-Green.png" id="39_xkcq7"]
 [ext_resource type="Texture2D" uid="uid://rjjun11gvusn" path="res://textures/Objects/Nature/Dark-Green/Tree_3_Normal_Dark-Green.png" id="40_8uufd"]
 [ext_resource type="PackedScene" uid="uid://cuhm54xp5n1di" path="res://SpawnZone.tscn" id="41_8uufd"]
+[ext_resource type="Script" uid="uid://ddwfgcrswyyvr" path="res://src/enemy_spawn_entry.gd" id="42_urahp"]
+[ext_resource type="PackedScene" uid="uid://baqydv0s2phxm" path="res://zombie.tscn" id="43_cskkv"]
 [ext_resource type="Texture2D" uid="uid://os1cnwk0q4i" path="res://textures/Objects/Nature/Dark-Green/Grass-On-Top-Of-Things/Moss-On-Top_Dark-Green_7.png" id="43_y0s0d"]
 [ext_resource type="Texture2D" uid="uid://hjctm17hkb8g" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Flowers_1_yellow.png" id="44_iwan2"]
 [ext_resource type="Texture2D" uid="uid://db2txt6su7lxe" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Stump_1.png" id="45_hac6k"]
 [ext_resource type="Texture2D" uid="uid://qplbyaygwdlj" path="res://textures/Objects/Nature/Dark-Green/Grass-On-Top-Of-Things/Moss-On-Top_Dark-Green_9.png" id="46_tu3qe"]
-[ext_resource type="Script" uid="uid://ddwfgcrswyyvr" path="res://src/enemy_spawn_entry.gd" id="42_urahp"]
-[ext_resource type="PackedScene" uid="uid://baqydv0s2phxm" path="res://zombie.tscn" id="43_cskkv"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vivmo"]
 tile_data = PackedInt32Array(0, 262144, 7, 65536, 327680, 9, 131072, 327680, 9, 196608, 196608, 8, 262144, 327680, 9, 327680, 327680, 9, 393216, 262144, 805306375)
@@ -1122,12 +1122,13 @@ radius = 5.7576885
 [sub_resource type="CircleShape2D" id="CircleShape2D_kwd4m"]
 radius = 5.1516647
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1f61l"]
-radius = 4.542546
 [sub_resource type="Resource" id="Resource_028i1"]
 script = ExtResource("42_urahp")
 enemy_scene = ExtResource("43_cskkv")
 spawn_count = 50
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f61l"]
+radius = 4.542546
 
 [node name="Map" type="Node2D" unique_id=1093885806]
 
@@ -1725,8 +1726,9 @@ texture = ExtResource("40_8uufd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree3NormalDarkGreen/StaticBody2D" unique_id=651125797]
 position = Vector2(0.8774508, 10.8011875)
 shape = SubResource("CircleShape2D_kwd4m")
+
 [node name="SpawnZone2" parent="." unique_id=436386275 instance=ExtResource("41_8uufd")]
-position = Vector2(-2253, 634)
+position = Vector2(-2397, 625)
 scale = Vector2(1.3355323, 4.1513867)
 enemy_spawns = Array[ExtResource("42_urahp")]([SubResource("Resource_028i1")])
 
@@ -2756,4 +2758,3 @@ texture_filter = 1
 position = Vector2(5552, 2675.9998)
 scale = Vector2(5.033337, 5.166663)
 texture = ExtResource("46_tu3qe")
-enemy_spawns = Array[ExtResource("42_urahp")]([SubResource("Resource_028i1")])
