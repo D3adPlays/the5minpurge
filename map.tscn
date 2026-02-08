@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://d3ftdn41i0k2h" path="res://textures/Objects/Vehicles/Normal/Car_9_Motorcycle/Car_9_Gray_Motorcycle_Side.png" id="15_2wwcf"]
 [ext_resource type="Texture2D" uid="uid://cktj81oktntdx" path="res://textures/Objects/Vehicles/Normal/Car_7_Truck/Car_7_Red_Truck.png" id="16_4sf5t"]
 [ext_resource type="Texture2D" uid="uid://d21v8xkjg8d2p" path="res://textures/Objects/Vehicles/Normal/Car_6_Scrap/Car_6_Gray_Scrap.png" id="17_3mr0t"]
+[ext_resource type="Texture2D" uid="uid://droejsege8dmd" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Rocks/Rock_6.png" id="17_hltbc"]
 [ext_resource type="Texture2D" uid="uid://s8m52oelxeft" path="res://textures/Objects/Nature/Dark-Green/Bush_2_Dark-Green.png" id="18_6sq2s"]
 [ext_resource type="Texture2D" uid="uid://c3x2m4c7nvaui" path="res://textures/Objects/Nature/Dark-Green/Tree-trunk_2_grass_Dark-Green.png" id="19_4v3wx"]
 [ext_resource type="Texture2D" uid="uid://bcqacr3uwtt5x" path="res://textures/Objects/Vehicles/Normal/Car_2_Upsidedown/Car_2_Blue_Upsidedown.png" id="20_y1wlr"]
@@ -41,6 +42,12 @@
 [ext_resource type="Texture2D" uid="uid://xrsb4w8omxov" path="res://textures/Objects/Nature/Dark-Green/Tree_6_Big-pine_Dark-Green.png" id="39_xkcq7"]
 [ext_resource type="Texture2D" uid="uid://rjjun11gvusn" path="res://textures/Objects/Nature/Dark-Green/Tree_3_Normal_Dark-Green.png" id="40_8uufd"]
 [ext_resource type="PackedScene" uid="uid://cuhm54xp5n1di" path="res://SpawnZone.tscn" id="41_8uufd"]
+[ext_resource type="Texture2D" uid="uid://os1cnwk0q4i" path="res://textures/Objects/Nature/Dark-Green/Grass-On-Top-Of-Things/Moss-On-Top_Dark-Green_7.png" id="43_y0s0d"]
+[ext_resource type="Texture2D" uid="uid://hjctm17hkb8g" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Flowers_1_yellow.png" id="44_iwan2"]
+[ext_resource type="Texture2D" uid="uid://db2txt6su7lxe" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Stump_1.png" id="45_hac6k"]
+[ext_resource type="Texture2D" uid="uid://qplbyaygwdlj" path="res://textures/Objects/Nature/Dark-Green/Grass-On-Top-Of-Things/Moss-On-Top_Dark-Green_9.png" id="46_tu3qe"]
+[ext_resource type="Script" uid="uid://ddwfgcrswyyvr" path="res://src/enemy_spawn_entry.gd" id="42_urahp"]
+[ext_resource type="PackedScene" uid="uid://baqydv0s2phxm" path="res://zombie.tscn" id="43_cskkv"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_vivmo"]
 tile_data = PackedInt32Array(0, 262144, 7, 65536, 327680, 9, 131072, 327680, 9, 196608, 196608, 8, 262144, 327680, 9, 327680, 327680, 9, 393216, 262144, 805306375)
@@ -1012,6 +1019,9 @@ pattern_1 = SubResource("TileMapPattern_2cqfq")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_urahp"]
 size = Vector2(36.02822, 14.557808)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hltbc"]
+size = Vector2(17.534935, 30.117012)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_028i1"]
 size = Vector2(36.10824, 13.093262)
 
@@ -1022,7 +1032,7 @@ polygon = PackedVector2Array(-17.577087, -3.7366028, -17.8667, -1.6261292, -15.4
 size = Vector2(54.873016, 27.39914)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_iwan2"]
-polygon = PackedVector2Array(-28.304016, 20.57431, -24.915527, 22.533783, -25.91214, 15.871613, -19.135101, 7.0540466, -8.770264, 8.425659, 1.1959534, -1.1756897, 13.155426, -11.364868, 20.729736, -15.283783, 24.317566, -14.304077, 27.905396, -10.385132, 24.716217, -19.398651, 18.13852, -23.905426, 10.763519, -27.82434, 2.3919067, -20.966217, -3.3884888, -15.67569, -7.7736206, -10.385132, -12.557404, -5.8783875, -18.138489, -1.9594727, -25.114838, 5.2905273, -28.503357, 10.972961)
+polygon = PackedVector2Array(-28.304016, 20.57431, -22.722961, 22.33783, -20.131744, 8.229736, -13.952698, 8.229736, -7.5743103, 4.310791, 0.39865112, -2.3513489, 13.155426, -11.364868, 20.729736, -15.283783, 24.317566, -14.304077, 27.905396, -10.385132, 24.716217, -19.398651, 18.13852, -23.905426, 10.763519, -27.82434, 2.3919067, -20.966217, -3.3884888, -15.67569, -7.7736206, -10.385132, -12.557404, -5.8783875, -18.138489, -1.9594727, -25.114838, 5.2905273, -28.503357, 10.972961)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_sb2pt"]
 vertices = PackedVector2Array(4563, 2157, 4731, 2157, 4731, 2219, 4563, 2219, 4563, 2275, 4333, 2275, 4333, 2101, 4563, 2101, 3555, 2331, 3555, 2387, 3499, 2387, 77, 2381, 77, 2051, 917, 1093, 6523.2734, 1323, 6523, 1323, 861, 1165.3203, 861, 1099, 637, -1427, 1533, -1365, 587, -1365, 419, -1427, 133, 1333.3203, 133, 797.39844, 148.14063, 866.25, 27, 595, 27, 1211, -85, 1211, -203, 1037, -203, 595, 755, 1093, 699, 1099, 749, 1093, 587, 1093, 284.5703, 836.25, 413, 701, 587, 589, 307, 483, 241.5, 640.39844, 133, 664.25, 133, 595, 251, 253, 917, 645, 6542.883, -3066.8828, 917, 651, 917, 315, 805, 1165.3203, 805, 1164.6875, -91, 1389.3203, -91, 1388.6875, -35, 1389.3203, 3381, 2845.3203, 3381, 2844.6875, 3437, 2845.3203, 3661, 2773, 3661, 2732.6875, 3717, 2733.3203, 6514.1094, 3373.0313, 3829, 2677.3203, 3829, 2676.6875, 3885, 2677.3203, 3885, 2676.6875, 3941, 2677.3203, 3941, 2676.6875, 3997, 2677.3203, 3997, 2676.6875, 4053, 2677.3203, 4053, 2676.6875, 4109, 2677.3203, 6243, 1491, 6243, 1659, 6187, 1659, -282.42188, 1557.1406, -975.8672, 2023.1875, -975.8672, 1741.9219, -328.60938, 1603.3281, 4227, 1995, -85, 2051, -3040.2188, -3023.1094, 1427, -3043.5078, 1427, -2995, 2149, -3046.8125, 2491, -3048.3594, 2491, -2995, 2149, -2995, 6461, 1989, 6520.297, 1989, 6461, 2045, 6411, 1379, 6411, 1435, 6299, 1435, 3437, 3377.4766, 3437, 3283, 749, 315, 749, 147, 357, 147, 357, 35, -309, 141, 251, 141, 643, 253, 643, 421, 811, 651, 811, 987, 755, 987, 693, 483, 749, 987, 693, 987, 413, 589, 307, 701, -483, 595, -483, 141, -371, 141, -589, 701, -309, 701, -309, 1037, -85, 1317, -91, 1317, -91, 1211, -203, 1155, -203, 1211, -309, 1155, 6523, 1379, 699, 1164.1328, 6299, 1491, -197, 1388.1328, -288.60156, 1534.0625, -305.5078, 1517.1328, 6187, 1771, 6131, 1771, 6131, 1827, 6075, 1827, 6075, 1883, 6019, 1883, 6019, 1939, 5963, 1939, 5963, 1995, 5907, 1995, 5907, 2051, 5795, 2051, -288.60156, 1580.2422, 5795, 2107, 5627, 2107, 4837, 2051, 4669, 1995, 5627, 2163, 5515, 2163, 5515, 2219, 5403, 2219, 5403, 2275, 5291, 2275, 5453, 2661, 5453, 2605, 5565, 2605, 5565, 2549, 5677, 2549, 5677, 2493, 5845, 2493, 5845, 2437, 5957, 2437, 5957, 2381, 6069, 2381, 6069, 2325, 6181, 2325, 6181, 2269, 6237, 2269, 6237, 2213, 6293, 2213, 6293, 2157, 6349, 2157, 6349, 2101, 6405, 2101, 6405, 2045, 3381, 3283, 3381, 3059, 3325, 3059, 3325, 2891, 3269, 2891, 3269, 2885, 3290.6563, 2885, 3437, 2829, 3458.6563, 2829, 3493, 2723, 3493, 2661, 3499, 2661, 3499, 2717, 3549, 2723, 3555, 2717, 3555, 2773, 3549, 2789.3203, 3717, 2717, 3738.6563, 2717, 4109, 2661, 4130.6563, 2661, 4165, 2616, 4165, 2605, 5067, 2605, 5067, 2661, 5229, 2275, 4837, 2275, 4669, 2051, 4227, 2275, 3779, 2275, 3779, 2331, -85, 2157, -29, 2157, -29, 2275, -203, 2275, -203, 2051, 3499, 2499, 3437, 2499, 3437, 2387, 3331, 2387, 3331, 2443, 3219, 2443, 3219, 2499, 3107, 2499, 3107, 2555, 2995, 2555, 2995, 2611, 2939, 2611, 2939, 2667, 2883, 2667, 2883, 2723, 2715, 2723, 2715, 2779, 2603, 2779, 2603, 2835, 2491, 2835, 2491, 2891, 2435, 2891, 2435, 2947, 2379, 2947, 2379, 3003, 1707, 3003, 1707, 3059, 1483, 3059, 1483, 3115, 1315, 3115, 1315, 3171, 1203, 3171, 1203, 3227, 1147, 3227, 1147, 3283, 1091, 3283, 1091, 3339, 867, 3339, 1483, -2995, 1483, -2989, 1427, -2989, 1427, -2597, 1371, -2597, 1371, -2491, 1427, -2491, 1427, -2379, 693, -2317, 1483, -2379, 1483, -2317, 1427, -2317, 1427, -2093, 693, -2093, 357, -1141, 245, -1141, 245, -1427, 357, -1427, 357, -1533, 245, -1533, 245, -2211, 587, -2211, 587, -1987, 1533, -1987, 1533, -2211, 1875, -2211, 1875, -2043, 1981, -2043, 1981, -2099, 2099, -2099, 2099, -2043, 2205, -2205, 1981, -2205, 1981, -2317, 2037, -2491, 1869, -2317, 1869, -2435, 1925, -2435, 1925, -2491, 2037, -2653, 1981, -2653, 1981, -2715, 2093, -2715, 2093, -2995, 2603, -2995, 2603, -2939, 3275, -2939, 3275, -2883, 3387, -2883, 3387, -2827, 3331, -2653, 3611, -2827, 3611, -2821, 3555, -2821, 3555, -2765, 3499, -2765, 3499, -2709, 3443, -2709, 3443, -2653, 3331, -2541, 3219, -2541, 3219, -2485, 3163, -2485, 3163, -2429, 3107, -2429, 3107, -2373, 3051, -2373, 3051, -2317, 2939, -2317, 2939, -2261, 2883, -2261, 2883, -2205, 2715, -2205, 2715, -2093, 2659, -2093, 2659, -2037, 2547, -2037, 2205, -2043, 2547, -1981, 2491, -1981, 2205, -2037, 2491, -1925, 2435, -1925, 2435, -1869, 2205, -1869, 2099, -2037, 2099, -1925, 1981, -1925, 1981, -2037, 1875, -2037, 1875, -1141, 1533, -1141, 587, -1141, 475, -1141, 693, -1035, 693, -1259, 1427, -1259, 1427, -1035, 1981, -1035, 1981, -1819, 2099, -1819, 2099, -1707, 2211, -1707, 2211, -1651, 2379, -1651, 2379, -1595, 2653, -1595, 2653, -1707, 2709, -1707, 2709, -1763, 2765, -1763, 2765, -1819, 2877, -1819, 2877, -1931, 2989, -1931, 2989, -1987, 3101, -1987, 3101, -2043, 3157, -2043, 3157, -2099, 3213, -2099, 3213, -2155, 3269, -2155, 3269, -2211, 3437, -2211, 3437, -2267, 3549, -2267, 3549, -2379, 3605, -2379, 3605, -2435, 3773, -2435, 3773, -2491, 3829, -2491, 3829, -2603, 3941, -2603, 3941, -2659, 3997, -2659, 3997, -2771, 4053, -2771, 4053, -2827, 4109, -2827, 4109, -2883, 4165, -2883, 4165, -2939, 4221, -2939, 4221, -2995, 4277, -2995, 867, 3381.211, -3097.7734, 3386.961, -309, 2381, 4277, -3056.5234, 3291.7813, 2844.3125, 3459.7813, 2788.3125, 3739.7813, 2676.3125, 4131.9063, 2616, 811, 645, 637, -1533, 139, -2317, 139, -1035, -589, 35, 811, 421, -309, 35, -371, 35, -309, 2051, -1480.8203, 2023.1875, 5229, 2661, -328.60938, 1510.9688, -309, 1317, -197, 1323, 419, -1533, 27, 1332.1328, -35, 1323, 27, 1317, -351.6875, 1517.1328, -305.5078, 1597.1484, 5291, 2661, -368.6172, 1534.0625, -374.78125, 1557.1406, -1480.8203, 1741.9219, 357, -1035, 475, -1035, -351.6875, 1597.1484, -368.6172, 1580.2422)
@@ -1037,25 +1047,42 @@ agent_radius = 25.0
 size = Vector2(18.8172, 35.592308)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tu3qe"]
+cull_mode = 2
 polygon = PackedVector2Array(-8.602158, -14.545471, -5.376343, -16.749329, -1.290329, -16.52893, 2.7956848, -16.749329, 7.9569855, -14.986237, 9.032242, -11.4600525, 9.032242, -7.9338684, 8.8172, -1.9834595, 9.032242, 3.7465515, 8.602142, 8.595047, 8.602142, 13.22316, 8.602142, 17.410477, 5.591385, 19.834732, 1.9354706, 18.292023, -2.1505432, 18.07164, -4.5161285, 19.173569, -7.7419434, 16.308548, -9.677429, 14.986237, -8.817215, 11.019302, -8.817215, 5.7300415, -8.602158, 0, -8.602158, -5.068878, -8.817215, -9.256195)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwan2"]
+size = Vector2(17.799683, 30.48988)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hac6k"]
+cull_mode = 2
+polygon = PackedVector2Array(-7.7995605, -12.3748665, -4.2542725, -14.313099, 1.9499512, -14.462193, 6.736084, -13.865814, 8.331543, -10.585728, 8.331543, -6.261978, 8.331543, -1.4909477, 8.508789, 3.130989, 9.217773, 8.945686, 9.040527, 11.927582, 8.508789, 13.567625, 3.8999023, 14.164003, -1.772583, 14.164003, -5.495117, 13.269436, -8.508667, 9.392971, -8.331421, 5.0692215, -8.331421, 0.74547577, -6.3814697, -1.4909477, -8.154053, -5.3674126, -9.572266, -9.542065)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_28eae"]
+size = Vector2(18.171783, 5.5422974)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1xagg"]
 size = Vector2(60.70117, 24.939194)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_urahp"]
+cull_mode = 2
 polygon = PackedVector2Array(10.918213, -27.935852, 14.399902, -26.694275, 17.578857, -24.565826, 22.12024, -21.727905, 25.904724, -18.889984, 25.904724, -13.214142, 26.056091, -7.183563, 23.028503, -3.4587708, 19.092651, 0.62072754, 14.854065, 4.8776245, 11.220947, 8.602386, 6.5281982, 12.681915, 2.1382446, 17.470917, -1.9490356, 21.373016, -4.3710938, 24.92044, -9.517944, 27.93576, -17.086914, 27.226227, -24.353088, 23.501495, -28.743103, 21.01828, -28.28894, 12.859283, -28.137573, 7.892914, -22.839294, 3.2812805, -18.903442, -1.5076904, -14.362122, -4.8777466, -8.60968, -10.021484, -3.765564, -14.455719, 1.2299194, -19.954193, 6.0740967, -23.856354, 8.798889, -25.984772)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cskkv"]
 size = Vector2(38.905487, 16.127975)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_028i1"]
+cull_mode = 2
 polygon = PackedVector2Array(-18.955261, 8.159943, -18.856201, 5.551544, -18.95996, 1.9538269, -18.648682, -1.2463379, -18.582642, -5.317444, -13.614563, -5.567566, -8.969421, -7.6377563, -3.8740234, -8.24295, -0.5800171, -7.7113647, 2.9733887, -8.680603, 7.31427, -8.736389, 11.435913, -7.014557, 14.557739, -5.6143494, 17.722046, -4.3324585, 18.453003, -0.9290161, 18.424683, 3.81427, 18.068604, 7.5281067, 13.100464, 7.7781982, 9.933838, 6.8916016, 7.04303, 8.734009, 4.1192017, 9.113647, 0.74505615, 8.02829, -3.4732666, 8.519562, -6.642273, 8.028259, -10.723816, 6.583374, -12.447449, 8.669159, -15.7508545, 9.71875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uufd"]
 size = Vector2(19.358292, 31.716732)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8uufd"]
+cull_mode = 2
 polygon = PackedVector2Array(-4.3026123, -17.2341, -1.2368164, -16.80008, 2.3864136, -15.932053, 5.312866, -14.774673, 8.796722, -13.761963, 12.001892, -12.170563, 12.001892, -7.251709, 10.887054, -3.0561981, 10.32962, 1.1392975, 8.936066, 5.6241455, 7.4031677, 9.819641, 6.28833, 14.015152, 4.755432, 16.908585, 0.8535156, 17.053268, -4.5813293, 15.895889, -7.6471252, 14.883194, -10.991638, 14.159836, -12.245819, 10.9770355, -11.4096985, 5.768814, -9.5980835, 0.12658691, -8.622589, -3.7795563, -7.368408, -7.8303986, -6.2535706, -13.761963)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tu3qe"]
+radius = 5.330983
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epbps"]
 size = Vector2(10.996094, 11.83362)
@@ -1069,6 +1096,9 @@ size = Vector2(10.403967, 7.766014)
 [sub_resource type="CircleShape2D" id="CircleShape2D_28eae"]
 radius = 3.9806333
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_epbps"]
+radius = 11.323812
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwd4m"]
 size = Vector2(31.2258, 22.266663)
 
@@ -1080,7 +1110,24 @@ height = 7.476074
 size = Vector2(17.241379, 34.141235)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xi453"]
-polygon = PackedVector2Array(-6.13031, -10.944794, -2.1073303, -10.944794, 1.5325317, -10.944794, 5.9386597, -11.271515, 6.704956, -5.3907166, 6.704956, -1.6335449, 7.0880737, 1.1434937, 6.704956, 5.5541077, 0.9578247, 5.5541077, -6.5134583, 5.5541077, -6.5134583, 0.81677246, -6.705017, -3.9205322, -6.321869, -6.8609314)
+cull_mode = 2
+polygon = PackedVector2Array(-8.0460205, -15.682098, -3.0517578e-05, -15.682098, 6.704956, -15.192047, 8.237518, -11.761566, 8.6206665, -5.227356, 8.6206665, -0.65341187, 8.237518, 4.2472534, 8.237518, 15.028717, -0.3831787, 15.028717, -9.003876, 14.375275, -7.8544617, 0.6534424, -8.0460205, -4.573944, -8.0460205, -9.63797)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xbf5p"]
+radius = 3.6166022
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_na5ms"]
+radius = 5.7576885
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kwd4m"]
+radius = 5.1516647
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f61l"]
+radius = 4.542546
+[sub_resource type="Resource" id="Resource_028i1"]
+script = ExtResource("42_urahp")
+enemy_scene = ExtResource("43_cskkv")
+spawn_count = 50
 
 [node name="Map" type="Node2D" unique_id=1093885806]
 
@@ -1136,6 +1183,14 @@ position = Vector2(-1224.0001, 1880.9999)
 [node name="Car2GrayUpsidedown" parent="." unique_id=1119418524 groups=["navigation"] instance=ExtResource("9_6qsgm")]
 position = Vector2(-397.00003, 1720.0001)
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Car2GrayUpsidedown" unique_id=627614742]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car2GrayUpsidedown/StaticBody2D" unique_id=1475330977]
+position = Vector2(-0.17930476, 0.62363255)
+rotation = 0.17515081
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_hltbc")
+
 [node name="Car4Red" parent="." unique_id=2097195010 groups=["navigation"] instance=ExtResource("10_ooc2g")]
 position = Vector2(2510.25, -2844.6501)
 
@@ -1187,11 +1242,28 @@ position = Vector2(5848, -302)
 scale = Vector2(5.6412854, 6.7071433)
 texture = ExtResource("13_ooc2g")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Car5RustTractorUp" unique_id=34107177]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car5RustTractorUp/StaticBody2D" unique_id=457096011]
+position = Vector2(0, 0.4100113)
+scale = Vector2(0.9999999, 1)
+shape = SubResource("RectangleShape2D_iwan2")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Car5RustTractorUp" unique_id=2077348210]
+occluder = SubResource("OccluderPolygon2D_hac6k")
+
 [node name="Car9GrayMotorcycleSide" type="Sprite2D" parent="." unique_id=461502074]
 texture_filter = 1
 position = Vector2(3575.9998, 3370.0002)
 scale = Vector2(7.342386, 6.281248)
 texture = ExtResource("15_2wwcf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Car9GrayMotorcycleSide" unique_id=1293797060]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Car9GrayMotorcycleSide/StaticBody2D" unique_id=825433713]
+position = Vector2(-0.40854698, 4.1392508)
+scale = Vector2(1.0000001, 1)
+shape = SubResource("RectangleShape2D_28eae")
 
 [node name="Car7RedTruck" type="Sprite2D" parent="." unique_id=2014260747]
 texture_filter = 1
@@ -1209,6 +1281,12 @@ shape = SubResource("RectangleShape2D_1xagg")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Car7RedTruck" unique_id=445447253]
 occluder = SubResource("OccluderPolygon2D_urahp")
+
+[node name="Rock6" type="Sprite2D" parent="Car7RedTruck" unique_id=1592945755]
+texture_filter = 1
+position = Vector2(220.65271, 45.72891)
+scale = Vector2(0.59060436, 0.8454519)
+texture = ExtResource("17_hltbc")
 
 [node name="Car6GrayScrap" type="Sprite2D" parent="." unique_id=695342295]
 texture_filter = 1
@@ -1287,6 +1365,11 @@ texture_filter = 1
 position = Vector2(-2208.875, -1412.625)
 scale = Vector2(10.749998, 8.216668)
 texture = ExtResource("21_n2jt6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RoofHole1Gray3" unique_id=348802602]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoofHole1Gray3/StaticBody2D" unique_id=43264719]
+shape = SubResource("CircleShape2D_tu3qe")
 
 [node name="RoofHole1Gray2" type="Sprite2D" parent="." unique_id=592560345]
 texture_filter = 1
@@ -1401,6 +1484,12 @@ position = Vector2(1417, -1224)
 scale = Vector2(2.5666666, 2.6538417)
 texture = ExtResource("30_urahp")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Tire2" unique_id=17788546]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tire2/StaticBody2D" unique_id=1389921415]
+position = Vector2(-1.1688312, 1.507249)
+shape = SubResource("CircleShape2D_epbps")
+
 [node name="ChipsPackYellow" type="Sprite2D" parent="." unique_id=348457098]
 texture_filter = 1
 position = Vector2(1063, -1392.0001)
@@ -1499,29 +1588,131 @@ position = Vector2(-2682, 1486)
 scale = Vector2(5.8125, 6.1)
 texture = ExtResource("38_vbtoe")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="StopSignDown1" unique_id=1596653982]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopSignDown1/StaticBody2D" unique_id=1483069106]
+position = Vector2(0.17204301, 10.491802)
+shape = SubResource("CircleShape2D_xbf5p")
+
 [node name="Tree6BigPineDarkGreen" type="Sprite2D" parent="." unique_id=1533830769]
 texture_filter = 1
 position = Vector2(6043, 3175)
 scale = Vector2(5.8703704, 5.622449)
 texture = ExtResource("39_xkcq7")
 
-[node name="Tree6BigPineDarkGreen2" type="Sprite2D" parent="." unique_id=1670135091]
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen" unique_id=1477950380]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen/StaticBody2D" unique_id=690460425]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen2" type="Sprite2D" parent="." unique_id=52856334]
 texture_filter = 1
-position = Vector2(6072, 2540)
+position = Vector2(5993, 2563)
 scale = Vector2(5.8703704, 5.622449)
 texture = ExtResource("39_xkcq7")
 
-[node name="Tree6BigPineDarkGreen3" type="Sprite2D" parent="." unique_id=266655788]
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen2" unique_id=1502071397]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen2/StaticBody2D" unique_id=909355450]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen3" type="Sprite2D" parent="." unique_id=307732658]
 texture_filter = 1
-position = Vector2(6356.9995, 3270)
+position = Vector2(6384, 2306)
 scale = Vector2(5.8703704, 5.622449)
 texture = ExtResource("39_xkcq7")
 
-[node name="Tree6BigPineDarkGreen4" type="Sprite2D" parent="." unique_id=200624388]
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen3" unique_id=955613241]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen3/StaticBody2D" unique_id=310004337]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen4" type="Sprite2D" parent="." unique_id=1759477567]
 texture_filter = 1
-position = Vector2(6433, 2183)
+position = Vector2(6293.0005, 2584)
 scale = Vector2(5.8703704, 5.622449)
 texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen4" unique_id=924965389]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen4/StaticBody2D" unique_id=814684004]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen5" type="Sprite2D" parent="." unique_id=1163184679]
+texture_filter = 1
+position = Vector2(6381, 3265)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen5" unique_id=2063694085]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen5/StaticBody2D" unique_id=1081083846]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen6" type="Sprite2D" parent="." unique_id=1822033222]
+texture_filter = 1
+position = Vector2(4257.0005, 2718)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen6" unique_id=193482756]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen6/StaticBody2D" unique_id=627115849]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen7" type="Sprite2D" parent="." unique_id=723679741]
+texture_filter = 1
+position = Vector2(2031, 2754)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen7" unique_id=231459584]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen7/StaticBody2D" unique_id=180563892]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen8" type="Sprite2D" parent="." unique_id=445870537]
+texture_filter = 1
+position = Vector2(1388, 2842)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen8" unique_id=2105577157]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen8/StaticBody2D" unique_id=1000283748]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen9" type="Sprite2D" parent="." unique_id=164491]
+texture_filter = 1
+position = Vector2(694, 3126.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen9" unique_id=429831823]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen9/StaticBody2D" unique_id=1951350982]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen9" type="Sprite2D" parent="Tree6BigPineDarkGreen9" unique_id=726501831]
+texture_filter = 1
+position = Vector2(688.00006, 3128)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen9/Tree6BigPineDarkGreen9" unique_id=898742125]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen9/Tree6BigPineDarkGreen9/StaticBody2D" unique_id=789254023]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
 
 [node name="Tree3NormalDarkGreen" type="Sprite2D" parent="." unique_id=1276529560]
 texture_filter = 1
@@ -1529,8 +1720,18 @@ position = Vector2(4860, -599)
 scale = Vector2(7.9776554, 8.425)
 texture = ExtResource("40_8uufd")
 
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree3NormalDarkGreen" unique_id=614813536]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree3NormalDarkGreen/StaticBody2D" unique_id=651125797]
+position = Vector2(0.8774508, 10.8011875)
+shape = SubResource("CircleShape2D_kwd4m")
+[node name="SpawnZone2" parent="." unique_id=436386275 instance=ExtResource("41_8uufd")]
+position = Vector2(-2253, 634)
+scale = Vector2(1.3355323, 4.1513867)
+enemy_spawns = Array[ExtResource("42_urahp")]([SubResource("Resource_028i1")])
+
 [node name="SpawnZone" parent="." unique_id=650088937 instance=ExtResource("41_8uufd")]
-position = Vector2(-2115.0002, 325.00012)
+position = Vector2(1577, 1017)
 scale = Vector2(1.85, 1.85)
 
 [node name="Tree1SpruceDarkGreen2" type="Sprite2D" parent="." unique_id=908479207]
@@ -1580,3 +1781,979 @@ texture = ExtResource("36_hac6k")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tree1SpruceDarkGreen5/StaticBody2D" unique_id=754396485]
 position = Vector2(-1.0526316, 11.0935545)
 shape = SubResource("CapsuleShape2D_8uufd")
+
+[node name="Tree6BigPineDarkGreen10" type="Sprite2D" parent="." unique_id=678794951]
+texture_filter = 1
+position = Vector2(908, 2561.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen10" unique_id=2107942511]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen10/StaticBody2D" unique_id=1722359953]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen11" type="Sprite2D" parent="." unique_id=415728703]
+texture_filter = 1
+position = Vector2(386.00003, 2730.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen11" unique_id=1347798672]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen11/StaticBody2D" unique_id=258329419]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen12" type="Sprite2D" parent="." unique_id=1418433245]
+texture_filter = 1
+position = Vector2(86.00006, 3245.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen12" unique_id=235255028]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen12/StaticBody2D" unique_id=1382343011]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen13" type="Sprite2D" parent="." unique_id=314908859]
+texture_filter = 1
+position = Vector2(-734.9998, 2888.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen13" unique_id=956602626]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen13/StaticBody2D" unique_id=331566300]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen14" type="Sprite2D" parent="." unique_id=1852749991]
+texture_filter = 1
+position = Vector2(-490.99982, 3276.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen14" unique_id=323969827]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen14/StaticBody2D" unique_id=1954850579]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen15" type="Sprite2D" parent="." unique_id=1383062086]
+texture_filter = 1
+position = Vector2(-204.99994, 2857.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen15" unique_id=311950513]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen15/StaticBody2D" unique_id=1318560811]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen16" type="Sprite2D" parent="." unique_id=280442530]
+texture_filter = 1
+position = Vector2(-543.9998, 2446.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen16" unique_id=1452028967]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen16/StaticBody2D" unique_id=1025478434]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen17" type="Sprite2D" parent="." unique_id=1505445126]
+texture_filter = 1
+position = Vector2(-2027, 3007)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen17" unique_id=1131302820]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen17/StaticBody2D" unique_id=1575177726]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen18" type="Sprite2D" parent="." unique_id=1526368039]
+texture_filter = 1
+position = Vector2(-1374, 3198)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen18" unique_id=1843687831]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen18/StaticBody2D" unique_id=1629500453]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen19" type="Sprite2D" parent="." unique_id=44162998]
+texture_filter = 1
+position = Vector2(-1460, 2499)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen19" unique_id=200293263]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen19/StaticBody2D" unique_id=854911359]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen19" type="Sprite2D" parent="Tree6BigPineDarkGreen19" unique_id=999806556]
+texture_filter = 1
+position = Vector2(-1520, 2485)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen19/Tree6BigPineDarkGreen19" unique_id=2030555585]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen19/Tree6BigPineDarkGreen19/StaticBody2D" unique_id=512158706]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen20" type="Sprite2D" parent="." unique_id=890263337]
+texture_filter = 1
+position = Vector2(-2945.0002, 3079)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen20" unique_id=1701895019]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen20/StaticBody2D" unique_id=694395884]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen21" type="Sprite2D" parent="." unique_id=1519009224]
+texture_filter = 1
+position = Vector2(-2668, 2553)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen21" unique_id=507408358]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen21/StaticBody2D" unique_id=1263702086]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen22" type="Sprite2D" parent="." unique_id=723455758]
+texture_filter = 1
+position = Vector2(-2235, 2649)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen22" unique_id=2104021240]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen22/StaticBody2D" unique_id=442373013]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen23" type="Sprite2D" parent="." unique_id=1511177556]
+texture_filter = 1
+position = Vector2(-2831, 2189)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen23" unique_id=1157110705]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen23/StaticBody2D" unique_id=2049178138]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen24" type="Sprite2D" parent="." unique_id=1393165840]
+texture_filter = 1
+position = Vector2(-1968, 2216)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen24" unique_id=1038454356]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen24/StaticBody2D" unique_id=98704919]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen25" type="Sprite2D" parent="." unique_id=1813528989]
+texture_filter = 1
+position = Vector2(563, 2230)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen25" unique_id=28049043]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen25/StaticBody2D" unique_id=1857397324]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen26" type="Sprite2D" parent="." unique_id=2025900737]
+texture_filter = 1
+position = Vector2(1495, 2276)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen26" unique_id=1787283383]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen26/StaticBody2D" unique_id=1868795036]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen27" type="Sprite2D" parent="." unique_id=217778887]
+texture_filter = 1
+position = Vector2(2315, 2395)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen27" unique_id=208250582]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen27/StaticBody2D" unique_id=1731558520]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen28" type="Sprite2D" parent="." unique_id=1800779709]
+texture_filter = 1
+position = Vector2(4281, 1397.9999)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen28" unique_id=1991785256]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen28/StaticBody2D" unique_id=2006089444]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen29" type="Sprite2D" parent="." unique_id=1114214623]
+texture_filter = 1
+position = Vector2(5364.0005, 1067)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen29" unique_id=1452584703]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen29/StaticBody2D" unique_id=468181757]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen30" type="Sprite2D" parent="." unique_id=262846573]
+texture_filter = 1
+position = Vector2(4632, 867)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen30" unique_id=1096088722]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen30/StaticBody2D" unique_id=1715392454]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen31" type="Sprite2D" parent="." unique_id=384010009]
+texture_filter = 1
+position = Vector2(2451.0005, 563.00006)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen31" unique_id=1857369153]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen31/StaticBody2D" unique_id=716131639]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen32" type="Sprite2D" parent="." unique_id=1035999741]
+texture_filter = 1
+position = Vector2(6319.0005, 629.00006)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen32" unique_id=1249320931]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen32/StaticBody2D" unique_id=357631875]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen33" type="Sprite2D" parent="." unique_id=41687606]
+texture_filter = 1
+position = Vector2(3366.0005, -226.99988)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen33" unique_id=1182017804]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen33/StaticBody2D" unique_id=1885157744]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen34" type="Sprite2D" parent="." unique_id=1464318310]
+texture_filter = 1
+position = Vector2(1692.0007, 39.000122)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen34" unique_id=1757294143]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen34/StaticBody2D" unique_id=2061680293]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen35" type="Sprite2D" parent="." unique_id=743111659]
+texture_filter = 1
+position = Vector2(3899, -1477)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen35" unique_id=1891111654]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen35/StaticBody2D" unique_id=634998269]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen36" type="Sprite2D" parent="." unique_id=732101353]
+texture_filter = 1
+position = Vector2(4920, -1816)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen36" unique_id=686993610]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen36/StaticBody2D" unique_id=597570493]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen37" type="Sprite2D" parent="." unique_id=1845911946]
+texture_filter = 1
+position = Vector2(5531, -2293)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen37" unique_id=2103771759]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen37/StaticBody2D" unique_id=474434768]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen38" type="Sprite2D" parent="." unique_id=645114934]
+texture_filter = 1
+position = Vector2(3288, -1788)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen38" unique_id=1049520352]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen38/StaticBody2D" unique_id=412776098]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen39" type="Sprite2D" parent="." unique_id=890158635]
+texture_filter = 1
+position = Vector2(4364, -2333)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen39" unique_id=1573643173]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen39/StaticBody2D" unique_id=355151645]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen40" type="Sprite2D" parent="." unique_id=681637890]
+texture_filter = 1
+position = Vector2(4823, -2814)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen40" unique_id=1366506187]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen40/StaticBody2D" unique_id=1215545440]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen41" type="Sprite2D" parent="." unique_id=86365124]
+texture_filter = 1
+position = Vector2(5842, -1625)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen41" unique_id=1016138817]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen41/StaticBody2D" unique_id=1628736866]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen42" type="Sprite2D" parent="." unique_id=1307576021]
+texture_filter = 1
+position = Vector2(6158, -2649)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen42" unique_id=1961655245]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen42/StaticBody2D" unique_id=166871231]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen43" type="Sprite2D" parent="." unique_id=1349308027]
+texture_filter = 1
+position = Vector2(5671, -2818)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen43" unique_id=1949647377]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen43/StaticBody2D" unique_id=918293380]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen44" type="Sprite2D" parent="." unique_id=2049092850]
+texture_filter = 1
+position = Vector2(5086, -2401)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen44" unique_id=830620700]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen44/StaticBody2D" unique_id=515047598]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen45" type="Sprite2D" parent="." unique_id=1484616381]
+texture_filter = 1
+position = Vector2(6412, -2010)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen45" unique_id=1314905604]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen45/StaticBody2D" unique_id=1629053741]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen46" type="Sprite2D" parent="." unique_id=2037442913]
+texture_filter = 1
+position = Vector2(6258, -943)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen46" unique_id=733507845]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen46/StaticBody2D" unique_id=1313816279]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen47" type="Sprite2D" parent="." unique_id=255969982]
+texture_filter = 1
+position = Vector2(5114, -1191)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen47" unique_id=1594305698]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen47/StaticBody2D" unique_id=776009182]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen48" type="Sprite2D" parent="." unique_id=1792923417]
+texture_filter = 1
+position = Vector2(2746.0002, -1039)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen48" unique_id=1737726402]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen48/StaticBody2D" unique_id=1655945084]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen49" type="Sprite2D" parent="." unique_id=1099483253]
+texture_filter = 1
+position = Vector2(4489, 83.99997)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen49" unique_id=1377193000]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen49/StaticBody2D" unique_id=1436640528]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen50" type="Sprite2D" parent="." unique_id=1909638948]
+texture_filter = 1
+position = Vector2(4144, -864.99994)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen50" unique_id=529495427]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen50/StaticBody2D" unique_id=804937369]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen51" type="Sprite2D" parent="." unique_id=1849055932]
+texture_filter = 1
+position = Vector2(966.00006, -339.99997)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen51" unique_id=1563663519]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen51/StaticBody2D" unique_id=1604930862]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen52" type="Sprite2D" parent="." unique_id=1635932336]
+texture_filter = 1
+position = Vector2(-1822.9998, -2361.9998)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen52" unique_id=1447161713]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen52/StaticBody2D" unique_id=1993141719]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen53" type="Sprite2D" parent="." unique_id=462004451]
+texture_filter = 1
+position = Vector2(-2655, -2873)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen53" unique_id=359956488]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen53/StaticBody2D" unique_id=1833524118]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen54" type="Sprite2D" parent="." unique_id=445146198]
+texture_filter = 1
+position = Vector2(-1090, -1857)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen54" unique_id=1549683277]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen54/StaticBody2D" unique_id=1841256116]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen55" type="Sprite2D" parent="." unique_id=1049752054]
+texture_filter = 1
+position = Vector2(-2888.9998, -2133)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen55" unique_id=527276061]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen55/StaticBody2D" unique_id=1361095093]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen56" type="Sprite2D" parent="." unique_id=494323413]
+texture_filter = 1
+position = Vector2(348.99994, -2937)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen56" unique_id=1002316934]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen56/StaticBody2D" unique_id=136290720]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen57" type="Sprite2D" parent="." unique_id=1456682017]
+texture_filter = 1
+position = Vector2(-396, -2607)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen57" unique_id=2135608900]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen57/StaticBody2D" unique_id=595600595]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen58" type="Sprite2D" parent="." unique_id=1733536556]
+texture_filter = 1
+position = Vector2(-1572.9999, -2796)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen58" unique_id=1465608252]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen58/StaticBody2D" unique_id=151981021]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen59" type="Sprite2D" parent="." unique_id=363844663]
+texture_filter = 1
+position = Vector2(1243, -2916)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen59" unique_id=713036024]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen59/StaticBody2D" unique_id=1499108691]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen60" type="Sprite2D" parent="." unique_id=1104236524]
+texture_filter = 1
+position = Vector2(1042, -2399)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen60" unique_id=976970415]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen60/StaticBody2D" unique_id=1796363015]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen61" type="Sprite2D" parent="." unique_id=530617939]
+texture_filter = 1
+position = Vector2(-1857.0001, -663.99994)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen61" unique_id=1036119927]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen61/StaticBody2D" unique_id=2065912783]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen62" type="Sprite2D" parent="." unique_id=1775486036]
+texture_filter = 1
+position = Vector2(-663, -638)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen62" unique_id=683628561]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen62/StaticBody2D" unique_id=1254298985]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen63" type="Sprite2D" parent="." unique_id=777089319]
+texture_filter = 1
+position = Vector2(-1288, 64.99994)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen63" unique_id=1466576760]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen63/StaticBody2D" unique_id=1525080335]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen64" type="Sprite2D" parent="." unique_id=456945211]
+texture_filter = 1
+position = Vector2(-864, 1058)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen64" unique_id=1078350812]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen64/StaticBody2D" unique_id=211927003]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen65" type="Sprite2D" parent="." unique_id=1633791114]
+texture_filter = 1
+position = Vector2(-1977, 809.99994)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen65" unique_id=2113652253]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen65/StaticBody2D" unique_id=172165758]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen66" type="Sprite2D" parent="." unique_id=459572551]
+texture_filter = 1
+position = Vector2(-2984, 525)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen66" unique_id=1887721638]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen66/StaticBody2D" unique_id=1568821699]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen67" type="Sprite2D" parent="." unique_id=1302891106]
+texture_filter = 1
+position = Vector2(-2977, -1109)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen67" unique_id=1934733072]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen67/StaticBody2D" unique_id=1940151345]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen68" type="Sprite2D" parent="." unique_id=341857042]
+texture_filter = 1
+position = Vector2(-2274, -2003.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen68" unique_id=895020137]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen68/StaticBody2D" unique_id=26886814]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen69" type="Sprite2D" parent="." unique_id=598676221]
+texture_filter = 1
+position = Vector2(-2339.0002, -2506)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen69" unique_id=132387588]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen69/StaticBody2D" unique_id=1655250839]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen70" type="Sprite2D" parent="." unique_id=1901987610]
+texture_filter = 1
+position = Vector2(-955.0001, -2447.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen70" unique_id=124657643]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen70/StaticBody2D" unique_id=1529594687]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen71" type="Sprite2D" parent="." unique_id=1241899177]
+texture_filter = 1
+position = Vector2(-894.0001, -2963.0002)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen71" unique_id=1205705369]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen71/StaticBody2D" unique_id=13382940]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen72" type="Sprite2D" parent="." unique_id=1420689493]
+texture_filter = 1
+position = Vector2(1959, -620.99994)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen72" unique_id=1302668113]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen72/StaticBody2D" unique_id=1241962220]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="Tree6BigPineDarkGreen73" type="Sprite2D" parent="." unique_id=796469920]
+texture_filter = 1
+position = Vector2(1514.0002, 1183)
+scale = Vector2(5.8703704, 5.622449)
+texture = ExtResource("39_xkcq7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Tree6BigPineDarkGreen73" unique_id=393689662]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tree6BigPineDarkGreen73/StaticBody2D" unique_id=1538242984]
+position = Vector2(-1.5331229, 20.631577)
+shape = SubResource("CircleShape2D_na5ms")
+
+[node name="MossOnTopDarkGreen7" type="Sprite2D" parent="." unique_id=639502505]
+position = Vector2(1931.25, 1389.75)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen8" type="Sprite2D" parent="." unique_id=1199917002]
+position = Vector2(790, 1779)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen9" type="Sprite2D" parent="." unique_id=496586052]
+position = Vector2(2006, 2258)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen10" type="Sprite2D" parent="." unique_id=437440114]
+position = Vector2(1456.0001, 1604)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen11" type="Sprite2D" parent="." unique_id=1097452781]
+position = Vector2(1131.0001, 1191)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen12" type="Sprite2D" parent="." unique_id=1382185097]
+position = Vector2(-1070, 2310)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen13" type="Sprite2D" parent="." unique_id=317281760]
+position = Vector2(-3030, 2102)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen14" type="Sprite2D" parent="." unique_id=118567471]
+position = Vector2(-2843, 927)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen15" type="Sprite2D" parent="." unique_id=1663634467]
+position = Vector2(-429, 1277)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen16" type="Sprite2D" parent="." unique_id=2011350653]
+position = Vector2(146.00006, 2394)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen17" type="Sprite2D" parent="." unique_id=646247279]
+position = Vector2(-2843, 927)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen18" type="Sprite2D" parent="." unique_id=528634644]
+position = Vector2(-1336.0002, 530.00006)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen19" type="Sprite2D" parent="." unique_id=627760936]
+position = Vector2(-1002.0001, -970)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen20" type="Sprite2D" parent="." unique_id=519130499]
+position = Vector2(-1610.0001, -212)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen21" type="Sprite2D" parent="." unique_id=101672587]
+position = Vector2(754, -777)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen22" type="Sprite2D" parent="." unique_id=1151104262]
+position = Vector2(-136, -1199)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen23" type="Sprite2D" parent="." unique_id=990000213]
+position = Vector2(-1647, -1947)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen24" type="Sprite2D" parent="." unique_id=2026807984]
+position = Vector2(4237, -255)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen25" type="Sprite2D" parent="." unique_id=1248951564]
+position = Vector2(2722, -440.00006)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen26" type="Sprite2D" parent="." unique_id=1658843213]
+position = Vector2(2417, -1358)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen27" type="Sprite2D" parent="." unique_id=429345264]
+texture_filter = 1
+position = Vector2(5926.0005, -681)
+scale = Vector2(5.3, 4.9666667)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen28" type="Sprite2D" parent="." unique_id=1093455465]
+texture_filter = 1
+position = Vector2(5070.0005, -299.99997)
+scale = Vector2(3.383353, 3.4833326)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen29" type="Sprite2D" parent="." unique_id=868218975]
+texture_filter = 1
+position = Vector2(5117.0005, -297.99997)
+scale = Vector2(3.383353, 3.4833326)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen30" type="Sprite2D" parent="." unique_id=818006055]
+texture_filter = 1
+position = Vector2(5072.0005, -183)
+scale = Vector2(3.383353, 3.4833326)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen31" type="Sprite2D" parent="." unique_id=208806897]
+texture_filter = 1
+position = Vector2(5070.0005, -224.99997)
+scale = Vector2(3.383353, 3.4833326)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen32" type="Sprite2D" parent="." unique_id=1239433471]
+texture_filter = 1
+position = Vector2(5070.0005, -263.99997)
+scale = Vector2(3.383353, 3.4833326)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen33" type="Sprite2D" parent="." unique_id=111451046]
+texture_filter = 1
+position = Vector2(5119.0005, -182)
+scale = Vector2(3.383353, 3.4833326)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen34" type="Sprite2D" parent="." unique_id=2085255215]
+texture_filter = 1
+position = Vector2(5122.0005, -224)
+scale = Vector2(3.383353, 3.4833326)
+texture = ExtResource("43_y0s0d")
+
+[node name="MossOnTopDarkGreen35" type="Sprite2D" parent="." unique_id=1008592873]
+texture_filter = 1
+position = Vector2(5118.0005, -261)
+scale = Vector2(3.383353, 3.4833326)
+texture = ExtResource("43_y0s0d")
+
+[node name="Flowers1Yellow" type="Sprite2D" parent="." unique_id=9994726]
+texture_filter = 1
+position = Vector2(3362.5, 2914.5)
+scale = Vector2(2.2142856, 2.25)
+texture = ExtResource("44_iwan2")
+
+[node name="Stump1" type="Sprite2D" parent="." unique_id=1507874668]
+texture_filter = 1
+position = Vector2(3770.25, 2901.5)
+scale = Vector2(5.6999927, 5.25)
+texture = ExtResource("45_hac6k")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Stump1" unique_id=1559292971]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stump1/StaticBody2D" unique_id=972653789]
+shape = SubResource("CircleShape2D_1f61l")
+
+[node name="MossOnTopDarkGreen36" type="Sprite2D" parent="." unique_id=1240814295]
+texture_filter = 1
+position = Vector2(6513, 2490)
+scale = Vector2(5.033337, 5.166663)
+texture = ExtResource("46_tu3qe")
+
+[node name="MossOnTopDarkGreen37" type="Sprite2D" parent="." unique_id=1825460256]
+texture_filter = 1
+position = Vector2(6238.0005, 3080)
+scale = Vector2(5.033337, 5.166663)
+texture = ExtResource("46_tu3qe")
+
+[node name="MossOnTopDarkGreen38" type="Sprite2D" parent="." unique_id=664939788]
+texture_filter = 1
+position = Vector2(5175, 3287.9998)
+scale = Vector2(5.033337, 5.166663)
+texture = ExtResource("46_tu3qe")
+
+[node name="MossOnTopDarkGreen39" type="Sprite2D" parent="." unique_id=1148749929]
+texture_filter = 1
+position = Vector2(5552, 2675.9998)
+scale = Vector2(5.033337, 5.166663)
+texture = ExtResource("46_tu3qe")
+enemy_spawns = Array[ExtResource("42_urahp")]([SubResource("Resource_028i1")])

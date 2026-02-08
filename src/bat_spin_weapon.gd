@@ -19,8 +19,22 @@ func _do_attack(direction: Vector2) -> void:
 	if effect_scene == null:
 		return
 
-	# Small controller vibration
-	Input.start_joy_vibration(0, 0.2, 0.2, 0.08)
+	var player = get_tree().get_first_node_in_group("player")
+	print("[TomatoGun] Player found: ", player)
+	
+	if player:
+		print("[TomatoGun] Player has modify_timer: ", player.has_method("modify_timer"))
+		if player.has_method("modify_timer"):
+			print("[TomatoGun] Calling player.modify_timer(-1.0)")
+			player.modify_timer(-5.0)
+			print("[TomatoGun] Timer modification complete")		
+		else:
+			print("[TomatoGun] ERROR: Player doesn't have modify_timer method!")
+	else:
+		print("[TomatoGun] ERROR: Could not find player!")
+
+	# Controller vibration for bat spin
+	Input.start_joy_vibration(0, 0.4, 0.4, 0.4)
 
 	var fx = effect_scene.instantiate()
 	# Put the effect at the same level as the player (sibling) so it isn't scaled/rotated by the player.

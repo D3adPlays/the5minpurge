@@ -28,6 +28,9 @@
 [ext_resource type="PackedScene" path="res://Weapons/bat_spin_weapon.tscn" id="22_batspin"]
 [ext_resource type="Texture2D" uid="uid://c2s4d26eh4isp" path="res://textures/Objects/Nature/Flowers_Mashrooms_Other-nature-stuff/Rain-Drop_2_Long_Blue.png" id="26_lswn8"]
 [ext_resource type="PackedScene" uid="uid://c8jwngngb0ubl" path="res://timer.tscn" id="27_a6jrf"]
+[ext_resource type="AudioStream" uid="uid://d1vntudtposj8" path="res://sounds/end.ogg" id="29_qsp4k"]
+[ext_resource type="AudioStream" uid="uid://b2caxyocb2ojn" path="res://sounds/rain2.ogg" id="29_seu75"]
+[ext_resource type="AudioStream" uid="uid://c0hm0m7edq381" path="res://sounds/rain1.ogg" id="30_htxhm"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w48qg"]
 shader = ExtResource("13_ycdy4")
@@ -480,9 +483,12 @@ scale = Vector2(10, 10)
 position = Vector2(160, 317)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2015079906]
-position = Vector2(570, 319)
+position = Vector2(-2849, 1891)
 motion_mode = 1
 script = ExtResource("1_ig7tw")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="CharacterBody2D" unique_id=409015048]
+current = true
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D" unique_id=1343187200]
 position = Vector2(-1, 27)
@@ -495,9 +501,6 @@ texture = ExtResource("18_cegan")
 texture_scale = 3.06
 
 [node name="TomatoGun" parent="CharacterBody2D" unique_id=2073554385 instance=ExtResource("21_getpj")]
-projectile_speed = null
-damage = null
-gun_offset = null
 
 [node name="BatSpinWeapon" parent="CharacterBody2D" unique_id=396909702 instance=ExtResource("22_batspin")]
 
@@ -552,5 +555,24 @@ offset_top = 26.000004
 offset_right = 1583.9995
 offset_bottom = -944.0
 
+[node name="Node" type="Node" parent="CharacterBody2D" unique_id=2111289708]
+
+[node name="Rain2" type="AudioStreamPlayer" parent="CharacterBody2D/Node" unique_id=761763958]
+stream = ExtResource("29_seu75")
+volume_db = -18.755
+autoplay = true
+parameters/looping = true
+
+[node name="Rain1" type="AudioStreamPlayer" parent="CharacterBody2D/Node" unique_id=2101035078]
+stream = ExtResource("30_htxhm")
+volume_db = -38.645
+autoplay = true
+parameters/looping = true
+
+[node name="Ambient" type="AudioStreamPlayer" parent="CharacterBody2D/Node" unique_id=701550487]
+stream = ExtResource("29_qsp4k")
+autoplay = true
+parameters/looping = true
+
 [node name="AmbiantLight" type="CanvasModulate" parent="." unique_id=794281094]
-color = Color(0.07608076, 0.11975584, 0.23239583, 1)
+color = Color(0.04729879, 0.08456164, 0.17154339, 1)

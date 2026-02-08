@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://blw5x5du6p06q" path="res://src/zombie.gd" id="1_roy8y"]
 [ext_resource type="Texture2D" uid="uid://pkly7b26vdhg" path="res://textures/Enemies/Zombie_Small/Zombie_Small_Down_Idle-Sheet6.png" id="1_uiaus"]
 [ext_resource type="Texture2D" uid="uid://756073jcp1ng" path="res://textures/Enemies/Zombie_Small/Zombie_Small_Side_Second-Death-Sheet7.png" id="2_jmu02"]
+[ext_resource type="AudioStream" uid="uid://ci4amakugimyx" path="res://sounds/zombie-1.wav" id="4_lnshm"]
+[ext_resource type="AudioStream" uid="uid://dwckgtoui64my" path="res://sounds/zombie-2.wav" id="5_x5rsa"]
+[ext_resource type="AudioStream" uid="uid://bxhhw7axbmhtd" path="res://sounds/zombie-3.wav" id="6_ogcpr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ogcpr"]
 atlas = ExtResource("2_jmu02")
@@ -140,6 +143,18 @@ size = Vector2(73, 106)
 
 [node name="Zombie" type="CharacterBody2D" unique_id=1073264807]
 script = ExtResource("1_roy8y")
+
+[node name="Zombie1" type="AudioStreamPlayer2D" parent="." unique_id=1670953654]
+stream = ExtResource("4_lnshm")
+volume_db = -4.364
+
+[node name="Zombie2" type="AudioStreamPlayer2D" parent="." unique_id=1535791984]
+stream = ExtResource("5_x5rsa")
+volume_db = -4.364
+
+[node name="Zombie3" type="AudioStreamPlayer2D" parent="." unique_id=1872590067]
+stream = ExtResource("6_ogcpr")
+volume_db = -4.364
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=212519111]
 texture_filter = 1
