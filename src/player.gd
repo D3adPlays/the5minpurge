@@ -24,7 +24,6 @@ func _on_ready() -> void:
 		push_error("No TomatoGun found as child of player. Weapon functionality will be disabled.")
 		push_error("Add a TomatoGun node as a child of the Player node in the scene.")
 	
-	# Setup timer bar locked to camera
 	print("About to call setup_timer_bar()")
 	setup_timer_bar()
 	
