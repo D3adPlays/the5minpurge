@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d17wp463dweqa"]
 
-[ext_resource type="Script" uid="uid://bc7gv7sf6dta8" path="res://fadeIn.gd" id="1_0rl1p"]
+[ext_resource type="Script" path="res://fadeIn.gd" id="1_0rl1p"]
 [ext_resource type="Script" uid="uid://dnnfsovvjxu3c" path="res://src/player.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ltfbs14ks3xb" path="res://map.tscn" id="1_lswn8"]
 [ext_resource type="Texture2D" uid="uid://dgbsopkqncbm" path="res://textures/Character/Main/Idle/Character_down_idle-Sheet6.png" id="2_0xm2m"]
@@ -35,7 +35,7 @@
 [ext_resource type="AudioStream" uid="uid://b2caxyocb2ojn" path="res://sounds/rain2.ogg" id="29_seu75"]
 [ext_resource type="AudioStream" uid="uid://c0hm0m7edq381" path="res://sounds/rain1.ogg" id="30_htxhm"]
 [ext_resource type="AudioStream" uid="uid://uolraelcylad" path="res://sounds/hurt.ogg" id="33_jq2sk"]
-[ext_resource type="Script" uid="uid://v17vufuf4sj" path="res://win.gd" id="34_win"]
+[ext_resource type="Script" path="res://win.gd" id="34_win"]
 [ext_resource type="Texture2D" uid="uid://btqddit7oh284" path="res://textures/Escape.png" id="36_ok6jj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w48qg"]

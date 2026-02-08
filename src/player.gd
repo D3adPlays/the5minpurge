@@ -10,6 +10,9 @@ const JOYSTICK_DEADZONE = 0.2
 var aim_direction: Vector2 = Vector2.RIGHT
 var countdown_timer: float = 0.0
 
+var idle_time := 0.0
+const IDLE_PAUSE_TIME := 2.0
+var is_paused_manually := false
 
 func _on_ready() -> void:
 	print("Player _on_ready() called")
@@ -50,6 +53,25 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	handle_collisions()
 	handle_timer_countdown(delta)
+	handle_pause_logic(delta)
+
+func has_player_input() -> bool:
+	if Input.is_action_pressed("left") \
+	or Input.is_action_pressed("right") \
+	or Input.is_action_pressed("up") \
+	or Input.is_action_pressed("down") \
+	or Input.is_action_pressed("attack"):
+		return true
+
+	if Input.get_vector("left", "right", "up", "down") != Vector2.ZERO:
+		return true
+
+	if Input.get_joy_axis(0, JOY_AXIS_LEFT_X) != 0.0 \
+	or Input.get_joy_axis(0, JOY_AXIS_LEFT_Y) != 0.0:
+		return true
+
+	return false
+
 
 func handle_movement() -> void:
 	# Get input from WASD/Arrow keys or left joystick
@@ -167,6 +189,32 @@ func handle_timer_countdown(delta: float) -> void:
 		countdown_timer -= 1.0
 		$Node/Tickdown.play()
 		modify_timer(-1.0)
+
+func handle_pause_logic(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		is_paused_manually = !is_paused_manually
+		get_tree().paused = is_paused_manually
+		idle_time = 0.0
+		return
+
+	if is_paused_manually:
+		return
+
+	if get_tree().paused:
+		if has_player_input():
+			get_tree().paused = false
+			idle_time = 0.0
+		return
+
+	if has_player_input():
+		idle_time = 0.0
+	else:
+		idle_time += delta
+		if idle_time >= IDLE_PAUSE_TIME:
+			get_tree().paused = true
+
+
+
 
 # Override from LivingEntity to reduce timer when taking damage
 func _on_damage_taken(amount: float, damage_source: Node) -> void:
