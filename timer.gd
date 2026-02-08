@@ -6,6 +6,7 @@ var progress_bg: ProgressBar
 var current_time: float = 300.0
 var max_time: float = 300.0  # 5 minutes default
 var tween: Tween
+var has_lost: bool = false
 
 signal time_zero
 
@@ -13,8 +14,10 @@ func _process(delta):
 	current_time -= delta
 	current_time = clamp(current_time, 0.0, max_time)
 
-	if current_time <= 0.0:
+	if current_time <= 0.0 and not has_lost:
+		has_lost = true
 		emit_signal("time_zero")
+		trigger_lose_sequence()
 
 func add_time(seconds: float):
 	current_time = min(current_time + seconds, max_time)
@@ -136,7 +139,7 @@ func create_floating_label(delta_time: float) -> void:
 		time_text = "%s%ds" % [sign, int(abs_delta)]
 	
 	floating_label.text = time_text
-	
+
 	floating_label.position = Vector2((size.x / 2) - floating_label.size.x / 2, (size.y / 2) + 200)  # Start above the timer bar
 	floating_label.pivot_offset = floating_label.size / 2
 	
@@ -172,3 +175,58 @@ func create_floating_label(delta_time: float) -> void:
 	
 	# Remove label after animation
 	label_tween.tween_callback(floating_label.queue_free).set_delay(1.5)
+
+func trigger_lose_sequence() -> void:
+	# Pause the game
+	
+	# Mute all sounds
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
+	
+	# Create a CanvasLayer for the fade and lose message
+	var canvas_layer = CanvasLayer.new()
+	canvas_layer.layer = 100  # Make sure it's on top
+	canvas_layer.process_mode = Node.PROCESS_MODE_ALWAYS  # Process even when paused
+	get_tree().root.add_child(canvas_layer)
+	
+	# Create a black ColorRect for the fade
+	var fade_rect = ColorRect.new()
+	fade_rect.color = Color(0, 0, 0, 0)  # Start transparent
+	fade_rect.size = Vector2(1920, 1080)
+	fade_rect.position = Vector2.ZERO
+	canvas_layer.add_child(fade_rect)
+	
+	# Create the lose message label
+	var lose_label = Label.new()
+	lose_label.text = "You ran out of time..."
+	lose_label.modulate = Color(1, 1, 1, 0)  # Start transparent
+	lose_label.size = Vector2(1920, 1080)
+	lose_label.position = Vector2.ZERO
+	lose_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	lose_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	lose_label.add_theme_font_size_override("font_size", 72)
+	canvas_layer.add_child(lose_label)
+	
+	# Fade to black
+	var fade_tween = create_tween()
+	fade_tween.tween_property(fade_rect, "color:a", 1.0, 2.0)
+	
+	# After fade to black, show lose message
+	await fade_tween.finished
+	var text_tween = create_tween()
+	text_tween.tween_property(lose_label, "modulate:a", 1.0, 1.0)
+	
+	# Wait a bit then reload the scene
+	
+	await text_tween.finished
+	await get_tree().create_timer(2.0).timeout
+	
+	# Clean up the canvas layer
+	canvas_layer.queue_free()
+	
+	# Unmute audio before reloading
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
+	
+	# Unpause the game before reloading
+	
+	# Reload the current scene
+	get_tree().reload_current_scene()

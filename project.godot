@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The 5min purge"
-run/main_scene="uid://d17wp463dweqa"
+run/main_scene="uid://uiay1gveoass"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/show_image=false
@@ -73,3 +73,4 @@ bat_attack={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

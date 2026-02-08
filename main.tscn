@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d17wp463dweqa"]
 
+[ext_resource type="Script" uid="uid://bc7gv7sf6dta8" path="res://fadeIn.gd" id="1_0rl1p"]
 [ext_resource type="Script" uid="uid://dnnfsovvjxu3c" path="res://src/player.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://ltfbs14ks3xb" path="res://map.tscn" id="1_lswn8"]
 [ext_resource type="Texture2D" uid="uid://dgbsopkqncbm" path="res://textures/Character/Main/Idle/Character_down_idle-Sheet6.png" id="2_0xm2m"]
@@ -33,6 +34,7 @@
 [ext_resource type="AudioStream" uid="uid://b2caxyocb2ojn" path="res://sounds/rain2.ogg" id="29_seu75"]
 [ext_resource type="AudioStream" uid="uid://c0hm0m7edq381" path="res://sounds/rain1.ogg" id="30_htxhm"]
 [ext_resource type="AudioStream" uid="uid://uolraelcylad" path="res://sounds/hurt.ogg" id="33_jq2sk"]
+[ext_resource type="Script" uid="uid://v17vufuf4sj" path="res://win.gd" id="34_win"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w48qg"]
 shader = ExtResource("13_ycdy4")
@@ -409,7 +411,11 @@ shader_parameter/anti_bleed_intensity = 1.8
 shader_parameter/color_bleed_blur_strength = 1.0
 shader_parameter/color_bleed_quality = 5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jq2sk"]
+size = Vector2(312, 91)
+
 [node name="Node2D" type="Node2D" unique_id=1645417753]
+script = ExtResource("1_0rl1p")
 
 [node name="Map" parent="." unique_id=1093885806 instance=ExtResource("1_lswn8")]
 
@@ -480,9 +486,6 @@ offset_top = -5405.0005
 offset_right = -4834.0005
 offset_bottom = -4181.6006
 scale = Vector2(10, 10)
-
-[node name="Zombie" parent="." unique_id=1073264807 instance=ExtResource("21_ryguw")]
-position = Vector2(160, 317)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=2015079906]
 position = Vector2(-2849, 1891)
@@ -589,3 +592,211 @@ parameters/looping = true
 
 [node name="AmbiantLight" type="CanvasModulate" parent="." unique_id=794281094]
 color = Color(0.04729879, 0.08456164, 0.17154339, 1)
+
+[node name="WinCond" type="Area2D" parent="." unique_id=2095285113]
+script = ExtResource("34_win")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinCond" unique_id=1910696946]
+position = Vector2(2322, -3002)
+shape = SubResource("RectangleShape2D_jq2sk")
+
+[node name="WinCond2" type="Area2D" parent="." unique_id=396484602]
+script = ExtResource("34_win")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinCond2" unique_id=183436724]
+position = Vector2(3775, 3426)
+shape = SubResource("RectangleShape2D_jq2sk")
+
+[node name="Predefined zombies" type="Node2D" parent="." unique_id=1026644117]
+
+[node name="Zombie" parent="Predefined zombies" unique_id=1073264807 instance=ExtResource("21_ryguw")]
+position = Vector2(160, 317)
+
+[node name="Zombie2" parent="Predefined zombies" unique_id=1603863142 instance=ExtResource("21_ryguw")]
+position = Vector2(388, -1260)
+
+[node name="Zombie3" parent="Predefined zombies" unique_id=624359318 instance=ExtResource("21_ryguw")]
+position = Vector2(457, -1352)
+
+[node name="Zombie4" parent="Predefined zombies" unique_id=481160965 instance=ExtResource("21_ryguw")]
+position = Vector2(357, -1365)
+
+[node name="Zombie5" parent="Predefined zombies" unique_id=899888042 instance=ExtResource("21_ryguw")]
+position = Vector2(344, -1605)
+
+[node name="Zombie6" parent="Predefined zombies" unique_id=967441594 instance=ExtResource("21_ryguw")]
+position = Vector2(617, -1700)
+
+[node name="Zombie7" parent="Predefined zombies" unique_id=1069616194 instance=ExtResource("21_ryguw")]
+position = Vector2(1097, -1544)
+
+[node name="Zombie8" parent="Predefined zombies" unique_id=926895058 instance=ExtResource("21_ryguw")]
+position = Vector2(1041, -1845)
+
+[node name="Zombie9" parent="Predefined zombies" unique_id=1245355307 instance=ExtResource("21_ryguw")]
+position = Vector2(899, -1929)
+
+[node name="Zombie10" parent="Predefined zombies" unique_id=1920010844 instance=ExtResource("21_ryguw")]
+position = Vector2(383, -2063)
+
+[node name="Zombie11" parent="Predefined zombies" unique_id=2146638557 instance=ExtResource("21_ryguw")]
+position = Vector2(89, -1827)
+
+[node name="Zombie12" parent="Predefined zombies" unique_id=1385688296 instance=ExtResource("21_ryguw")]
+position = Vector2(1516, -1456)
+
+[node name="Zombie13" parent="Predefined zombies" unique_id=759323131 instance=ExtResource("21_ryguw")]
+position = Vector2(1468, -1733)
+
+[node name="Zombie14" parent="Predefined zombies" unique_id=11762177 instance=ExtResource("21_ryguw")]
+position = Vector2(1681, -1817)
+
+[node name="Zombie15" parent="Predefined zombies" unique_id=717606893 instance=ExtResource("21_ryguw")]
+position = Vector2(1491, -1894)
+
+[node name="Zombie16" parent="Predefined zombies" unique_id=1816534457 instance=ExtResource("21_ryguw")]
+position = Vector2(1670, -1994)
+
+[node name="Zombie17" parent="Predefined zombies" unique_id=154365619 instance=ExtResource("21_ryguw")]
+position = Vector2(1821, -1332)
+
+[node name="Zombie18" parent="Predefined zombies" unique_id=30805050 instance=ExtResource("21_ryguw")]
+position = Vector2(2326, -2037)
+
+[node name="Zombie19" parent="Predefined zombies" unique_id=1107954837 instance=ExtResource("21_ryguw")]
+position = Vector2(2287, -2448)
+
+[node name="Zombie20" parent="Predefined zombies" unique_id=1053624149 instance=ExtResource("21_ryguw")]
+position = Vector2(2609, -2590)
+
+[node name="Zombie21" parent="Predefined zombies" unique_id=2063998946 instance=ExtResource("21_ryguw")]
+position = Vector2(2350, -2629)
+
+[node name="Zombie22" parent="Predefined zombies" unique_id=530843082 instance=ExtResource("21_ryguw")]
+position = Vector2(2601, -2695)
+
+[node name="Zombie23" parent="Predefined zombies" unique_id=2019309156 instance=ExtResource("21_ryguw")]
+position = Vector2(2622, -2319)
+
+[node name="Zombie24" parent="Predefined zombies" unique_id=524291153 instance=ExtResource("21_ryguw")]
+position = Vector2(2717, -2607)
+
+[node name="Zombie25" parent="Predefined zombies" unique_id=895628295 instance=ExtResource("21_ryguw")]
+position = Vector2(2243, -2753)
+
+[node name="Zombie26" parent="Predefined zombies" unique_id=1553781243 instance=ExtResource("21_ryguw")]
+position = Vector2(2258, -1479)
+
+[node name="Zombie27" parent="Predefined zombies" unique_id=1147179404 instance=ExtResource("21_ryguw")]
+position = Vector2(-240, 303)
+
+[node name="Zombie28" parent="Predefined zombies" unique_id=367100391 instance=ExtResource("21_ryguw")]
+position = Vector2(-98, 562)
+
+[node name="Zombie29" parent="Predefined zombies" unique_id=1975536227 instance=ExtResource("21_ryguw")]
+position = Vector2(5, 402)
+
+[node name="Zombie30" parent="Predefined zombies" unique_id=1903168428 instance=ExtResource("21_ryguw")]
+position = Vector2(334, 330)
+
+[node name="Zombie31" parent="Predefined zombies" unique_id=1243882829 instance=ExtResource("21_ryguw")]
+position = Vector2(391, 363)
+
+[node name="Zombie32" parent="Predefined zombies" unique_id=1338813131 instance=ExtResource("21_ryguw")]
+position = Vector2(752, 521)
+
+[node name="Zombie33" parent="Predefined zombies" unique_id=1837890860 instance=ExtResource("21_ryguw")]
+position = Vector2(2959, 2028)
+
+[node name="Zombie34" parent="Predefined zombies" unique_id=906753059 instance=ExtResource("21_ryguw")]
+position = Vector2(1985, 1786)
+
+[node name="Zombie35" parent="Predefined zombies" unique_id=1927769260 instance=ExtResource("21_ryguw")]
+position = Vector2(1436, 1745)
+
+[node name="Zombie36" parent="Predefined zombies" unique_id=1897977311 instance=ExtResource("21_ryguw")]
+position = Vector2(2399, 1351)
+
+[node name="Zombie37" parent="Predefined zombies" unique_id=1600305466 instance=ExtResource("21_ryguw")]
+position = Vector2(2354, 2059)
+
+[node name="Zombie38" parent="Predefined zombies" unique_id=1215617467 instance=ExtResource("21_ryguw")]
+position = Vector2(1639, 2007)
+
+[node name="Zombie39" parent="Predefined zombies" unique_id=2120797004 instance=ExtResource("21_ryguw")]
+position = Vector2(2443, 1783)
+
+[node name="Zombie40" parent="Predefined zombies" unique_id=1427847089 instance=ExtResource("21_ryguw")]
+position = Vector2(3624, 1262)
+
+[node name="Zombie41" parent="Predefined zombies" unique_id=952785112 instance=ExtResource("21_ryguw")]
+position = Vector2(3810, 1721)
+
+[node name="Zombie42" parent="Predefined zombies" unique_id=1468711611 instance=ExtResource("21_ryguw")]
+position = Vector2(4494, 1804)
+
+[node name="Zombie43" parent="Predefined zombies" unique_id=1575773726 instance=ExtResource("21_ryguw")]
+position = Vector2(4425, 2170)
+
+[node name="Zombie44" parent="Predefined zombies" unique_id=544614341 instance=ExtResource("21_ryguw")]
+position = Vector2(5029, 1801)
+
+[node name="Zombie45" parent="Predefined zombies" unique_id=1258004849 instance=ExtResource("21_ryguw")]
+position = Vector2(4936, 1152)
+
+[node name="Zombie46" parent="Predefined zombies" unique_id=862166248 instance=ExtResource("21_ryguw")]
+position = Vector2(5005, 786)
+
+[node name="Zombie47" parent="Predefined zombies" unique_id=47973008 instance=ExtResource("21_ryguw")]
+position = Vector2(4998, 320)
+
+[node name="Zombie48" parent="Predefined zombies" unique_id=1156213745 instance=ExtResource("21_ryguw")]
+position = Vector2(5285, 738)
+
+[node name="Zombie49" parent="Predefined zombies" unique_id=655178982 instance=ExtResource("21_ryguw")]
+position = Vector2(5563, 2923)
+
+[node name="Zombie50" parent="Predefined zombies" unique_id=2041352286 instance=ExtResource("21_ryguw")]
+position = Vector2(4523, 3079)
+
+[node name="Zombie51" parent="Predefined zombies" unique_id=978000305 instance=ExtResource("21_ryguw")]
+position = Vector2(3905, 3179)
+
+[node name="Zombie52" parent="Predefined zombies" unique_id=55762671 instance=ExtResource("21_ryguw")]
+position = Vector2(3681, 3172)
+
+[node name="Zombie53" parent="Predefined zombies" unique_id=244862146 instance=ExtResource("21_ryguw")]
+position = Vector2(4030, 3414)
+
+[node name="Zombie54" parent="Predefined zombies" unique_id=85347659 instance=ExtResource("21_ryguw")]
+position = Vector2(3560, 2962)
+
+[node name="Zombie55" parent="Predefined zombies" unique_id=1955387374 instance=ExtResource("21_ryguw")]
+position = Vector2(4092, 2993)
+
+[node name="Zombie56" parent="Predefined zombies" unique_id=304109699 instance=ExtResource("21_ryguw")]
+position = Vector2(4341, 3162)
+
+[node name="Zombie57" parent="Predefined zombies" unique_id=2081878287 instance=ExtResource("21_ryguw")]
+position = Vector2(4413, 2831)
+
+[node name="Zombie58" parent="Predefined zombies" unique_id=401624401 instance=ExtResource("21_ryguw")]
+position = Vector2(4651, 2724)
+
+[node name="Zombie59" parent="Predefined zombies" unique_id=324357631 instance=ExtResource("21_ryguw")]
+position = Vector2(4634, 2738)
+
+[node name="Zombie60" parent="Predefined zombies" unique_id=1525893110 instance=ExtResource("21_ryguw")]
+position = Vector2(4738, 3173)
+
+[node name="Zombie61" parent="Predefined zombies" unique_id=410974849 instance=ExtResource("21_ryguw")]
+position = Vector2(5270, 3028)
+
+[node name="Zombie62" parent="Predefined zombies" unique_id=1744902425 instance=ExtResource("21_ryguw")]
+position = Vector2(5620, 3245)
+
+[node name="Zombie63" parent="Predefined zombies" unique_id=1257270225 instance=ExtResource("21_ryguw")]
+position = Vector2(5813, 2947)
+
+[node name="Zombie64" parent="Predefined zombies" unique_id=1479300667 instance=ExtResource("21_ryguw")]
+position = Vector2(5813, 2947)
