@@ -3,16 +3,34 @@ extends ProgressBar
 var timer_label: Label
 var progress_bg: ProgressBar
 
-var current_time: float = 0.0
+var current_time: float = 300.0
 var max_time: float = 300.0  # 5 minutes default
 var tween: Tween
+
+signal time_zero
+
+func _process(delta):
+	current_time -= delta
+	current_time = clamp(current_time, 0.0, max_time)
+
+	if current_time <= 0.0:
+		emit_signal("time_zero")
+
+func add_time(seconds: float):
+	current_time = min(current_time + seconds, max_time)
+
+func remove_time(seconds: float):
+	current_time = max(current_time - seconds, 0.0)
+	if current_time <= 0.0:
+		emit_signal("time_zero")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Get node references using direct paths instead of unique IDs
 	timer_label = get_node_or_null("Timer")
 	progress_bg = get_node_or_null("ProgressBG")
-	
+	current_time = max_time
+
 	print("Timer _ready() - timer_label: ", timer_label)
 	print("Timer _ready() - progress_bg: ", progress_bg)
 	

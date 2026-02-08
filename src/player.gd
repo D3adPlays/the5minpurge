@@ -10,6 +10,7 @@ const JOYSTICK_DEADZONE = 0.2
 var aim_direction: Vector2 = Vector2.RIGHT
 var countdown_timer: float = 0.0
 
+
 func _on_ready() -> void:
 	print("Player _on_ready() called")
 	# Set up inherited animated sprite reference
@@ -26,6 +27,9 @@ func _on_ready() -> void:
 	# Setup timer bar locked to camera
 	print("About to call setup_timer_bar()")
 	setup_timer_bar()
+	
+func take_damage(amount: float, damage_source: Node = null) -> void:
+	modify_timer(-15.0)
 
 func _physics_process(delta: float) -> void:
 	handle_movement()

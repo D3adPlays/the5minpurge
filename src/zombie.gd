@@ -33,6 +33,12 @@ func _on_enemy_ready() -> void:
 	# Additional zombie-specific setup after enemy initialization
 	pass
 
+func die():
+	var player = get_tree().get_first_node_in_group("player")
+	if player and player.has_method("modify_timer"):
+		player.modify_timer(7.0) # +7 secondes à la mort du zombie
+	queue_free()
+
 func _on_state_changed(old_state: State, new_state: State) -> void:
 	# Update animations based on state changes
 	if not animated_sprite:
